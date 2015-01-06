@@ -1,0 +1,95 @@
+	type::Street;;
+	backgroundColor::139,,137,,137;;
+	foregroundColor::0,,0,,0;;
+	title:: ;;
+	subText::START;; 
+	description:: ;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::255,,0,,0;;
+	foregroundColor::0,,0,,0;;
+	title::TOWER;;
+	subText::Get 250 Gold;; 
+	description::TOWER: Welcome to the Tower, feel free to loot the dungeon. Beware of the dragon!!!;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::255,,0,,221;;
+	foregroundColor::0,,0,,0;;
+	title::CRATER;;
+	subText::Pay 200 Gold;; 
+	description::CRATER: You fell into the crater and lost your wallet;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::104,,11,,255;;
+	foregroundColor::0,,0,,0;;
+	title::PALACE GATES;;
+	subText::Pay 100 Gold;;  
+	description::PALACE GATES: Knock on the gates to pay your weapon-taxes;;
+	leje:: ;;
+||	
+	type::Street;;
+	backgroundColor::11,,47,,255;;
+	foregroundColor::0,,0,,0;;
+	title::COLD DESERT;;
+	subText::Pay 20 Gold;; 
+	description::COLD DESERT: You have lost track of where you going and can't find your way home;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::11,,137,,255;;
+	foregroundColor::0,,0,,0;;
+	title::WALLED CITY;;
+	subText::Get 180 Gold;;  
+	description::WALLED CITY: You manage to sneak in behind the Giant Walls. Fill up your Pockets!!! ;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::11,,223,,255;;
+	foregroundColor::0,,0,,0;;
+	title::MONASTERY;;
+	subText::Get 0 Gold;; 
+	description::MONASTERY: The monks and nuns have nothing to offer. Keep on going!;;
+	leje:: ;;
+||	
+    type::Street;;
+	backgroundColor::11,,255,,223;;
+	foregroundColor::0,,0,,0;;
+	title::BLACK CAVE;; 
+	subText::Pay 70 Gold;; 
+	description::BLACK CAVE: You are enchanted by the beauty of stalagmites and flowstones;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::11,,255,,121;;
+	foregroundColor::0,,0,,0;;
+	title::MOUNTAIN HUTS;; 
+	subText::Pay 60 Gold;;
+	description::MOUNTAIN HUTS: Perched high above the crowded resorts, they offer spectacular Coffee;;
+	leje:: ;;
+||	
+	type::Street;;
+	backgroundColor::166,,255,,11;;
+	foregroundColor::0,,0,,0;;
+	title::THE WEREWALL;;
+	subText::Pay 80 Gold;; 
+	description::THE WEREWALL: You find yourself gazing upon the wall of werewolves. You find the strength to continue - Throw again;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::247,,255,,11;;
+	foregroundColor::0,,0,,0;;
+	title::THE PIT;;
+	subText::Pay 90 Gold;; 
+	description::THE PIT: Tread carefully. You slip and fall directly into a pit filled with snakes and spiders;;
+	leje:: ;;
+||	
+    type::Street;;
+	backgroundColor::255,,153,,11;;
+	foregroundColor::0,,0,,0;;
+	title::GOLDMINE;; 
+	subText::Get 650 Gold;; 
+	description::GOLDMINE: Wow! You find the goldmine. The place is ruled by hardworking leprechauns;;
+	leje:: ;;

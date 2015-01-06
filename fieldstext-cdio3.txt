@@ -1,0 +1,174 @@
+	type::Start;;
+	backgroundColor::255,,4,,4;;
+	foregroundColor::0,,0,,0;;
+	title::START;; 
+	subText:: ;; 
+	description:: ;;
+||		
+	type::Street;;
+	backgroundColor::255,,97,,67;;
+	foregroundColor::0,,0,,0;;
+	title::CRATER;;
+	subText::Price: 1500;; 
+	description::Territory: Crater;;
+	leje::Rent: 300;;
+||	
+	type::Street;;
+	backgroundColor::253,,146,,39;;
+	foregroundColor::0,,0,,0;;
+	title::SECOND SAIL;;
+	subText::Price: 4000;; 
+	description::Fleet: Second Sail;;
+	leje::Rent: 500-4000;;
+||		
+	type::Street;;
+	backgroundColor::253,,196,,39;;
+	foregroundColor::0,,0,,0;;
+	title::TOWER;;
+	subText::Price: 6000;; 
+	description::Territory: Tower;;
+	leje::Rent: 3200;;
+||	
+	type::Street;;
+	backgroundColor::255,,232,,85;;
+	foregroundColor::0,,0,,0;;
+	title::GOLDMINE;;
+	subText::TAX: 2000;; 
+	description::Tax: Goldmine;;
+	leje:: ;;
+||	
+	type::Street;;
+	backgroundColor::235,,255,,44;;
+	foregroundColor::0,,0,,0;;
+	title::COLD DESERT;;
+	subText::Price: 3000;; 
+	description::Territory: Cold Dessert;;
+	leje::Rent: 700;;
+||	
+	type::Street;;
+	backgroundColor::192,,255,,44;;
+	foregroundColor::0,,0,,0;;
+	title::MOUNTAIN HUTS;;
+	subText::Price: 2500;; 
+	description::Labor Camp: Huts in the mountains;;
+	leje::Rent: 10 x Dice;;
+||
+	type::Street;;
+	backgroundColor::108,,255,,44;;
+	foregroundColor::0,,0,,0;;
+	title::THE WEREWALL;;
+	subText::Price: 4300;; 
+	description::Territory: The Werewolf Wall;;
+	leje::Rent: 1300;;
+||
+	type::Street;;
+	backgroundColor::44,,255,,164;;
+	foregroundColor::0,,0,,0;;
+	title::SEA GROVER;;
+	subText::Price: 4000;; 
+	description::Fleet: Sea Grover;;
+	leje::Rent: 500-4000;;
+||	
+	type::Street;;
+	backgroundColor::44,,255,,242;;
+	foregroundColor::0,,0,,0;;
+	title::WALLED CITY;;
+	subText::Receive: 5000;; 
+	description::Refuge: Walled City;;
+	leje:: ;;
+||	
+	type::Street;;
+	backgroundColor::44,,249,,255;;
+	foregroundColor::0,,0,,0;;
+	title::BLACK CAVE;; 
+	subText::Price: 4000;; 
+	description::Territory: Black Cave;;
+	leje::Rent: 1000;;
+||		
+	type::Street;;
+	backgroundColor::44,,221,,255;;
+	foregroundColor::0,,0,,0;;
+	title::TRIBE ENCHAMPMENT;; 
+	subText::Price:	1000;; 
+	description::Territory: Tribe Enchampment;;
+	leje::Rent: 100;;
+||	
+	type::Street;;
+	backgroundColor::44,,192,,255;;
+	foregroundColor::0,,0,,0;;
+	title::THE BUCCANEERS;; 
+	subText::Price:	4000;; 
+	description::Fleet: The Buccaneers;;
+	leje::Rent: 500-4000;;
+||	
+	type::Street;;
+	backgroundColor::44,,143,,255;;
+	foregroundColor::0,,0,,0;;
+	title::SOUTH CITADEL;; 
+	subText::Price:	5000;; 
+	description::Territory: South Citadel;;
+	leje::Rent: 2000;;
+||	
+	type::Street;;
+	backgroundColor::44,,115,,255;;
+	foregroundColor::0,,0,,0;;
+	title::CARAVAN;; 
+	subText::Tax: 4000 or 10%;; 
+	description::Tax: Caravan;;
+	leje:: ;;
+||
+	type::Street;;
+	backgroundColor::44,,58,,255;;
+	foregroundColor::0,,0,,0;;
+	title::MOUNTAIN;; 
+	subText::Price: 2000;; 
+	description::Territory: Mountain;;
+	leje::Rent: 500;;
+||	
+	type::Street;;
+	backgroundColor::108,,44,,255;;
+	foregroundColor::0,,0,,0;;
+	title::PALACE GATES;; 
+	subText::Price: 5500;; 
+	description::Territory: Palace Gates;;
+	leje::Rent: 2600;;
+||	
+	type::Street;;
+	backgroundColor::157,,44,,255;;
+	foregroundColor::0,,0,,0;;
+	title::PRIVATEER ARMADE;; 
+	subText::Price: 4000;; 
+	description::Fleet: Privateer Armade;;
+	leje::Rent: 500-4000;;
+||	
+	type::Street;;
+	backgroundColor::221,,44,,255;;
+	foregroundColor::0,,0,,0;;
+	title::MOUNTAIN VILLAGE;; 
+	subText::Price: 4750;; 
+	description::Territory: Mountain Village;;
+	leje::Rent: 1600;;
+||	
+	type::Street;;
+	backgroundColor::255,,44,,228;;
+	foregroundColor::0,,0,,0;;
+	title::THE PIT;; 
+	subText::Price: 2500;; 
+	description::Labor Camp: The Pit;;
+	leje::Rent: 10 x Dice;;
+||	
+	type::Street;;
+	backgroundColor::255,,44,,143;;
+	foregroundColor::0,,0,,0;;
+	title::CASTLE;; 
+	subText::Price: 8000;; 
+	description::Territory: Castle;;
+	leje::Rent: 4000;;
+||	
+	type::Street;;
+	backgroundColor::255,,44,,51;;
+	foregroundColor::0,,0,,0;;
+	title::MONASTERY;;
+	subText::Receive: 500;; 
+	description::Refuge: Monastery;;
+	leje:: ;;

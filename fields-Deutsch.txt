@@ -1,0 +1,95 @@
+	type::Street;;
+	backgroundColor::139,,137,,137;;
+	foregroundColor::0,,0,,0;;
+	title:: ;;
+	subText::START;; 
+	description:: ;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::255,,0,,0;;
+	foregroundColor::0,,0,,0;;
+	title::TURM;;
+	subText::+250 Gold;; 
+	description::TURM: Willkommen auf dem Turm, fühlen Sie sich frei , um den Dungeon zu plündern. Hüten Sie sich vor dem Drachen !!!;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::255,,0,,221;;
+	foregroundColor::0,,0,,0;;
+	title::KRATER;;
+	subText::-200 Gold;; 
+	description::KRATER: Sie fiel in den Krater und verlor Ihren Geldbeutel;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::104,,11,,255;;
+	foregroundColor::0,,0,,0;;
+	title::PALASTTORE;;
+	subText::-100 Gold;;  
+	description::PALASTTORE: Klopfen Sie an den Gates , um Ihre Waffe - Steuern zahlen;;
+	leje:: ;;
+||	
+	type::Street;;
+	backgroundColor::11,,47,,255;;
+	foregroundColor::0,,0,,0;;
+	title::KALTE WÜSTE;;
+	subText::-20 Gold;; 
+	description::KALTE WÜSTE: Sie haben den Überblick, wo Sie gehen verloren und kann nicht finden den Weg nach Hause;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::11,,137,,255;;
+	foregroundColor::0,,0,,0;;
+	title::UMMAUERTEN STADT;;
+	subText::+180 Gold;;  
+	description::UMMAUERTEN: Ihnen gelingt, hinter den Riesenmauernschleichen . Füllen Sie Ihre Taschen!!! ;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::11,,223,,255;;
+	foregroundColor::0,,0,,0;;
+	title::KLOSTER;;
+	subText::0 Gold;; 
+	description::KLOSTER: Die Mönche und Nonnen haben nichts zu bieten. Fahren Sie weiter!;;
+	leje:: ;;
+||	
+    type::Street;;
+	backgroundColor::11,,255,,223;;
+	foregroundColor::0,,0,,0;;
+	title::SCHWARZE HÖHLE;; 
+	subText::-70 Gold;; 
+	description::SCHWARZE HÖHLE: Sie sind von der Schönheit der Stalagmiten und flowstones verzaubern;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::11,,255,,121;;
+	foregroundColor::0,,0,,0;;
+	title::BERGHÜTTEN;; 
+	subText::-60 Gold;;
+	description::BERGHÜTTEN: Hoch über den überfüllten Resorts bieten sie spektakuläre Kaffee;;
+	leje:: ;;
+||	
+	type::Street;;
+	backgroundColor::166,,255,,11;;
+	foregroundColor::0,,0,,0;;
+	title::DIE WEREWALL;;
+	subText::-80 Gold;; 
+	description::DIE WEREWALL: Sie finden sich blickte auf die Wand von Werwölfen . Sie finden die Kraft, weiter - wieder Werfen;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::247,,255,,11;;
+	foregroundColor::0,,0,,0;;
+	title::THE PIT;;
+	subText::-90 Gold;; 
+	description::THE PIT: Treten sorgfältig. Sie rutschen und fallen direkt in eine Grube mit Schlangen und Spinnen gefüllt;;
+	leje:: ;;
+||	
+    type::Street;;
+	backgroundColor::255,,153,,11;;
+	foregroundColor::0,,0,,0;;
+	title::GOLDMINE;; 
+	subText::+650 Gold;; 
+	description::GOLDMINE: Wow! Sie finden die Goldmine . Der Ort ist von fleißigen Kobolde ausgeschlossen;;
+	leje:: ;;

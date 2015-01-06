@@ -1,0 +1,95 @@
+	type::Street;;
+	backgroundColor::139,,137,,137;;
+	foregroundColor::0,,0,,0;;
+	title:: ;;
+	subText::START;; 
+	description:: ;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::255,,0,,0;;
+	foregroundColor::0,,0,,0;;
+	title::TAARN;;
+	subText::-250 Guld;; 
+	description::TAARN: Velkommen til Taarnet, foel dig fri til at tage hvadend du kan. Pas paa dragen!!!;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::255,,0,,221;;
+	foregroundColor::0,,0,,0;;
+	title::KRATER;;
+	subText::-200 Guld;; 
+	description::KRATER: Du faldt ned i krateret og mistede din pung!;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::104,,11,,255;;
+	foregroundColor::0,,0,,0;;
+	title::PALADSETS INDGANG;;
+	subText::-100 Guld;;  
+	description::PALADSETS INDGANG: Bank paa, og betal vaaben-beskatning;;
+	leje:: ;;
+||	
+	type::Street;;
+	backgroundColor::11,,47,,255;;
+	foregroundColor::0,,0,,0;;
+	title::KOLD OERKEN;;
+	subText::-20 Guld;; 
+	description::KOLD OERKEN: Du aner ikke hvor du befinder dig, og kan ikke finde hjem.;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::11,,137,,255;;
+	foregroundColor::0,,0,,0;;
+	title::BEMURET BY;;
+	subText::+180 Guld;;  
+	description::BEMURET BY: Du formaar at snige dig ind bag byens mure. Fyld lommerne!!! ;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::11,,223,,255;;
+	foregroundColor::0,,0,,0;;
+	title::KLOSTER;;
+	subText::0 Gold;; 
+	description::KLOSTER: Munkene og nonnerne har intet at tilbyde. Fortsaet!;;
+	leje:: ;;
+||	
+    	type::Street;;
+	backgroundColor::11,,255,,223;;
+	foregroundColor::0,,0,,0;;
+	title::SORT GROTTE;; 
+	subText::-70 Guld;; 
+	description::SORT GROTTE: Du bliver fortryllet ved skoenheden af stalagmitter og glimtesten;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::11,,255,,121;;
+	foregroundColor::0,,0,,0;;
+	title::BJERGHYTTER;; 
+	subText::-60 Guld;;
+	description::BJERGHYTTER: Hoejt over de overfyldte turistattraktioner, tilbyder de spektakulaer kaffe.;;
+	leje:: ;;
+||	
+	type::Street;;
+	backgroundColor::166,,255,,11;;
+	foregroundColor::0,,0,,0;;
+	title::VARMUREN;;
+	subText::-80 Guld;; 
+	description::VARMUREN: Du griber dig selv i at maabe over Varulve-Muren. Du finder styrken til at fortsaette - Kast igen;;
+	leje:: ;;
+||		
+	type::Street;;
+	backgroundColor::247,,255,,11;;
+	foregroundColor::0,,0,,0;;
+	title::HULLET;;
+	subText::-90 Guld;; 
+	description::HULLET: Se dig for! Du falder ned i et hul fyldt af slanger og edderkopper.;;
+	leje:: ;;
+||	
+    	type::Street;;
+	backgroundColor::255,,153,,11;;
+	foregroundColor::0,,0,,0;;
+	title::GULDMINE;; 
+	subText::+650 Guld;; 
+	description::GULDMINE: Wow! Du fandt guldminen. Stedet er styret af hardtarbejdende nisser.;;
+	leje:: ;;
