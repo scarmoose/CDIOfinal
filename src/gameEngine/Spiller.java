@@ -1,11 +1,11 @@
 package gameEngine;
 
-public class Player {
+public class Spiller {
 
 	private String name;
 	private int fleetsOwned = 0;
 	private int currentPos = 0;
-	private Account playerAcc = new Account(); 
+	private Konto playerAcc = new Konto(); 
 
 
 	/**
@@ -35,7 +35,7 @@ public class Player {
 	 * Construct for a new player
 	 * @param name name of the player
 	 */
-	public Player(String name) {
+	public Spiller(String name) {
 		this.name = name; 
 	}
 
@@ -63,7 +63,7 @@ public class Player {
 	 * 
 	 * @return returns the players account for further use.
 	 */
-	public Account getAccount() {
+	public Konto getAccount() {
 		return playerAcc;
 	}
 	

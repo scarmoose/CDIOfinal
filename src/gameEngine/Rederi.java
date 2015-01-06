@@ -3,7 +3,7 @@ package gameEngine;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class Fleet extends Ownable {
+public class Rederi extends Ownable {
 	
 	/**
 	 * Constructs a field of the type Fleet
@@ -12,7 +12,7 @@ public class Fleet extends Ownable {
 	 * @param price the price of the field.
 	 */
 	
-	public Fleet(String fieldName, int fieldNumber, int price) {
+	public Rederi(String fieldName, int fieldNumber, int price) {
 		super(fieldName, fieldNumber, price);
 	}
 	
@@ -53,7 +53,7 @@ public class Fleet extends Ownable {
 	 * @param player player who landed on the field
 	 */
 	
-	public void buyProperty(Player player){
+	public void buyProperty(Spiller player){
 		if (player.getAccount().getBalance()<super.getPrice()){
 			final JPanel panel = new JPanel();
 			JOptionPane.showMessageDialog(panel, "Insufficient funds", "Service message",
@@ -76,7 +76,7 @@ public class Fleet extends Ownable {
 	 */
 	
 	@Override
-	public void landOnField(Player player) {
+	public void landOnField(Spiller player) {
 		if (super.getOwner() != null){
 			super.getOwner().getAccount().deposit(getRent());
 			player.getAccount().withdraw(getRent());

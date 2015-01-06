@@ -4,13 +4,13 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestsAccount {
+public class KontoTest {
 	
-	Account acc1;
+	Konto acc1;
 	
 	@Before
 	public void setUp() throws Exception {
-		acc1 = new Account();
+		acc1 = new Konto();
 	}
 	
 	//test whether the account is instantiated with balance = 30000
@@ -53,7 +53,7 @@ public class TestsAccount {
 	
 	@Test
 	public void testNegativeDeposit() {
-		Account acc2 = new Account(1000);
+		Konto acc2 = new Konto(1000);
 		acc2.deposit(-1);
 		assertEquals(1000, acc2.getBalance());
 	}

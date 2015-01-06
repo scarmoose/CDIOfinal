@@ -5,15 +5,15 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class RefugeTest {
+public class ParkeringTest {
 	
-	Refuge ref1; 
-	Player player1;
+	Parkering ref1; 
+	Spiller player1;
 
 	@Before
 	public void setUp() throws Exception {
-		ref1 = new Refuge("Walled City", 5, 5000); //fieldNumber set to 5
-		player1 = new Player("PlayerOne"); //contructs player with balance = 30000
+		ref1 = new Parkering("Walled City", 5, 5000); //fieldNumber set to 5
+		player1 = new Spiller("PlayerOne"); //contructs player with balance = 30000
 	}
 
 	@Test

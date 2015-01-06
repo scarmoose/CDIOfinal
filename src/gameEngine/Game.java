@@ -11,14 +11,14 @@ import gameEngine.GameBoard;
 public class Game {
 
 	//All players are created
-	Player player1 = new Player("PlayerOne");
-	Player player2 = new Player("PlayerTwo");
-	Player player3 = new Player("PlayerThree");
-	Player player4 = new Player("PlayerFour");
-	Player player5 = new Player("PlayerFive");
-	Player player6 = new Player("PlayerSix");
+	Spiller player1 = new Spiller("PlayerOne");
+	Spiller player2 = new Spiller("PlayerTwo");
+	Spiller player3 = new Spiller("PlayerThree");
+	Spiller player4 = new Spiller("PlayerFour");
+	Spiller player5 = new Spiller("PlayerFive");
+	Spiller player6 = new Spiller("PlayerSix");
 	//All the players are placed in an array
-	Player playerTurn[] = {player1,player2,player3,player4,player5,player6}; 
+	Spiller playerTurn[] = {player1,player2,player3,player4,player5,player6}; 
 
 	GameBoard currentBoard = new GameBoard();
 
@@ -89,7 +89,7 @@ public class Game {
 		String buttonPressed = "";
 
 		//Dices to be rolled are created.
-		Die dieOne = new Die();
+		Terning dieOne = new Terning();
 
 		int turn = 0; //Variable used to determine which players turn it is.
 

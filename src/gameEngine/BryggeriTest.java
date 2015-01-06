@@ -5,21 +5,21 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
 
-public class LaborCampTest {
+public class BryggeriTest {
 
 	//We're getting players from the player class, dice from Die class and the method Labor from LaberCamp class
 
-	Player playerWhoLandedOnField;
-	Die diceRoll;
-	LaborCamp labor;	
+	Spiller playerWhoLandedOnField;
+	Terning diceRoll;
+	Bryggeri labor;	
 	Ownable ownable;
 	
 	//Initializing the above
 	@Before
 	public void setup(){
-		playerWhoLandedOnField = new Player("Lander-Guy");
-		diceRoll = new Die();
-		labor = new LaborCamp("ACB", 3, 1000);
+		playerWhoLandedOnField = new Spiller("Lander-Guy");
+		diceRoll = new Terning();
+		labor = new Bryggeri("ACB", 3, 1000);
 	}
 	
 	//Tests if BaseRent is equal to what we expected: The facevalue of the dice*100,
@@ -27,7 +27,7 @@ public class LaborCampTest {
 	//Because of changes, the FaceValue is set to 30, resulting in getRent()=300
 	@Test
 	public void testLaborCamp() {
-		Die testDie = new Die();
+		Terning testDie = new Terning();
 		testDie.setLastRoll(3);
 		assertEquals(labor.getRent(), 300);		
 	}

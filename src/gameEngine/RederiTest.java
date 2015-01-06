@@ -5,19 +5,19 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class FleetTest {
+public class RederiTest {
 
-	Player playerTest1;
-	Player playerTest2;
-	Fleet fl1;
-	Fleet fl2;
+	Spiller playerTest1;
+	Spiller playerTest2;
+	Rederi fl1;
+	Rederi fl2;
 	
 	@Before
 	public void setUp() throws Exception {
-		playerTest1 = new Player("playerTest1");
-		playerTest2 = new Player("playerTest2");
-		fl1 = new Fleet("Fleet", 5, 4000);
-		fl2 = new Fleet("Fleet2", 6, 4000);
+		playerTest1 = new Spiller("playerTest1");
+		playerTest2 = new Spiller("playerTest2");
+		fl1 = new Rederi("Fleet", 5, 4000);
+		fl2 = new Rederi("Fleet2", 6, 4000);
 
 	}
 

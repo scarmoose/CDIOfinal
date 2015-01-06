@@ -3,7 +3,7 @@ package gameEngine;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class Territory extends Ownable {
+public class Gade extends Ownable {
 	
 	private int rent; 
 	
@@ -15,7 +15,7 @@ public class Territory extends Ownable {
 	 * @param rent rent of the field 
 	 */
 	
-	public Territory(String fieldName, int fieldnumber, int price, int rent) {
+	public Gade(String fieldName, int fieldnumber, int price, int rent) {
 		super(fieldName, fieldnumber, price);
 		this.rent = rent;
 	}
@@ -25,7 +25,7 @@ public class Territory extends Ownable {
 	 * @param lander player who landed on the field
 	 */
 	
-	public void buyProperty(Player lander){
+	public void buyProperty(Spiller lander){
 		if(lander.getAccount().getBalance()<super.getPrice()){
 			final JPanel panel = new JPanel();
 			JOptionPane.showMessageDialog(panel, "Insufficient funds", "Service message",
@@ -47,7 +47,7 @@ public class Territory extends Ownable {
 	 */
 
 	@Override
-	public void landOnField( Player lander){
+	public void landOnField( Spiller lander){
 		if (super.getOwner() != null){
 			lander.getAccount().withdraw(rent);
 			super.getOwner().getAccount().deposit(rent);

@@ -1,6 +1,6 @@
 package gameEngine;
 
-public abstract class Fields {
+public abstract class Felt {
 	
 
 	
@@ -13,7 +13,7 @@ public abstract class Fields {
 	 * @param fieldNumber Number of field
 	 */
 	
-	public Fields(String fieldName, int fieldNumber) {
+	public Felt(String fieldName, int fieldNumber) {
 		this.fieldName = fieldName; 
 		this.fieldNumber = fieldNumber; 
 	}
@@ -23,7 +23,7 @@ public abstract class Fields {
 	 * 
 	 * @param player the player who have landed on the current field
 	 */
-	public abstract void landOnField(Player player);
+	public abstract void landOnField(Spiller player);
 	
 
 }

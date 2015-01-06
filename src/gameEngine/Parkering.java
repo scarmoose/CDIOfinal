@@ -1,6 +1,6 @@
 package gameEngine;
 
-public class Refuge extends Fields{
+public class Parkering extends Felt{
 
 	
 	private int bonus;
@@ -12,7 +12,7 @@ public class Refuge extends Fields{
 	 * @param bonus the value of the bonus a player should recieve when he lands on the field
 	 */
 	
-	public Refuge(String fieldName, int fieldNumber, int bonus){
+	public Parkering(String fieldName, int fieldNumber, int bonus){
 		super(fieldName, fieldNumber);
 		this.bonus = bonus;
 	}
@@ -20,7 +20,7 @@ public class Refuge extends Fields{
 	 * The play who landed on the field recieves a set bonus.
 	 */
 	@Override
-	public void landOnField(Player playerWhoLandedOnField) {
+	public void landOnField(Spiller playerWhoLandedOnField) {
 		playerWhoLandedOnField.getAccount().deposit(bonus);
 		System.out.println(playerWhoLandedOnField.getName()+" recieved "+bonus);
 	}

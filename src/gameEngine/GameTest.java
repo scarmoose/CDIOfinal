@@ -7,13 +7,13 @@ import org.junit.Test;
 
 public class GameTest {
 	GameBoard currentBoard;
-	Player[] playerTurn = new Player[2];
+	Spiller[] playerTurn = new Spiller[2];
 
 	@Before
 	public void setUp() throws Exception {
 		currentBoard = new GameBoard();
-		playerTurn[0] = new Player("1");
-		playerTurn[1] = new Player("2");
+		playerTurn[0] = new Spiller("1");
+		playerTurn[1] = new Spiller("2");
 		
 		
 	}

@@ -5,11 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestsPlayer {
-	Player testPlay;
+public class SpillerTest {
+	Spiller testPlay;
 	@Before
 	public void setup() throws Exception{
-	testPlay = new Player("PlayerOne");
+	testPlay = new Spiller("PlayerOne");
 	}
 	
 	@Test //Checking if the contruct is properly made with the correct name.

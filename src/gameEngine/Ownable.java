@@ -1,9 +1,9 @@
 package gameEngine;
 
-public abstract class Ownable extends Fields {
+public abstract class Ownable extends Felt {
 	
 	private String name;
-	private Player owner;
+	private Spiller owner;
 	private int price;
 	
 	
@@ -36,11 +36,11 @@ public abstract class Ownable extends Fields {
 		return price; 
 	}
 	
-	public Player getOwner() {
+	public Spiller getOwner() {
 		return owner; 
 	}
 	
-	public void setOwner(Player owner) {
+	public void setOwner(Spiller owner) {
 		this.owner = owner; 
 	}
 	public void setOwnerName(String name) { 

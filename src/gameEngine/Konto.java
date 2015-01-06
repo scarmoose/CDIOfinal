@@ -1,17 +1,17 @@
 package gameEngine;
 
-public class Account {
+public class Konto {
 	
 	private int balance;
 	/**
 	 * 
 	 * @param balance the balance of the player.
 	 */
-	public Account(int balance) {
+	public Konto(int balance) {
 		this.balance = balance;
 	}
 	
-	public Account() {
+	public Konto() {
 		balance = 30000;
 	}
 	

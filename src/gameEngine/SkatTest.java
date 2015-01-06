@@ -5,17 +5,17 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TaxTest {
+public class SkatTest {
 
-	Player playerTestLand;
-	Tax caravan;
-	Tax goldmine;
+	Spiller playerTestLand;
+	Skat caravan;
+	Skat goldmine;
 	
 	@Before
 	public void setUp() throws Exception {
-		playerTestLand = new Player("test1");
-		caravan = new Tax("Caravan", 2, 4000, 10);
-		goldmine = new Tax("Goldmine", 3, 2000, 0);
+		playerTestLand = new Spiller("test1");
+		caravan = new Skat("Caravan", 2, 4000, 10);
+		goldmine = new Skat("Goldmine", 3, 2000, 0);
 	}
 	
 	@Test

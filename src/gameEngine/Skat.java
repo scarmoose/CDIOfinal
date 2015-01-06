@@ -2,7 +2,7 @@ package gameEngine;
 
 import javax.swing.JOptionPane; 
 
-public class Tax extends Fields {
+public class Skat extends Felt {
 	
 	
 	private int baseTax;
@@ -16,7 +16,7 @@ public class Tax extends Fields {
 	 * @param percentTax Percent tax in whole numbers. i.e. 10% is 10.
 	 */
 	
-	public Tax(String fieldName, int fieldNumber, int baseTax, int percentTax) {
+	public Skat(String fieldName, int fieldNumber, int baseTax, int percentTax) {
 		super(fieldName, fieldNumber);
 		this.baseTax = baseTax;
 		this.percentTax = percentTax; 
@@ -43,7 +43,7 @@ public class Tax extends Fields {
 	 * @param playerWhoLanded The player who landed on the field
 	 */
 	@Override
-	public void landOnField(Player playerWhoLanded) {
+	public void landOnField(Spiller playerWhoLanded) {
 		if(percentTax == 0) {
 			playerWhoLanded.getAccount().withdraw(baseTax);
 			System.out.println(playerWhoLanded.getName()+" landed on "+fieldName+" and paid "+baseTax);

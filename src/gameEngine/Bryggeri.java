@@ -3,7 +3,7 @@ package gameEngine;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class LaborCamp extends Ownable {
+public class Bryggeri extends Ownable {
 	
 	private int baseRent = 100;
 	
@@ -14,12 +14,12 @@ public class LaborCamp extends Ownable {
 	 * @param price Price of field
 	 */
 	
-	public LaborCamp(String fieldName, int fieldNumber, int price){ 
+	public Bryggeri(String fieldName, int fieldNumber, int price){ 
 		super(fieldName, fieldNumber, price);
 	}
 
 	public int getRent() {
-		return baseRent * Die.getLastRoll();
+		return baseRent * Terning.getLastRoll();
 	}
 	
 	/**
@@ -27,7 +27,7 @@ public class LaborCamp extends Ownable {
 	 * @param playerWhoLandedOnField player who landed on the field
 	 */
 	
-	public void buyProperty(Player playerWhoLandedOnField){
+	public void buyProperty(Spiller playerWhoLandedOnField){
 		if(playerWhoLandedOnField.getAccount().getBalance()<super.getPrice()){
 			final JPanel panel = new JPanel();
 			JOptionPane.showMessageDialog(panel, "Insufficient funds", "Service message",
@@ -48,7 +48,7 @@ public class LaborCamp extends Ownable {
 	 * @param playerWhoLandedOnField player who landed on the field
 	 */
 
-	public void landOnField(Player playerWhoLandedOnField) { 
+	public void landOnField(Spiller playerWhoLandedOnField) { 
 		if(super.getOwner() != null){
 			playerWhoLandedOnField.getAccount().withdraw(getRent());
 			super.getOwner().getAccount().deposit(getRent());

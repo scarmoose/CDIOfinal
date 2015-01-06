@@ -1,6 +1,6 @@
 package gameEngine;
 
-public class Die {
+public class Terning {
 	
 	private final int MAX = 6; //max value of die
 	private int faceValue1; //shows current value of roll 1

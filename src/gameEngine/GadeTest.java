@@ -5,17 +5,17 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
 
-public class TerritoryTest {
+public class GadeTest {
 	
-	Player owner;
-	Player lander;
-	Territory territory;
+	Spiller owner;
+	Spiller lander;
+	Gade territory;
 	
 	@Before
 	public void setup(){
-		owner = new Player("owner");
-		lander = new Player("lander");
-		territory = new Territory("Tribal Encampment",1,1000,100);
+		owner = new Spiller("owner");
+		lander = new Spiller("lander");
+		territory = new Gade("Tribal Encampment",1,1000,100);
 	}
 	
 	/*

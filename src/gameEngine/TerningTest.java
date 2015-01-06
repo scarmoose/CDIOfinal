@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestsDie {
+public class TerningTest {
 
 	@Before
 	public void setUp() throws Exception {
@@ -18,7 +18,7 @@ public class TestsDie {
 	public void testRollDie() {
 
 
-		Die die = new Die();
+		Terning die = new Terning();
 
 
 		int throw2 = 0;
