@@ -59,8 +59,8 @@ public class Game {
 		//The choice of amount of players
 		String[] amount = {"3", "4","5","6"};//Lowest amount of players will be 2
 		//Selection box in which amount of players is chosen
-		String players = (String) JOptionPane.showInputDialog(null, "Choose amount of players:",
-				"The Choice of a Lifetime", JOptionPane.QUESTION_MESSAGE, null,
+		String players = (String) JOptionPane.showInputDialog(null, "Vælg antal spillere:",
+				"Livets største beslutning", JOptionPane.QUESTION_MESSAGE, null,
 				amount, 
 				amount[0]); //Default choice is 2 players
 		int NumberOfPlayers = Integer.parseInt(players);//Turns the choice into an integer
@@ -68,18 +68,18 @@ public class Game {
 
 		//Game Window initialization
 		GUI.create("fieldstext-cdio3.txt");
-		Game.setTypeNameOne("Enter name for player 1");
-		Game.setTypeNameTwo("Enter name for player 2");
-		Game.setRollDice("Roll Dice");
+		Game.setTypeNameOne("Indtast navn for spiller 1");
+		Game.setTypeNameTwo("Indtast navn for spiller 2");
+		Game.setRollDice("Kast terninger");
 
 
 		//User names are prompted from the users, and store in previous variables
 		int n = 0; //Variable used to run through the array
 		while (n<=NumberOfPlayers-1){
-			playerNames[n] = GUI.getUserString(" Enter name for player "+(n+1));
+			playerNames[n] = GUI.getUserString(" Indtast navn for spiller "+(n+1));
 			playerTurn[n].setName(playerNames[n]);
 			if (playerNames[n].equals("")){
-				playerNames[n] = "Player "+(n+1);//Add 1 to n, because we wont start with Spiller0
+				playerNames[n] = "Spiller "+(n+1);//Add 1 to n, because we wont start with Spiller0
 				playerTurn[n].setName(playerNames[n]);
 			}
 			n++;//increment n in order to perform the next iteration
@@ -131,7 +131,7 @@ public class Game {
 			//Terminates the game if all except one have lost
 			if (inactivePlayers==MaxInactive){
 				Object[] option = {"Exit game!",};         		
-				int endButtonPressed = JOptionPane.showOptionDialog(null,playerNames[turn]+" is the winner! " + " Thanks for playing! ", playerNames[turn]+ " won!!! ",
+				int endButtonPressed = JOptionPane.showOptionDialog(null,playerNames[turn]+" er vinderen! " + " Tak fordi I spillede med! ", playerNames[turn]+ " vandt! ",
 				JOptionPane.WARNING_MESSAGE,
 				JOptionPane.QUESTION_MESSAGE,
 				null,
