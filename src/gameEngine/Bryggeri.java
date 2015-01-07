@@ -30,7 +30,7 @@ public class Bryggeri extends Ownable {
 	public void buyProperty(Spiller playerWhoLandedOnField){
 		if(playerWhoLandedOnField.getAccount().getBalance()<super.getPrice()){
 			final JPanel panel = new JPanel();
-			JOptionPane.showMessageDialog(panel, "Insufficient funds", "Service message",
+			JOptionPane.showMessageDialog(panel, "Du har ikke penge nok!", "Service meddelelse",
 			JOptionPane.WARNING_MESSAGE);
 			return;
 		}
@@ -52,15 +52,15 @@ public class Bryggeri extends Ownable {
 		if(super.getOwner() != null){
 			playerWhoLandedOnField.getAccount().withdraw(getRent());
 			super.getOwner().getAccount().deposit(getRent());
-			System.out.println(playerWhoLandedOnField.getName()+" paid "+getRent()+" in rent to "+getOwnerName());
+			System.out.println(playerWhoLandedOnField.getName()+" betalte "+getRent()+" til "+getOwnerName());
 		}
 		else{
 			Object[] options = {
-					"Buy it now!",
-                    "No, thank you",};
+					"Køb nu!",
+                    "Nej, ellers tak.",};
 			int buttonPressed = JOptionPane.showOptionDialog(null,
-					"Do you wish to own this property? (LaborCamp-property)",
-					"DECIDE NOW!",
+					"Ønsker du at eje dette bryggeri?",
+					"BESLUT DIG NU!",
 					JOptionPane.WARNING_MESSAGE,
 					JOptionPane.QUESTION_MESSAGE,
 					null,

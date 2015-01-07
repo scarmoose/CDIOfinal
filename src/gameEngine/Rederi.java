@@ -56,7 +56,7 @@ public class Rederi extends Ownable {
 	public void buyProperty(Spiller player){
 		if (player.getAccount().getBalance()<super.getPrice()){
 			final JPanel panel = new JPanel();
-			JOptionPane.showMessageDialog(panel, "Insufficient funds", "Service message",
+			JOptionPane.showMessageDialog(panel, "Du har ikke penge nok!", "Service meddelelse",
 			JOptionPane.WARNING_MESSAGE);
 			return;
 		}
@@ -80,16 +80,16 @@ public class Rederi extends Ownable {
 		if (super.getOwner() != null){
 			super.getOwner().getAccount().deposit(getRent());
 			player.getAccount().withdraw(getRent());
-			System.out.println(player.getName()+" paid "+getRent()+" in rent to "+getOwnerName());
+			System.out.println(player.getName()+" betalte "+getRent()+" til "+getOwnerName());
 		}
 		else {
 			//prompts the player to buy the field
 			Object[] options = {
-					"Buy it now!",
-                    "No, thank you",};
+					"Køb nu!",
+                    "Nej, ellers tak.",};
 			int buttonPressed = JOptionPane.showOptionDialog(null,
-					"Do you wish to own this property? (Fleet-property)",
-					"DECIDE NOW!",
+					"Ønsker du at eje dette rederi?",
+					"BESLUT DIG NU!",
 					JOptionPane.WARNING_MESSAGE,
 					JOptionPane.QUESTION_MESSAGE,
 					null,

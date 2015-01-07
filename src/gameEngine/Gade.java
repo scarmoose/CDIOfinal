@@ -28,7 +28,7 @@ public class Gade extends Ownable {
 	public void buyProperty(Spiller lander){
 		if(lander.getAccount().getBalance()<super.getPrice()){
 			final JPanel panel = new JPanel();
-			JOptionPane.showMessageDialog(panel, "Insufficient funds", "Service message",
+			JOptionPane.showMessageDialog(panel, "Du har ikke penge nok!", "Service meddelelse",
 			JOptionPane.WARNING_MESSAGE);
 			return;
 		}
@@ -55,11 +55,11 @@ public class Gade extends Ownable {
 		}
 		else{				
 			Object[] options = {
-					"Buy it now!",
-                    "No, thank you",};
+					"Køb den nu!!",
+                    "Nej, ellers tak",};
 			int buttonPressed = JOptionPane.showOptionDialog(null,
-					"Do you wish to own this property? (Territory-property)",
-					"DECIDE NOW!",
+					"Ønsker du at eje dennen gade?",
+					"BESLUT DIG NU!",
 					JOptionPane.WARNING_MESSAGE,
 					JOptionPane.QUESTION_MESSAGE,
 					null,
