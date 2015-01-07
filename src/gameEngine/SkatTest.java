@@ -14,8 +14,8 @@ public class SkatTest {
 	@Before
 	public void setUp() throws Exception {
 		playerTestLand = new Spiller("test1");
-		caravan = new Skat("Caravan", 2, 4000, 10);
-		goldmine = new Skat("Goldmine", 3, 2000, 0);
+		caravan = new Skat("Caravan", 4000, 10);
+		goldmine = new Skat("Goldmine", 2000, 0);
 	}
 	
 	@Test

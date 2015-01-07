@@ -16,8 +16,8 @@ public class RederiTest {
 	public void setUp() throws Exception {
 		playerTest1 = new Spiller("playerTest1");
 		playerTest2 = new Spiller("playerTest2");
-		fl1 = new Rederi("Fleet", 5, 4000);
-		fl2 = new Rederi("Fleet2", 6, 4000);
+		fl1 = new Rederi("Fleet", 4000);
+		fl2 = new Rederi("Fleet2", 4000);
 
 	}
 

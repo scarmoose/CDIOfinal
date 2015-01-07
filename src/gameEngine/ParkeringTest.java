@@ -12,7 +12,7 @@ public class ParkeringTest {
 
 	@Before
 	public void setUp() throws Exception {
-		ref1 = new Parkering("Walled City", 5, 5000); //fieldNumber set to 5
+		ref1 = new Parkering("Walled City", 5000); //fieldNumber set to 5
 		player1 = new Spiller("PlayerOne"); //contructs player with balance = 30000
 	}
 
