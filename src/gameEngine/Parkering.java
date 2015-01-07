@@ -12,8 +12,8 @@ public class Parkering extends Felt{
 	 * @param bonus the value of the bonus a player should recieve when he lands on the field
 	 */
 	
-	public Parkering(String fieldName, int fieldNumber, int bonus){
-		super(fieldName, fieldNumber);
+	public Parkering(String fieldName, int bonus){
+		super(fieldName);
 		this.bonus = bonus;
 	}
 	/**

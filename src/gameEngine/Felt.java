@@ -13,9 +13,8 @@ public abstract class Felt {
 	 * @param fieldNumber Number of field
 	 */
 	
-	public Felt(String fieldName, int fieldNumber) {
+	public Felt(String fieldName) {
 		this.fieldName = fieldName; 
-		this.fieldNumber = fieldNumber; 
 	}
 	/**
 	 * This is used to have an effect on a given player depending on the field which 

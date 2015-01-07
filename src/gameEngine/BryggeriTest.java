@@ -19,7 +19,7 @@ public class BryggeriTest {
 	public void setup(){
 		playerWhoLandedOnField = new Spiller("Lander-Guy");
 		diceRoll = new Terning();
-		labor = new Bryggeri("ACB", 3, 1000);
+		labor = new Bryggeri("ACB", 1000);
 	}
 	
 	//Tests if BaseRent is equal to what we expected: The facevalue of the dice*100,

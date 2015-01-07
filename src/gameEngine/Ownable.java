@@ -14,8 +14,8 @@ public abstract class Ownable extends Felt {
 	 * @param price price of the field
 	 */
 	
-	public Ownable(String fieldName, int fieldNumber, int price) {
-		super(fieldName, fieldNumber); 
+	public Ownable(String fieldName, int price) {
+		super(fieldName); 
 		this.price = price;
 		this.owner = null;
 	}

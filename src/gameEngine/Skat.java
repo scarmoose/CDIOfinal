@@ -16,8 +16,8 @@ public class Skat extends Felt {
 	 * @param percentTax Percent tax in whole numbers. i.e. 10% is 10.
 	 */
 	
-	public Skat(String fieldName, int fieldNumber, int baseTax, int percentTax) {
-		super(fieldName, fieldNumber);
+	public Skat(String fieldName, int baseTax, int percentTax) {
+		super(fieldName);
 		this.baseTax = baseTax;
 		this.percentTax = percentTax; 
 	}

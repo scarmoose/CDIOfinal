@@ -14,8 +14,8 @@ public class Bryggeri extends Ownable {
 	 * @param price Price of field
 	 */
 	
-	public Bryggeri(String fieldName, int fieldNumber, int price){ 
-		super(fieldName, fieldNumber, price);
+	public Bryggeri(String fieldName, int price){ 
+		super(fieldName, price);
 	}
 
 	public int getRent() {

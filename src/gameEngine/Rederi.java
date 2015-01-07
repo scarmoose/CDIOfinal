@@ -6,14 +6,14 @@ import javax.swing.JPanel;
 public class Rederi extends Ownable {
 	
 	/**
-	 * Constructs a field of the type Fleet
+	 * Constructs a field of the type Rederi
 	 * @param fieldName The name of the field.
 	 * @param fieldNumber Number of the field. 
 	 * @param price the price of the field.
 	 */
 	
-	public Rederi(String fieldName, int fieldNumber, int price) {
-		super(fieldName, fieldNumber, price);
+	public Rederi(String fieldName, int price) {
+		super(fieldName, price);
 	}
 	
 	/*

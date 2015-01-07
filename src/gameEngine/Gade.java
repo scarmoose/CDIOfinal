@@ -16,7 +16,7 @@ public class Gade extends Ownable {
 	 */
 	
 	public Gade(String fieldName, int fieldnumber, int price, int rent) {
-		super(fieldName, fieldnumber, price);
+		super(fieldName, price);
 		this.rent = rent;
 	}
 	
