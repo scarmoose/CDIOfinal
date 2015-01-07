@@ -6,6 +6,8 @@ import javax.swing.JPanel;
 public class Gade extends Ownable {
 	
 	private int rent; 
+	private int housesOnField = 0; 
+	private final int MAX_HOUSES_ON_FIELD = 4;
 	
 	/**
 	 * Constructs a Territory field
@@ -17,6 +19,16 @@ public class Gade extends Ownable {
 	public Gade(String fieldName, int price, int rent) {
 		super(fieldName, price);
 		this.rent = rent;
+	}
+	
+	public int getHousesOnField() {
+		return housesOnField;
+	}
+	
+	public void buyHouse() {
+		if(housesOnField < MAX_HOUSES_ON_FIELD) {
+			housesOnField++;			
+		}
 	}
 	
 	/**

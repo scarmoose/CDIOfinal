@@ -5,8 +5,6 @@ public abstract class Ownable extends Felt {
 	private String name;
 	private Spiller owner;
 	private int price;
-	private int housesOnField = 0; 
-	private final int MAX_HOUSES_ON_FIELD = 4;
 	
 	
 	/**
@@ -24,16 +22,6 @@ public abstract class Ownable extends Felt {
 	
 	public String getFieldName() {
 		return fieldName; 
-	}
-	
-	public int getHousesOnField() {
-		return housesOnField;
-	}
-	
-	public void buyHouse() {
-		if(housesOnField < MAX_HOUSES_ON_FIELD) {
-			housesOnField++;			
-		}
 	}
 	
 	public void setPrice(int price) {
