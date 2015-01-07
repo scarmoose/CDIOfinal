@@ -15,7 +15,7 @@ public class Gade extends Ownable {
 	 * @param rent rent of the field 
 	 */
 	
-	public Gade(String fieldName, int fieldnumber, int price, int rent) {
+	public Gade(String fieldName, int price, int rent) {
 		super(fieldName, price);
 		this.rent = rent;
 	}

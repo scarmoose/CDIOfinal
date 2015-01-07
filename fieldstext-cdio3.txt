@@ -8,9 +8,9 @@
 	type::Street;;
 	backgroundColor::107,,107,,245;;
 	foregroundColor::0,,0,,0;;
-	title::Rødovrevej;;
+	title::RÃ¸dovrevej;;
 	subText::Pris: 1200;; 
-	description::Vej: Rødovrevej;;
+	description::Vej: RÃ¸dovrevej;;
 	leje::Rent: 50;;
 ||		
 	type::Street;;
@@ -42,7 +42,7 @@
 	foregroundColor::0,,0,,0;;
 	title::Rederi;;
 	subText::Pris: 4000;; 
-	description::SFL Færgerne;;
+	description::SFL FÃ¦rgerne;;
 	leje::Rent: 500-4000;;
 ||	
 	type::Street;;
@@ -72,25 +72,25 @@
 	type::Street;;
 	backgroundColor::245,,147,,97;;
 	foregroundColor::0,,0,,0;;
-	title::Allégade;;
+	title::AllÃ©gade;;
 	subText::Pris: 2400;; 
-	description::Vej: Allégade;;
+	description::Vej: AllÃ©gade;;
 	leje::Rent: 150;;
 ||	
 	type::Street;;
 	backgroundColor::0,,0,,0;;
 	foregroundColor::255,,255,,255;;
-	title::Fængsel;;
+	title::FÃ¦ngsel;;
 	subText:: ;;
-	description::På besøg;;
+	description::PÃ¥ besÃ¸g;;
 	leje:: ;;
 ||		
 	type::Street;;
 	backgroundColor::50,,170,,40;;
 	foregroundColor::0,,0,,0;;
-	title::Frederiksberg Allé;; 
+	title::Frederiksberg AllÃ©;; 
 	subText::Pris: 2800;; 
-	description::Vej: Frederiksberg Allé;;
+	description::Vej: Frederiksberg AllÃ©;;
 	leje::Rent: 200;;
 ||	
 	type::Street;;
@@ -99,14 +99,14 @@
 	title::Bryggeri;; 
 	subText::Pris:	3000;; 
 	description::Tuborg Bryggeri;;
-	leje::Rent: 100-200 x øjne;;
+	leje::Rent: 100-200 x Ã¸jne;;
 ||		
 	type::Street;;
 	backgroundColor::50,,170,,40;;
 	foregroundColor::0,,0,,0;;
-	title::Bülowsvej;; 
+	title::Bï¿½lowsvej;; 
 	subText::Pris: 2800;; 
-	description::Vej: Bülowsvej;;
+	description::Vej: BÃ¼lowsvej;;
 	leje::Rent: 200;;
 ||		
 	type::Street;;
@@ -160,7 +160,7 @@
 	type::Street;;
 	backgroundColor::30,,175,,0;;
 	foregroundColor::0,,0,,0;;
-	title::Ægte Parkering;;
+	title::Ã†gte Parkering;;
 	subText:: ;; 
 	description::Parkering;;
 	leje:: ;;
@@ -184,17 +184,17 @@
 	type::Street;;
 	backgroundColor::255,,100,,25;;
 	foregroundColor::0,,0,,0;;
-	title::Østerbrogade;;
+	title::Ã˜sterbrogade;;
 	subText::Pris: 4400;; 
-	description::Vej: Østerbrogade;;
+	description::Vej: Ã˜sterbrogade;;
 	leje::Rent: 350 ;;
 ||	
 	type::Street;;
 	backgroundColor::255,,100,,25;;
 	foregroundColor::0,,0,,0;;
-	title::Grønningen;;
+	title::GrÃ¸nningen;;
 	subText::Pris: 4800;; 
-	description::Vej: Grønningen;;
+	description::Vej: GrÃ¸nningen;;
 	leje::Rent: 400 ;;
 ||	
 	type::Street;;
@@ -227,20 +227,20 @@
 	title::Bryggeri;; 
 	subText::Pris:	3000;; 
 	description::Coca-Cola Tapperi;;
-	leje::Rent: 100-200 x øjne;;
+	leje::Rent: 100-200 x Ã¸jne;;
 ||	
 	type::Street;;
 	backgroundColor::255,,255,,255;;
 	foregroundColor::0,,0,,0;;
-	title::Østergade;;
+	title::ï¿½stergade;;
 	subText::Pris: 5600;; 
-	description::Vej: Østergade;;
+	description::Vej: Ã˜stergade;;
 	leje::Rent: 500 ;;
 ||	
 	type::Street;;
 	backgroundColor::0,,55,,55;;
 	foregroundColor::255,,255,,255;;
-	title::Gå i Fængsel;;
+	title::GÃ¥ i FÃ¦ngsel;;
 	subText:: ;; 
 	description::Hold ud, G!;;
 	leje:: ;;
@@ -306,13 +306,13 @@
 	foregroundColor::0,,0,,0;;
 	title::Statsskat;;
 	subText::Betal 2000 ;; 
-	description::Ekstra Ordinær Statsskat;;
+	description::Ekstra OrdinÃ¦r Statsskat;;
 	leje::Rent: 2000;;
 ||	
 	type::Street;;
 	backgroundColor::150,,0,,150;;
 	foregroundColor::255,,255,,255;;
-	title::Rådhuspladsen;;
+	title::Rï¿½dhuspladsen;;
 	subText::Pris: 8000;; 
-	description::Vej: Rådhuspladsen;;
+	description::Vej: RÃ¥dhuspladsen;;
 	leje::Rent: 1000 ;;
