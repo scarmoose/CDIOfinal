@@ -5,7 +5,7 @@ public abstract class Felt {
 
 	
 	String fieldName;
-	int fieldNumber;
+	
 	
 	/**
 	 * Constructs a field with a name and a number
