@@ -4,6 +4,7 @@ public class Spiller {
 
 	private String name;
 	private int fleetsOwned = 0;
+	private int breweriesOwned = 0;
 	private int currentPos = 0;
 	private Konto playerAcc = new Konto(); 
 
@@ -17,8 +18,8 @@ public class Spiller {
 	 * @return the current position of the player in the game.
 	 */
 	public int getCurrentPos() {
-		if(currentPos > 21){
-			currentPos = currentPos - 21;
+		if(currentPos > 39){
+			currentPos = currentPos - 39;
 		}		
 		return currentPos;
 	}
@@ -80,6 +81,14 @@ public class Spiller {
 	 */
 	public void incrementFleetsOwned(){
 		this.fleetsOwned = this.fleetsOwned + 1;
+	}
+	
+	public int getBreweriesOwned(){
+		return breweriesOwned;
+	}
+	
+	public void incrementBreweriesOwned(){
+		this.breweriesOwned++;
 	}
 
 }

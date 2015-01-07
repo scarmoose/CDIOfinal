@@ -7,6 +7,9 @@ public class Bryggeri extends Ownable {
 	
 	private int baseRent = 100;
 	
+	private final int BreweriRENT_1 = 100*Terning.getLastRoll();
+	private final int BreweriRENT_2 = 200*Terning.getLastRoll();
+	
 	/**
 	 * Constructs a Labor Camp
 	 * @param fieldName Name of field
@@ -19,7 +22,15 @@ public class Bryggeri extends Ownable {
 	}
 
 	public int getRent() {
-		return baseRent * Terning.getLastRoll();
+		switch (super.getOwner().getBreweriesOwned()){
+		
+		case 1:
+			return BreweriRENT_1;
+		case 2:
+			return BreweriRENT_2;
+		default:
+			return 0;
+	}
 	}
 	
 	/**
