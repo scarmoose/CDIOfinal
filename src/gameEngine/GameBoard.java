@@ -9,23 +9,7 @@ package gameEngine;
 public class GameBoard {
 	
 	Ownable[] ownables = new Ownable[]{
-		new Gade("Crater", 2, 1500, 300),
-		new Rederi("Second Sail", 3, 4000),
-		new Gade("Tower", 4, 6000, 3200),
-		new Gade("Cold Desert", 6, 3000, 700),
-		new Bryggeri("Huts in the Mountain", 7, 2500),
-		new Gade("The Werewall", 8, 4300, 1300),
-		new Rederi("Sea Grover", 9, 4000),
-		new Gade("Black Cave", 11, 4000, 1000),
-		new Gade("Tribe Encampment", 12, 1000, 100),
-		new Rederi("The Buccaneers", 13, 4000),
-		new Gade("South Citadel", 14, 5000, 2000),
-		new Gade("Mountain", 16, 2000, 500), 
-		new Gade("Palace Gates", 17, 5500, 2600),
-		new Rederi("Privateer Armade", 18, 4000),
-		new Gade("Mountain Village", 19, 4750, 1600),
-		new Bryggeri("The Pit", 20, 2500),
-		new Gade("Castle", 21, 8000, 4000),
+		new Gade("Rødovrevej", )
 	};
 	
 	Felt[] fields = new Felt[]{

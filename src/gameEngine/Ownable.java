@@ -24,10 +24,6 @@ public abstract class Ownable extends Felt {
 		return fieldName; 
 	}
 	
-	public int getFieldNumber() {
-		return fieldNumber;
-	}
-	
 	public void setPrice(int price) {
 		this.price = price; 
 	}

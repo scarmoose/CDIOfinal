@@ -6,11 +6,12 @@ import javax.swing.JPanel;
 public class Gade extends Ownable {
 	
 	private int rent; 
+	private int housesOnField = 0; 
+	private final int MAX_HOUSES_ON_FIELD = 4;
 	
 	/**
 	 * Constructs a Territory field
 	 * @param fieldName name of the field
-	 * @param fieldnumber number of the field
 	 * @param price price of the field
 	 * @param rent rent of the field 
 	 */
@@ -18,6 +19,16 @@ public class Gade extends Ownable {
 	public Gade(String fieldName, int price, int rent) {
 		super(fieldName, price);
 		this.rent = rent;
+	}
+	
+	public int getHousesOnField() {
+		return housesOnField;
+	}
+	
+	public void buyHouse() {
+		if(housesOnField < MAX_HOUSES_ON_FIELD) {
+			housesOnField++;			
+		}
 	}
 	
 	/**
@@ -28,7 +39,7 @@ public class Gade extends Ownable {
 	public void buyProperty(Spiller lander){
 		if(lander.getAccount().getBalance()<super.getPrice()){
 			final JPanel panel = new JPanel();
-			JOptionPane.showMessageDialog(panel, "Du har ikke penge nok!", "Service meddelelse",
+			JOptionPane.showMessageDialog(panel, "Insufficient funds", "Service message",
 			JOptionPane.WARNING_MESSAGE);
 			return;
 		}
@@ -36,7 +47,7 @@ public class Gade extends Ownable {
 		super.setOwner(lander);
 		super.setOwnerName(lander.getName());
 		lander.getAccount().withdraw(getPrice());
-		System.out.println(lander.getName()+" købte "+fieldName+" for "+getPrice());
+		System.out.println(lander.getName()+" bought "+fieldName+" for "+getPrice());
 		}
 	}
 	
@@ -51,15 +62,15 @@ public class Gade extends Ownable {
 		if (super.getOwner() != null){
 			lander.getAccount().withdraw(rent);
 			super.getOwner().getAccount().deposit(rent);
-			System.out.println(lander.getName()+" betalte "+rent+" til "+getOwnerName());
+			System.out.println(lander.getName()+" paid "+rent+" in rent to "+getOwnerName());
 		}
 		else{				
 			Object[] options = {
-					"Køb den nu!!",
-                    "Nej, ellers tak",};
+					"Buy it now!",
+                    "No, thank you",};
 			int buttonPressed = JOptionPane.showOptionDialog(null,
-					"Ønsker du at eje dennen gade?",
-					"BESLUT DIG NU!",
+					"Do you wish to own this property? (Territory-property)",
+					"DECIDE NOW!",
 					JOptionPane.WARNING_MESSAGE,
 					JOptionPane.QUESTION_MESSAGE,
 					null,

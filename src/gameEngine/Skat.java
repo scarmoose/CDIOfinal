@@ -44,34 +44,10 @@ public class Skat extends Felt {
 	 */
 	@Override
 	public void landOnField(Spiller playerWhoLanded) {
-		if(percentTax == 0) {
-			playerWhoLanded.getAccount().withdraw(baseTax);
-			System.out.println(playerWhoLanded.getName()+" landed on "+fieldName+" and paid "+baseTax);
+		if(playerWhoLanded.getAccount().getBalance() >= 40000) {
+			playerWhoLanded.getAccount().withdraw(4000);
 		}
-		else {
-			Object[] options = {
-					"10% of your fortune",
-                    "4000 straight",};
-			int buttonPressed = JOptionPane.showOptionDialog(null,
-    "Do you want to pay 10% of your fortune or 4000?",
-    "DECIDE NOW!",
-    JOptionPane.WARNING_MESSAGE,
-    JOptionPane.QUESTION_MESSAGE,
-    null,
-    options, 
-    options[0]);
-			if(buttonPressed == 0){
-				playerWhoLanded.getAccount().withdraw((int) ((percentTax/100.0) * playerWhoLanded
-						.getAccount().getBalance()));
-				System.out.println(playerWhoLanded.getName()+" landed on "+fieldName+" and paid "+(((10*playerWhoLanded
-						.getAccount().getBalance())/9)-(playerWhoLanded
-								.getAccount().getBalance())));
-			}
-			if(buttonPressed == 1) {
-				playerWhoLanded.getAccount().withdraw(baseTax);
-				System.out.println(playerWhoLanded.getName()+" landed on "+fieldName+" and paid "+baseTax);
-			}
-		}
+		else playerWhoLanded.getAccount().withdraw((int) (0.1 * playerWhoLanded.getAccount().getBalance()));
 	}
 
 }
