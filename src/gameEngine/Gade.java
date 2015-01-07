@@ -36,7 +36,7 @@ public class Gade extends Ownable {
 		super.setOwner(lander);
 		super.setOwnerName(lander.getName());
 		lander.getAccount().withdraw(getPrice());
-		System.out.println(lander.getName()+" bought "+fieldName+" for "+getPrice());
+		System.out.println(lander.getName()+" købte "+fieldName+" for "+getPrice());
 		}
 	}
 	
@@ -51,7 +51,7 @@ public class Gade extends Ownable {
 		if (super.getOwner() != null){
 			lander.getAccount().withdraw(rent);
 			super.getOwner().getAccount().deposit(rent);
-			System.out.println(lander.getName()+" paid "+rent+" in rent to "+getOwnerName());
+			System.out.println(lander.getName()+" betalte "+rent+" til "+getOwnerName());
 		}
 		else{				
 			Object[] options = {
