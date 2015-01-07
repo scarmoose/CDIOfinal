@@ -4,6 +4,7 @@ public class Spiller {
 
 	private String name;
 	private int fleetsOwned = 0;
+	private int breweriesOwned = 0;
 	private int currentPos = 0;
 	private Konto playerAcc = new Konto(); 
 
@@ -80,6 +81,14 @@ public class Spiller {
 	 */
 	public void incrementFleetsOwned(){
 		this.fleetsOwned = this.fleetsOwned + 1;
+	}
+	
+	public int getBreweriesOwned(){
+		return breweriesOwned;
+	}
+	
+	public void incrementBreweriesOwned(){
+		this.breweriesOwned++;
 	}
 
 }
