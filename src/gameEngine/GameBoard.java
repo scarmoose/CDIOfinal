@@ -9,7 +9,14 @@ package gameEngine;
 public class GameBoard {
 	
 	Ownable[] ownables = new Ownable[]{
-		new Gade("Rødovrevej", )
+		new Gade("Rødovrevej", 1200, 50),
+		new Gade("Hvidovrevej", 1200, 50),
+		new Rederi("SFL Færgerne", 4000),
+		new Gade("Roskildevej", 2000, 100),
+		new Gade("Valby Langgade", 2000, 100),
+		new Gade("Allegade", 2400, 150),
+		new Gade("Frederiksberg Alle", 2800, 200),
+		new Bryggeri("Tuborg Bryggeri")
 	};
 	
 	Felt[] fields = new Felt[]{

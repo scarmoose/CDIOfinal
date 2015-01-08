@@ -5,6 +5,7 @@ public abstract class Ownable extends Felt {
 	private String name;
 	private Spiller owner;
 	private int price;
+	private int pawnPrice;
 	
 	
 	/**
@@ -17,6 +18,7 @@ public abstract class Ownable extends Felt {
 	public Ownable(String fieldName, int price) {
 		super(fieldName); 
 		this.price = price;
+		this.pawnPrice = (int) (price/2);
 		this.owner = null;
 	}
 	

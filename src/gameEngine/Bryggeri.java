@@ -7,8 +7,8 @@ public class Bryggeri extends Ownable {
 	
 	private int baseRent = 100;
 	
-	private final int BreweriRENT_1 = 100*Terning.getLastRoll();
-	private final int BreweriRENT_2 = 200*Terning.getLastRoll();
+	private final int BreweriRENT_1 = baseRent*Terning.getLastRoll();
+	private final int BreweriRENT_2 = 2*baseRent*Terning.getLastRoll();
 	
 	/**
 	 * Constructs a Labor Camp
@@ -67,10 +67,10 @@ public class Bryggeri extends Ownable {
 		}
 		else{
 			Object[] options = {
-					"Køb nu!",
+					"Kï¿½b nu!",
                     "Nej, ellers tak.",};
 			int buttonPressed = JOptionPane.showOptionDialog(null,
-					"Ønsker du at eje dette bryggeri?",
+					"ï¿½nsker du at eje dette bryggeri?",
 					"BESLUT DIG NU!",
 					JOptionPane.WARNING_MESSAGE,
 					JOptionPane.QUESTION_MESSAGE,

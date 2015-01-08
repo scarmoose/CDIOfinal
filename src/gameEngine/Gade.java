@@ -7,7 +7,25 @@ public class Gade extends Ownable {
 	
 	private int rent; 
 	private int housesOnField = 0; 
-	private final int MAX_HOUSES_ON_FIELD = 4;
+	private final int MAX_HOUSES_ON_FIELD = 5; //4 houses + 1 hotel
+	private int[] houseRent = new int[5];
+	
+	/**
+	 * Sets the rent of the field with houses and hotel
+	 * @param rent1house rent of field with 1 house
+	 * @param rent2houses rent of field with 2 houses
+	 * @param rent3houses rent of field with 3 houses
+	 * @param rent4houses rent of field with 4 houses
+	 * @param renthotel rent of field with 1 hotel
+	 */
+	
+	public void setHouseRent(int rent1house, int rent2houses, int rent3houses, int rent4houses, int renthotel) {
+		houseRent[0] = rent1house; 
+		houseRent[1] = rent2houses;
+		houseRent[2] = rent3houses;
+		houseRent[3] = rent4houses;
+		houseRent[4] = renthotel;
+	}
 	
 	/**
 	 * Constructs a Territory field

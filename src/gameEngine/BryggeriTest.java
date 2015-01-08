@@ -54,7 +54,7 @@ public class BryggeriTest {
 	public void testBuyProperty(){
 		labor.buyProperty(playerWhoLandedOnField);
 		assertTrue(playerWhoLandedOnField.getAccount().getBalance()<30000);
-		System.out.println(playerWhoLandedOnField + " landed on " + labor.getFieldNumber());
+//		System.out.println(playerWhoLandedOnField + " landed on " + labor.getFieldNumber());
 		System.out.println(playerWhoLandedOnField + " bought " + labor.getFieldName() + " for " + labor.getPrice());
 	}
 }
