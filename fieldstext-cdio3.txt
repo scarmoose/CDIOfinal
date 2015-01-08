@@ -16,9 +16,9 @@
 	type::Street;;
 	backgroundColor::0,,0,,0;;
 	foregroundColor::255,,255,,255;;
-	title::Parkering;;
+	title::Metro;;
 	subText:: ;; 
-	description::Parkering;;
+	description::Metro;;
 	leje:: ;;
 ||	
 	type::Street;;
@@ -56,9 +56,9 @@
 	type::Street;;
 	backgroundColor::0,,0,,0;;
 	foregroundColor::255,,255,,255;;
-	title::Parkering;;
+	title::Metro;;
 	subText:: ;; 
-	description::Parkering;;
+	description::Metro;;
 	leje:: ;;
 ||	
 	type::Street;;
@@ -104,7 +104,7 @@
 	type::Street;;
 	backgroundColor::50,,170,,40;;
 	foregroundColor::0,,0,,0;;
-	title::B�lowsvej;; 
+	title::Bülowsvej;; 
 	subText::Pris: 2800;; 
 	description::Vej: Bülowsvej;;
 	leje::Rent: 200;;
@@ -136,9 +136,9 @@
 	type::Street;;
 	backgroundColor::0,,0,,0;;
 	foregroundColor::255,,255,,255;;
-	title::Parkering;;
+	title::Metro;;
 	subText:: ;; 
-	description::Parkering;;
+	description::Metro;;
 	leje:: ;;
 ||	
 	type::Street;;
@@ -176,9 +176,9 @@
 	type::Street;;
 	backgroundColor::0,,0,,0;;
 	foregroundColor::255,,255,,255;;
-	title::Parkering;;
+	title::Metro;;
 	subText:: ;; 
-	description::Parkering;;
+	description::Metro;;
 	leje:: ;;
 ||	
 	type::Street;;
@@ -232,7 +232,7 @@
 	type::Street;;
 	backgroundColor::255,,255,,255;;
 	foregroundColor::0,,0,,0;;
-	title::�stergade;;
+	title::Østergade;;
 	subText::Pris: 5600;; 
 	description::Vej: Østergade;;
 	leje::Rent: 500 ;;
@@ -264,9 +264,9 @@
 	type::Street;;
 	backgroundColor::0,,0,,0;;
 	foregroundColor::255,,255,,255;;
-	title::Parkering;;
+	title::Metro;;
 	subText:: ;; 
-	description::Parkering;;
+	description::Metro;;
 	leje:: ;;
 ||	
 	type::Street;;
@@ -288,9 +288,9 @@
 	type::Street;;
 	backgroundColor::0,,0,,0;;
 	foregroundColor::255,,255,,255;;
-	title::Parkering;;
+	title::Metro;;
 	subText:: ;; 
-	description::Parkering;;
+	description::Metro;;
 	leje:: ;;
 ||	
 	type::Street;;
@@ -312,7 +312,7 @@
 	type::Street;;
 	backgroundColor::150,,0,,150;;
 	foregroundColor::255,,255,,255;;
-	title::R�dhuspladsen;;
+	title::Rådhuspladsen;;
 	subText::Pris: 8000;; 
 	description::Vej: Rådhuspladsen;;
 	leje::Rent: 1000 ;;
