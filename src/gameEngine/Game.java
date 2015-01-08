@@ -127,7 +127,7 @@ public class Game {
 			}
 			//Terminates the game if all except one have lost
 			if (inactivePlayers==MaxInactive){
-				Object[] option = {"Exit game!",};         		
+				Object[] option = {"Slut spil!",};         		
 				int endButtonPressed = JOptionPane.showOptionDialog(null,playerNames[turn]+" er vinderen! " + " Tak fordi I spillede med! ", playerNames[turn]+ " vandt! ",
 				JOptionPane.WARNING_MESSAGE,
 				JOptionPane.QUESTION_MESSAGE,
