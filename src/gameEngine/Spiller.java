@@ -7,7 +7,19 @@ public class Spiller {
 	private int breweriesOwned = 0;
 	private int currentPos = 0;
 	private Konto playerAcc = new Konto(); 
+	private int PrisonCount = 0;
 
+	public int getPrisonCount() {
+		return PrisonCount;
+	}
+
+	public void incrementPrisonCount() {
+		this.PrisonCount = this.PrisonCount + 1;
+	}
+	
+	public void resetPrisonCount() {
+		PrisonCount = 0;
+	}
 
 	/**
 	 * 
@@ -18,12 +30,20 @@ public class Spiller {
 	 * @return the current position of the player in the game.
 	 */
 	public int getCurrentPos() {
+		if(currentPos == 21)
+		{
+			currentPos = 11;
+		}
 		if(currentPos > 39){
-			currentPos = currentPos - 39;
+			currentPos = currentPos - 40;
 			this.getAccount().deposit(4000); //4000 when START is passed
 			System.out.println(name+ " fik 4000 for at passere START");
 		}		
 		return currentPos;
+	}
+
+	public void setCurrentPos(int currentPos) {
+		this.currentPos = currentPos - 1;
 	}
 
 	/**

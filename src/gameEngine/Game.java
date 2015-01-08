@@ -48,7 +48,9 @@ public class Game {
 	private static String rollDice = "";
 
 	private int inactivePlayers  = 0; //Variable to check amount of inactive player. It starts with 0, because they all start out active
-
+	
+	int trow = 0;
+	
 	public void game(){
 
 		//variables created for storing the users names for the game in an array
@@ -147,10 +149,27 @@ public class Game {
 			buttonPressed = GUI.getUserButtonPressed(null, rollDice);
 
 			if(buttonPressed.equals(rollDice)){
-				int trow=dieOne.rollDie();
+				//int trow=dieOne.rollDie();
+				//int trow = 0;
+				trow=dieOne.rollDie();
 				GUI.setDice(dieOne.getFaceValue1(), dieOne.getFaceValue2());
 
 				if(activePlayers[turn]) {
+					if(playerTurn[turn].getPrisonCount()==3){
+						playerTurn[turn].resetPrisonCount();
+						playerTurn[turn].getAccount().withdraw(1000);
+					}
+					if(playerTurn[turn].getPrisonCount()>0){
+						if(dieOne.getFaceValue1()==dieOne.getFaceValue2())
+						{
+							playerTurn[turn].resetPrisonCount();
+						}
+						else
+						{
+							playerTurn[turn].incrementPrisonCount();
+							continue;
+						}
+					}
 					GUI.removeAllCars(playerNames[turn]);//Removes the player from the board.
 					playerTurn[turn].updateCurrentPos(trow);//Updates the current position by adding with trow
 					

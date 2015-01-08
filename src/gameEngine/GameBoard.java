@@ -70,7 +70,7 @@ public class GameBoard {
 		ownables[19],
 		ownables[20],
 		ownables[21],
-		new Skat("Gå i Fængsel", 0, 0),							//30
+		new Fængsel("Gå i Fængsel"),							//30
 		ownables[22],
 		ownables[23],
 		new Metro("Metro"),
