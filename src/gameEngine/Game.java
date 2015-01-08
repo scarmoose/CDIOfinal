@@ -155,7 +155,7 @@ public class Game {
 				GUI.setDice(dieOne.getFaceValue1(), dieOne.getFaceValue2());
 
 				if(activePlayers[turn]) {
-					if(playerTurn[turn].getPrisonCount()==3){
+					if(playerTurn[turn].getPrisonCount()==4){
 						playerTurn[turn].resetPrisonCount();
 						playerTurn[turn].getAccount().withdraw(1000);
 					}
@@ -167,7 +167,8 @@ public class Game {
 						else
 						{
 							playerTurn[turn].incrementPrisonCount();
-							continue;
+							trow=0;
+							System.out.println("PRISON");
 						}
 					}
 					GUI.removeAllCars(playerNames[turn]);//Removes the player from the board.
