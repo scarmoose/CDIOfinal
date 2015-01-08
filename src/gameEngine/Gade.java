@@ -57,7 +57,7 @@ public class Gade extends Ownable {
 	public void buyProperty(Spiller lander){
 		if(lander.getAccount().getBalance()<super.getPrice()){
 			final JPanel panel = new JPanel();
-			JOptionPane.showMessageDialog(panel, "Insufficient funds", "Service message",
+			JOptionPane.showMessageDialog(panel, "Ikke nok penge.", "Service meddelelse",
 			JOptionPane.WARNING_MESSAGE);
 			return;
 		}
@@ -65,7 +65,7 @@ public class Gade extends Ownable {
 		super.setOwner(lander);
 		super.setOwnerName(lander.getName());
 		lander.getAccount().withdraw(getPrice());
-		System.out.println(lander.getName()+" bought "+fieldName+" for "+getPrice());
+		System.out.println(lander.getName()+" købte "+fieldName+" for "+getPrice());
 		}
 	}
 	
@@ -80,15 +80,15 @@ public class Gade extends Ownable {
 		if (super.getOwner() != null){
 			lander.getAccount().withdraw(rent);
 			super.getOwner().getAccount().deposit(rent);
-			System.out.println(lander.getName()+" paid "+rent+" in rent to "+getOwnerName());
+			System.out.println(lander.getName()+" betalte "+rent+" til "+getOwnerName());
 		}
 		else{				
 			Object[] options = {
-					"Buy it now!",
-                    "No, thank you",};
+					"Køb nu!!",
+                    "Nej, ellers tak.",};
 			int buttonPressed = JOptionPane.showOptionDialog(null,
-					"Do you wish to own this property? (Territory-property)",
-					"DECIDE NOW!",
+					"Ønsker du at eje denne gade?",
+					"BESLUT DIG NU!",
 					JOptionPane.WARNING_MESSAGE,
 					JOptionPane.QUESTION_MESSAGE,
 					null,
