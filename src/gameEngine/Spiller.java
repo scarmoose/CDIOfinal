@@ -12,8 +12,8 @@ public class Spiller {
 	/**
 	 * 
 	 * returns an integer with the players current position. 
-	 * If the players position is more than 21 (the 21 fields + START at 0)
-	 * 21 is subtracted when the currentPos i needed
+	 * If the players position is more than 39 (the 39 fields + START at 0)
+	 * 39 is subtracted when the currentPos i needed
 	 * 
 	 * @return the current position of the player in the game.
 	 */

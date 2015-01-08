@@ -65,11 +65,7 @@ public class Gade extends Ownable {
 		super.setOwner(lander);
 		super.setOwnerName(lander.getName());
 		lander.getAccount().withdraw(getPrice());
-<<<<<<< HEAD
-		System.out.println(lander.getName()+" k�bte "+fieldName+" for "+getPrice());
-=======
 		System.out.println(lander.getName()+" købte "+fieldName+" for "+getPrice());
->>>>>>> branch 'master' of https://github.com/scarmoose/CDIOfinal.git
 		}
 	}
 	
@@ -88,7 +84,6 @@ public class Gade extends Ownable {
 		}
 		else{				
 			Object[] options = {
-					"K�b nu!!",
 					"Køb nu!",
                     "Nej, ellers tak.",};
 			int buttonPressed = JOptionPane.showOptionDialog(null,
