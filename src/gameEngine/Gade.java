@@ -10,6 +10,16 @@ public class Gade extends Ownable {
 	private final int MAX_HOUSES_ON_FIELD = 5; //4 houses + 1 hotel
 	private int[] houseRent = new int[5];
 	
+	private String colour;
+	
+	public String getColour() {
+		return colour;
+	}
+
+	public void setColour(String colour) {
+		this.colour = colour;
+	}
+
 	/**
 	 * Sets the rent of the field with houses and hotel
 	 * @param rent1house rent of field with 1 house
@@ -110,6 +120,7 @@ public class Gade extends Ownable {
 		return rent;
 	}
 		
+
 	
 }
 
