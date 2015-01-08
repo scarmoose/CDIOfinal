@@ -49,7 +49,7 @@ public class Bryggeri extends Ownable {
 		super.setOwner(playerWhoLandedOnField);
 		super.setOwnerName(playerWhoLandedOnField.getName());
 		playerWhoLandedOnField.getAccount().withdraw(getPrice());
-		System.out.println(playerWhoLandedOnField.getName()+" k�bte "+fieldName+" for "+getPrice());
+		System.out.println(playerWhoLandedOnField.getName()+" købte "+fieldName+" for "+getPrice());
 		}
 	}
 	
@@ -67,10 +67,10 @@ public class Bryggeri extends Ownable {
 		}
 		else{
 			Object[] options = {
-					"K�b nu!",
+					"Køb nu!",
                     "Nej, ellers tak.",};
 			int buttonPressed = JOptionPane.showOptionDialog(null,
-					"�nsker du at eje dette bryggeri?",
+					"Ønsker du at eje dette bryggeri?",
 					"BESLUT DIG NU!",
 					JOptionPane.WARNING_MESSAGE,
 					JOptionPane.QUESTION_MESSAGE,

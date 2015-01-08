@@ -65,7 +65,7 @@ public class Rederi extends Ownable {
 			super.setOwnerName(player.getName());
 			player.getAccount().withdraw(getPrice());
 			super.getOwner().incrementFleetsOwned();
-			System.out.println(player.getName()+" bought "+fieldName+" for "+getPrice());
+			System.out.println(player.getName()+" kÃ¸bte "+fieldName+" for "+getPrice());
 		}
 	}
 	
@@ -85,10 +85,10 @@ public class Rederi extends Ownable {
 		else {
 			//prompts the player to buy the field
 			Object[] options = {
-					"Køb nu!",
+					"KÃ¸b nu!",
                     "Nej, ellers tak.",};
 			int buttonPressed = JOptionPane.showOptionDialog(null,
-					"Ønsker du at eje dette rederi?",
+					"Ã˜nsker du at eje dette rederi?",
 					"BESLUT DIG NU!",
 					JOptionPane.WARNING_MESSAGE,
 					JOptionPane.QUESTION_MESSAGE,
