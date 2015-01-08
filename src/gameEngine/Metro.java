@@ -6,11 +6,10 @@ public class Metro extends Felt{
 	
 	
 		
-		private int metroFine;
+		private int metroFine = 750;
 		
-		public Metro(String fieldName, int metroFine){
+		public Metro(String fieldName){
 			super(fieldName);
-			this.metroFine = metroFine;
 		}
 		public int getmetroFine() {
 			return metroFine;
