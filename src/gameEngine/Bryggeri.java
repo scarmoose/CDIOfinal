@@ -41,7 +41,7 @@ public class Bryggeri extends Ownable {
 	public void buyProperty(Spiller playerWhoLandedOnField){
 		if(playerWhoLandedOnField.getAccount().getBalance()<super.getPrice()){
 			final JPanel panel = new JPanel();
-			JOptionPane.showMessageDialog(panel, "Du har ikke penge nok!", "Service meddelelse",
+			JOptionPane.showMessageDialog(panel, "Ikke penge nok.", "Service meddelelse",
 			JOptionPane.WARNING_MESSAGE);
 			return;
 		}
@@ -49,7 +49,7 @@ public class Bryggeri extends Ownable {
 		super.setOwner(playerWhoLandedOnField);
 		super.setOwnerName(playerWhoLandedOnField.getName());
 		playerWhoLandedOnField.getAccount().withdraw(getPrice());
-		System.out.println(playerWhoLandedOnField.getName()+" bought "+fieldName+" for "+getPrice());
+		System.out.println(playerWhoLandedOnField.getName()+" købte "+fieldName+" for "+getPrice());
 		}
 	}
 	
