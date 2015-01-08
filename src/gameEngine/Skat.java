@@ -1,6 +1,6 @@
 package gameEngine;
 
-import javax.swing.JOptionPane; 
+//import javax.swing.JOptionPane; 
 
 public class Skat extends Felt {
 	
@@ -11,7 +11,6 @@ public class Skat extends Felt {
 	/**
 	 * Constructs a field of type Tax
 	 * @param fieldName name of field
-	 * @param fieldNumber number of field on the game board
 	 * @param baseTax Base tax
 	 * @param percentTax Percent tax in whole numbers. i.e. 10% is 10.
 	 */
@@ -44,10 +43,10 @@ public class Skat extends Felt {
 	 */
 	@Override
 	public void landOnField(Spiller playerWhoLanded) {
-		if(playerWhoLanded.getAccount().getBalance() >= 40000) {
-			playerWhoLanded.getAccount().withdraw(4000);
+		if(playerWhoLanded.getAccount().getBalance() >= 10*baseTax) {
+			playerWhoLanded.getAccount().withdraw(baseTax);
 		}
-		else playerWhoLanded.getAccount().withdraw((int) (0.1 * playerWhoLanded.getAccount().getBalance()));
+		else playerWhoLanded.getAccount().withdraw((int) ((percentTax/100.0) * playerWhoLanded.getAccount().getBalance()));
 	}
 
 }
