@@ -59,8 +59,8 @@ public class Game {
 		//The choice of amount of players
 		String[] amount = {"3", "4","5","6"};//Lowest amount of players will be 2
 		//Selection box in which amount of players is chosen
-		String players = (String) JOptionPane.showInputDialog(null, "Vælg antal spillere:",
-				"Livets største beslutning", JOptionPane.QUESTION_MESSAGE, null,
+		String players = (String) JOptionPane.showInputDialog(null, "VÃ¦lg antal spillere:",
+				"Livets stÃ¸rste beslutning", JOptionPane.QUESTION_MESSAGE, null,
 				amount, 
 				amount[0]); //Default choice is 2 players
 		int NumberOfPlayers = Integer.parseInt(players);//Turns the choice into an integer
@@ -68,10 +68,7 @@ public class Game {
 
 		//Game Window initialization
 		GUI.create("fieldstext-cdio3.txt");
-		Game.setTypeNameOne("Indtast navn for spiller 1");
-		Game.setTypeNameTwo("Indtast navn for spiller 2");
 		Game.setRollDice("Kast terninger");
-
 
 		//User names are prompted from the users, and store in previous variables
 		int n = 0; //Variable used to run through the array
@@ -144,7 +141,7 @@ public class Game {
 				}
 		
 			//Prints out which players turn it is
-			System.out.println(playerNames[turn]+"'s turn");
+			System.out.println(playerNames[turn]+"s tur.");
 			
 			//user prompted button, when pressed the value of rollDice is stored in i.
 			buttonPressed = GUI.getUserButtonPressed(null, rollDice);
@@ -159,7 +156,7 @@ public class Game {
 					
 					//sets car at field corresponding to the value of the players position
 					GUI.setCar(playerTurn[turn].getCurrentPos()+1, playerNames[turn]);
-					System.out.println(playerNames[turn]+" threw a "+playerTurn[turn].getCurrentPos());
+					System.out.println(playerNames[turn]+" fik en "+trow+"'er.");
 
 					currentBoard.fields[playerTurn[turn].getCurrentPos()].landOnField(playerTurn[turn]);
 					
