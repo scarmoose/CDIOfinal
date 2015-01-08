@@ -21,6 +21,7 @@ public class Spiller {
 		if(currentPos > 39){
 			currentPos = currentPos - 39;
 			this.getAccount().deposit(4000); //4000 when START is passed
+			System.out.println(name+ " fik 4000 for at passere START");
 		}		
 		return currentPos;
 	}

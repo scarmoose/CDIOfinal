@@ -40,46 +40,46 @@ public class GameBoard {
 	};
 	
 	Felt[] fields = new Felt[]{
-		new Skat("Start",0,0),
+		new Skat("Start",0,0),									//0
 		ownables[0],
 		new Metro("Metro"),
 		ownables[1],
 		new Skat("Indkomstskat", 4000, 10),
-		ownables[2],
+		ownables[2],											//5
 		ownables[3],
 		new Metro("Metro"), 
 		ownables[4],
 		ownables[5],
-		new Skat("Fængsel", 0, 0),
+		new Skat("Fængsel", 0, 0),								//10
 		ownables[6], 
 		ownables[7],
 		ownables[8],
 		ownables[9],
-		ownables[10],
+		ownables[10],											//15
 		ownables[11],
 		new Metro("Metro"),
 		ownables[12],
 		ownables[13],
-		new Parkering("Ægte Parkering", 500),
+		new Parkering("Ægte Parkering", 500),					//20
 		ownables[14],
 		new Metro("Metro"),
 		ownables[15],
 		ownables[16],
-		ownables[17], //DFDS
+		ownables[17], //DFDS									//25
 		ownables[18],
 		ownables[19],
 		ownables[20],
 		ownables[21],
-		new Skat("Gå i Fængsel", 0, 0),
+		new Skat("Gå i Fængsel", 0, 0),							//30
 		ownables[22],
 		ownables[23],
 		new Metro("Metro"),
 		ownables[24], 
-		ownables[25],
+		ownables[25],											//35
 		new Metro("Metro"),
 		ownables[26],
 		new Skat("Statsskat", 2000, 0),
-		ownables[27]
+		ownables[27]											//39
 	};
 }
 
