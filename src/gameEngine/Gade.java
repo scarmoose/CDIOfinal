@@ -66,7 +66,6 @@ public class Gade extends Ownable {
 		super.setOwnerName(lander.getName());
 		lander.getAccount().withdraw(getPrice());
 		System.out.println(lander.getName()+" købte "+fieldName+" for "+getPrice());
-
 		}
 	}
 	
