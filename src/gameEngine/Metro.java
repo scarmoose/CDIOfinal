@@ -22,5 +22,6 @@ public class Metro extends Felt{
 				playerWhoLanded.getAccount().withdraw(metroFine);
 				System.out.println("Du har fået en bøde, for at køre uden billet.");
 			}
+			
 			}
 }
