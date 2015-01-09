@@ -6,6 +6,7 @@ public abstract class Ownable extends Felt {
 	private Spiller owner;
 	private int price;
 	private int pawnPrice;
+	private boolean isPawned;
 	
 	
 	/**
@@ -41,11 +42,30 @@ public abstract class Ownable extends Felt {
 	public void setOwner(Spiller owner) {
 		this.owner = owner; 
 	}
+	
 	public void setOwnerName(String name) { 
 		this.name = name;
 	}
+	
 	public String getOwnerName() {
 		return name; 
+	}
+	
+	public int getPawnPrice() {
+		return pawnPrice; 
+	}
+	
+	public boolean isPawned() {
+		return isPawned;
+	}
+	
+	/**
+	 * Pawns property and returns half the buy price to the owners account.
+	 */
+	
+	public void pawnProperty() {
+		isPawned = true; 
+		owner.getAccount().deposit(pawnPrice);
 	}
 	
 	public boolean isBuyable() {
