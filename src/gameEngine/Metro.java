@@ -34,29 +34,29 @@ public class Metro extends Felt{
 					GUI.showMessage("Du retuner en tegnebog til retmæssige ejer. Du får en findeløn " + metroBonus +",-");
 					break;
 				case 3:
-					System.out.println("Du har taget Metroen den forkerte vej. Rykkes tilbage til Forige Station");
-					GUI.showMessage("Du har taget Metroen den forkerte vej. Rykkes tilbage til Forige Station");
+					System.out.println("Du har taget Metroen den forkerte vej. Du rykkes tilbage til forrige Station");
+					GUI.showMessage("Du har taget Metroen den forkerte vej. Du rykkes tilbage til forrige Station");
 					break;
 				case 4:
-					System.out.println("Du har huske Rejsekortet idag. Ryk frem til Næste Station");
-					GUI.showMessage("Du har huske Rejsekortet idag. Ryk frem til Næste Station");
+					System.out.println("Du har husket rejsekortet idag. Ryk frem til Næste Station");
+					GUI.showMessage("Du har husket rejsekortet idag. Ryk frem til Næste Station");
 					break;
 				case 5:
 					playerWhoLanded.getAccount().withdraw(rejsekortFine); //withdraw to the players account
-					System.out.println("Du har ikke tjekket ud med Rejsekortet. Du få en bøde på." + rejsekortFine + ",-");
-					GUI.showMessage("Du har ikke tjekket ud med Rejsekortet. Du få en bøde på." + rejsekortFine + ",-");
+					System.out.println("Du har ikke tjekket ud med Rejsekortet. Du får en bøde på." + rejsekortFine + ",-");
+					GUI.showMessage("Du har ikke tjekket ud med Rejsekortet. Du får en bøde på." + rejsekortFine + ",-");
 					break;
 				case 6:
-					System.out.println("Du tog Metroen den forkerte vej. Rykkes tilbage til Forige Station");
-					GUI.showMessage("Du tog Metroen den forkerte vej. Rykkes tilbage til Forige Station");
+					System.out.println("Du tog Metroen den forkerte vej. Du rykkes tilbage til forrige Station");
+					GUI.showMessage("Du tog Metroen den forkerte vej. Du rykkes tilbage til forrige Station");
 					break;
 				case 7:
-					System.out.println("Du huske Ungdomskortet idag. Ryk frem til Næste Station");
-					GUI.showMessage("Du huske Ungdomskortet idag. Ryk frem til Næste Station");
+					System.out.println("Du har husket Ungdomskortet idag. Ryk frem til næste Station");
+					GUI.showMessage("Du har husket Ungdomskortet idag. Ryk frem til næste Station");
 					break;
 				case 8:
-					System.out.println("Du faldt i søvn i Metron. Du rykkes 2 Stationer frem. Ingen Bonus ved passering ved start");
-					GUI.showMessage("Du faldt i søvn i Metron. Du rykkes 2 Stationer frem. Ingen Bonus ved passering ved start");
+					System.out.println("Du faldt i søvn i Metroen. Du rykkes 2 Stationer frem. Ingen Bonus ved passering ved start");
+					GUI.showMessage("Du faldt i søvn i Metroen. Du rykkes 2 Stationer frem. Ingen Bonus ved passering ved start");
 					break;
 					
 				}
