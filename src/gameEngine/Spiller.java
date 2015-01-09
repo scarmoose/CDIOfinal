@@ -1,5 +1,7 @@
 package gameEngine;
 
+import boundaryToMatador.GUI;
+
 public class Spiller {
 
 	private String name;
@@ -38,6 +40,7 @@ public class Spiller {
 			currentPos = currentPos - 40;
 			this.getAccount().deposit(4000); //4000 when START is passed
 			System.out.println(name+ " fik 4000 for at passere START");
+			GUI.showMessage(name+ " fik 4000 for at passere START");
 		}		
 		return currentPos;
 	}

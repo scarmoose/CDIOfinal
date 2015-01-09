@@ -1,5 +1,7 @@
 package gameEngine;
 
+import boundaryToMatador.GUI;
+
 public class Metro extends Felt{
 	
 	
@@ -16,10 +18,12 @@ public class Metro extends Felt{
 		@Override
 		public void landOnField(Spiller playerWhoLanded) {
 			int result = (int)(Math.random()*100);
-			if(result >= 20 && result <=40){ // Make i a 1 out of 5 chance to get a fine
+			if(result >= 1 && result <=100){ // Make i a 1 out of 5 chance to get a fine
 				playerWhoLanded.getAccount().withdraw(metroFine); //withdraw to the players account
-				System.out.println("Du har fået en bøde, for at køre uden billet.");
+				System.out.println("Du har fået en bøde, for at køre uden billet. Betal " + metroFine +",-");
+				GUI.showMessage("Du har fået en bøde, for at køre uden billet. Betal " + metroFine +",-");
 			}
 			
 			}
+		
 }
