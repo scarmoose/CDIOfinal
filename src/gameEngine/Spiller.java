@@ -32,9 +32,9 @@ public class Spiller {
 	 * @return the current position of the player in the game.
 	 */
 	public int getCurrentPos() {
-		if(currentPos == 21)
+		if(currentPos == 30)
 		{
-			currentPos = 11;
+			currentPos = 10;
 		}
 		if(currentPos > 39){
 			currentPos = currentPos - 40;
