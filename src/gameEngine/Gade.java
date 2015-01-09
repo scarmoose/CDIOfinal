@@ -61,6 +61,11 @@ public class Gade extends Ownable {
 			System.out.println(super.getOwnerName()+" har købt et hus på "+super.getFieldName());
 			GUI.showMessage(super.getOwnerName()+" har købt et hus på "+super.getFieldName());
 		}
+		else
+		{
+			System.out.println(super.getOwnerName()+" kan ikke bygge flere huse på "+super.getFieldName());
+			GUI.showMessage(super.getOwnerName()+" kan ikke bygge flere huse på "+super.getFieldName());
+		}
 	}
 	
 	/**
