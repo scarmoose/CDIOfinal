@@ -10,6 +10,15 @@ public class Spiller {
 	private int currentPos = 0;
 	private Konto playerAcc = new Konto(); 
 	private int PrisonCount = 0;
+	private int blueCount = 0;
+	private int pinkCount = 0;
+	private int greenCount = 0;
+	private int greyCount = 0;
+	private int redCount = 0;
+	private int whiteCount = 0;
+	private int yellowCount = 0;
+	private int purpleCount = 0;
+	
 
 	public int getPrisonCount() {
 		return PrisonCount;

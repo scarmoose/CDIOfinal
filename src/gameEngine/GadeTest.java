@@ -15,7 +15,7 @@ public class GadeTest {
 	public void setup(){
 		owner = new Spiller("owner");
 		lander = new Spiller("lander");
-		territory = new Gade("Tribal Encampment",1000,100);
+		territory = new Gade("Tribal Encampment",1000,100,"red");
 	}
 	
 	/*

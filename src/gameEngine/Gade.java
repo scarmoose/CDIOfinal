@@ -3,6 +3,8 @@ package gameEngine;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import boundaryToMatador.GUI;
+
 public class Gade extends Ownable {
 	
 	private int rent; 
@@ -44,9 +46,10 @@ public class Gade extends Ownable {
 	 * @param rent rent of the field 
 	 */
 	
-	public Gade(String fieldName, int price, int rent) {
+	public Gade(String fieldName, int price, int rent, String colour) {
 		super(fieldName, price);
 		this.rent = rent;
+		this.colour = colour;
 	}
 	
 	public int getHousesOnField() {
@@ -55,7 +58,14 @@ public class Gade extends Ownable {
 	
 	public void buyHouse() {
 		if(housesOnField < MAX_HOUSES_ON_FIELD) {
-			housesOnField++;			
+			housesOnField++;	
+			System.out.println(super.getOwnerName()+" har købt et hus på "+super.getFieldName());
+			GUI.showMessage(super.getOwnerName()+" har købt et hus på "+super.getFieldName());
+		}
+		else
+		{
+			System.out.println(super.getOwnerName()+" kan ikke bygge flere huse på "+super.getFieldName());
+			GUI.showMessage(super.getOwnerName()+" kan ikke bygge flere huse på "+super.getFieldName());
 		}
 	}
 	

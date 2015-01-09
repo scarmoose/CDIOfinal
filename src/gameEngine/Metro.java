@@ -107,6 +107,7 @@ public class Metro extends Felt{
 					}
 					break;
 				case 3:
+
 					System.out.println("Du har taget Metroen den forkerte vej. Rykkes tilbage til Forige Station");
 					GUI.showMessage("Du har taget Metroen den forkerte vej. Rykkes tilbage til Forige Station");
 					if (playerWhoLanded.getCurrentPos() == 2){
@@ -141,6 +142,7 @@ public class Metro extends Felt{
 					}
 					break;
 				case 4:
+
 					System.out.println("Du har huske Rejsekortet idag. Ryk frem til Næste Station");
 					GUI.showMessage("Du har huske Rejsekortet idag. Ryk frem til Næste Station");
 					if (playerWhoLanded.getCurrentPos() == 2){
@@ -176,6 +178,7 @@ public class Metro extends Felt{
 					break;
 				case 5:
 					playerWhoLanded.getAccount().withdraw(rejsekortFine); //withdraw to the players account
+
 					System.out.println("Du har ikke tjekket ud med Rejsekortet. Du få en bøde på." + rejsekortFine + ",-");
 					GUI.showMessage("Du har ikke tjekket ud med Rejsekortet. Du få en bøde på." + rejsekortFine + ",-");
 					if (playerWhoLanded.getCurrentPos() == 2){
@@ -208,8 +211,10 @@ public class Metro extends Felt{
 						playerWhoLanded.updateCurrentPos(7);
 						GUI.setCar(playerWhoLanded.getCurrentPos(), playerWhoLanded.getName());
 					}
+
 					break;
 				case 6:
+
 					System.out.println("Du tog Metroen den forkerte vej. Rykkes tilbage til Forige Station");
 					GUI.showMessage("Du tog Metroen den forkerte vej. Rykkes tilbage til Forige Station");
 					if (playerWhoLanded.getCurrentPos() == 2){
@@ -244,6 +249,7 @@ public class Metro extends Felt{
 					}
 					break;
 				case 7:
+
 					System.out.println("Du huske Ungdomskortet idag. Ryk frem til Næste Station");
 					GUI.showMessage("Du huske Ungdomskortet idag. Ryk frem til Næste Station");
 					if (playerWhoLanded.getCurrentPos() == 2){
@@ -276,6 +282,7 @@ public class Metro extends Felt{
 						playerWhoLanded.updateCurrentPos(7);
 						GUI.setCar(playerWhoLanded.getCurrentPos(), playerWhoLanded.getName());
 					}
+
 					break;
 				case 8:
 					System.out.println("Du faldt i søvn i Metron. Du rykkes 2 Stationer frem. Ingen Bonus ved passering ved start");
