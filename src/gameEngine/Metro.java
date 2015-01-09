@@ -7,12 +7,12 @@ public class Metro extends Felt{
 	
 		
 		private int metroFine = 750; //Set fine to 750
-		private int metroBonus = 500;
-		private int rejsekortFine = 150;
-		private int plads[]={2,7,17,22,33,36};
-		private int updatePositiv[]={6,11,6,11,4,7};
-		private int updateNegativ[]={35,-4,-9,-4,-10,-2};
-		private int updateDouble[]={16,16,17,15,10,12};
+		private int metroBonus = 500; //bonus for finding the wallet
+		private int rejsekortFine = 150;//fine for not having the travelcard at check
+		private int plads[]={2,7,17,22,33,36}; // array over the metro fields
+		private int updatePositiv[]={6,11,6,11,4,7}; // array over the positive amount that there are add to the felt position to get to the next metro fields
+		private int updateNegativ[]={35,-4,-9,-4,-10,-2};//array over the negative amount that there are add to the felt position to get to the next metro fields
+		private int updateDouble[]={16,16,17,15,10,12};//array over the double positive amount that there are add to the felt position to get to the next metro fields
 		private int i = 0;
 		
 		public Metro(String fieldName){
@@ -24,7 +24,7 @@ public class Metro extends Felt{
 		
 		@Override
 		public void landOnField(Spiller playerWhoLanded) {
-			int result =(int)(8);//  (int)((Math.random()*8)+1); // 8 random Places for the Switch statsment. And +1 for make go from 1-8 and not 0-7.
+			int result = (int)((Math.random()*8)+1); // 8 random Places for the Switch statsment. And +1 for make it go from 1-8 insted of 0-7.
 			
 			while(playerWhoLanded.getCurrentPos() !=plads[i]){
 				i++;
@@ -35,8 +35,8 @@ public class Metro extends Felt{
 					playerWhoLanded.getAccount().withdraw(metroFine); //withdraw to the players account
 					System.out.println("Du har fået en bøde for at køre uden billet. Betal " + metroFine +",-");
 					GUI.showMessage("Du har fået en bøde for at køre uden billet. Betal " + metroFine +",-");
-					GUI.removeAllCars(playerWhoLanded.getName());
-					playerWhoLanded.updateCurrentPos(updatePositiv [i]);
+					GUI.removeAllCars(playerWhoLanded.getName()); //remove the car so it can be placed at the new position
+					playerWhoLanded.updateCurrentPos(updatePositiv [i]);//update the position to the new by adding the amount of the number in the array
 					GUI.setCar(playerWhoLanded.getCurrentPos(), playerWhoLanded.getName());
 					break;
 					
