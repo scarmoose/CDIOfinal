@@ -157,7 +157,10 @@ public class Game {
 				if(activePlayers[turn]) {
 					if(playerTurn[turn].getPrisonCount()==4){
 						playerTurn[turn].resetPrisonCount();
-						playerTurn[turn].getAccount().withdraw(1000);
+						if(dieOne.getFaceValue1()!=dieOne.getFaceValue2())
+						{
+							playerTurn[turn].getAccount().withdraw(1000);
+						}
 					}
 					if(playerTurn[turn].getPrisonCount()>0){
 						if(dieOne.getFaceValue1()==dieOne.getFaceValue2())
