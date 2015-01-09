@@ -10,7 +10,7 @@ public class Metro extends Felt{
 		private int metroBonus = 500; //bonus for finding the wallet
 		private int rejsekortFine = 150;//fine for not having the travelcard at check
 		private int plads[]={2,7,17,22,33,36}; // array over the metro fields
-		private int updatePositiv[]={6,11,6,11,4,7}; // array over the positive amount that there are add to the felt position to get to the next metro fields
+		private int updatePositiv[]={6,11,6,12,4,7}; // array over the positive amount that there are add to the felt position to get to the next metro fields
 		private int updateNegativ[]={35,-4,-9,-4,-10,-2};//array over the negative amount that there are add to the felt position to get to the next metro fields
 		private int updateDouble[]={16,16,17,15,10,12};//array over the double positive amount that there are add to the felt position to get to the next metro fields
 		private int i = 0;
