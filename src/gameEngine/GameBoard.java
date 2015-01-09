@@ -9,34 +9,34 @@ package gameEngine;
 public class GameBoard {
 	
 	Ownable[] ownables = new Ownable[]{
-		new Gade("Rødovrevej", 1200, 50), 						//0
-		new Gade("Hvidovrevej", 1200, 50),
+		new Gade("Rødovrevej", 1200, 50, "blue"), 						//0
+		new Gade("Hvidovrevej", 1200, 50, "blue"),
 		new Rederi("SFL Færgerne", 4000),
-		new Gade("Roskildevej", 2000, 100),
-		new Gade("Valby Langgade", 2000, 100),
-		new Gade("Allegade", 2400, 150), 						//5
-		new Gade("Frederiksberg Alle", 2800, 200),
+		new Gade("Roskildevej", 2000, 100, "pink"),
+		new Gade("Valby Langgade", 2000, 100, "pink"),
+		new Gade("Allegade", 2400, 150, "pink"), 						//5
+		new Gade("Frederiksberg Alle", 2800, 200, "green"),
 		new Bryggeri("Tuborg Bryggeri", 3000),
-		new Gade("Bülowsvej", 2800, 200),
-		new Gade("Gl. Kongevej", 3200, 250),
+		new Gade("Bülowsvej", 2800, 200, "green"),
+		new Gade("Gl. Kongevej", 3200, 250, "green"),
 		new Rederi("DSB Rederierne Kalundborg/Aarhus", 4000), 	//10
-		new Gade("Bernstoffsvej", 3600, 300),
-		new Gade("Hellerupvej", 3600, 300), 
-		new Gade("Strandvej", 4000, 350),
-		new Gade("Trianglen", 4400, 350),
-		new Gade("Østerbrogade", 4400, 350), 					//15
-		new Gade("Grønningen", 4800, 400), 
+		new Gade("Bernstoffsvej", 3600, 300, "grey"),
+		new Gade("Hellerupvej", 3600, 300, "grey"), 
+		new Gade("Strandvej", 4000, 350, "grey"),
+		new Gade("Trianglen", 4400, 350, "red"),
+		new Gade("Østerbrogade", 4400, 350, "red"), 					//15
+		new Gade("Grønningen", 4800, 400, "red"), 
 		new Rederi("DFDS Seaways", 4000),
-		new Gade("Bredgade", 5200, 450), 
-		new Gade("Kgs. Nytorv", 5200, 450),
+		new Gade("Bredgade", 5200, 450, "white"), 
+		new Gade("Kgs. Nytorv", 5200, 450, "white"),
 		new Bryggeri("Coca-Cola Tapperi", 3000),				//20 
-		new Gade("Østergade", 5600, 500),
-		new Gade("Amagertorv", 6000, 550),
-		new Gade("Vimmelskaftet", 6000, 550), 
-		new Gade("Nygade", 6400, 600),
+		new Gade("Østergade", 5600, 500, "white"),
+		new Gade("Amagertorv", 6000, 550, "yellow"),
+		new Gade("Vimmelskaftet", 6000, 550, "yellow"), 
+		new Gade("Nygade", 6400, 600, "yellow"),
 		new Rederi("DSB Rederierne Halvskov/Knudshoved2", 4000),//25
-		new Gade("Frederiksberggade", 7000, 700),
-		new Gade("Rådhuspladsen", 8000, 1000)
+		new Gade("Frederiksberggade", 7000, 700, "purple"),
+		new Gade("Rådhuspladsen", 8000, 1000, "purple")
 	};
 	
 	Felt[] fields = new Felt[]{

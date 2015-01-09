@@ -46,9 +46,10 @@ public class Gade extends Ownable {
 	 * @param rent rent of the field 
 	 */
 	
-	public Gade(String fieldName, int price, int rent) {
+	public Gade(String fieldName, int price, int rent, String colour) {
 		super(fieldName, price);
 		this.rent = rent;
+		this.colour = colour;
 	}
 	
 	public int getHousesOnField() {
