@@ -24,7 +24,7 @@ public class Metro extends Felt{
 		
 		@Override
 		public void landOnField(Spiller playerWhoLanded) {
-			int result = (int)((Math.random()*8)+1); // 8 random Places for the Switch statsment. And +1 for make it go from 1-8 insted of 0-7.
+			int result = (int)(8);//((Math.random()*8)+1); // 8 random Places for the Switch statsment. And +1 for make it go from 1-8 insted of 0-7.
 			
 			while(playerWhoLanded.getCurrentPos() !=plads[i]){
 				i++;
@@ -95,18 +95,21 @@ public class Metro extends Felt{
 				case 8:
 					System.out.println("Du faldt i søvn i metroen. Ryk 2 metro felter frem. Du modtager ikke 4000kr. hvis du passerer start feltet");
 					GUI.showMessage("Du faldt i søvn i metroen. Ryk 2 metro felter frem. Du modtager ikke 4000kr. hvis du passerer start feltet");
-					GUI.removeAllCars(playerWhoLanded.getName());
-					playerWhoLanded.updateCurrentPos(updateDouble [i]);
-					GUI.setCar(playerWhoLanded.getCurrentPos(), playerWhoLanded.getName());
 					
+					//withdraw 4000 from the account of the player so there dont get the bonus when the landed on field nr. 33
 					if(playerWhoLanded.getCurrentPos() == 33 ){
-						playerWhoLanded.getAccount().withdraw(-4000);
+						playerWhoLanded.getAccount().withdraw(4000);
 						System.out.println("Trækker 4000 fra for at passer start");
 					}
 					else if(playerWhoLanded.getCurrentPos() == 36 ){
-							playerWhoLanded.getAccount().withdraw(-4000);
-							System.out.println("Trækker 4000 fra for at passer start");
+						playerWhoLanded.getAccount().withdraw(4000);
+						System.out.println("Trækker 4000 fra for at passer start");
 					}
+					GUI.removeAllCars(playerWhoLanded.getName());
+					
+					playerWhoLanded.updateCurrentPos(updateDouble [i]);
+					GUI.setCar(playerWhoLanded.getCurrentPos(), playerWhoLanded.getName());
+					
 					break;
 					
 				}
