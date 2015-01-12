@@ -40,6 +40,7 @@ public class Gade extends Ownable {
 		houseRent[4] = renthotel;
 	}
 	
+	
 	/**
 	 * Constructs a Territory field
 	 * @param fieldName name of the field
@@ -57,7 +58,7 @@ public class Gade extends Ownable {
 		return housesOnField;
 	}
 	
-	public void buyHouse() {
+	public void buyHouse(Spiller lander) {
 		if(housesOnField < MAX_HOUSES_ON_FIELD) {
 			housesOnField++;	
 			System.out.println(super.getOwnerName()+" har købt et hus på "+super.getFieldName());
@@ -66,7 +67,7 @@ public class Gade extends Ownable {
 			
 			Object[] options = {
 					"Administrér grunde.",
-                    "Giv turen videre.",};
+                    "Giv turen videre",};
 			int buttonPressed = JOptionPane.showOptionDialog(null,
 					"Hvad vil du foretage dig?",
 					"BESLUT DIG NU!",
@@ -88,7 +89,8 @@ public class Gade extends Ownable {
 						options2, 
 						options2[0]);
 				if(buttonPressed2 == 0){
-					buyHouse();
+					String[] ejedeGader = {}
+					
 				}	
 				else if(buttonPressed2 == 1){
 					return;
@@ -142,7 +144,7 @@ public class Gade extends Ownable {
 		else{				
 			Object[] options = {
 					"Køb nu!",
-                    "Nej, ellers tak.",};
+                    "Nej, ellers tak!",};
 			int buttonPressed = JOptionPane.showOptionDialog(null,
 					"Ønsker du at eje "+ super.getFieldName()+"? Pris: "+ super.getPrice(),
 					"BESLUT DIG NU!",
