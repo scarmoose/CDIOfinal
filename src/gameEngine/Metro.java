@@ -93,8 +93,8 @@ public class Metro extends Felt{
 					break;
 					
 				case 8:
-					System.out.println("Du faldt i søvn i metroen. Ryk 2 metro felter frem. Du modtager ikke 4000kr. hvis du passerer start feltet");
-					GUI.showMessage("Du faldt i søvn i metroen. Ryk 2 metro felter frem. Du modtager ikke 4000kr. hvis du passerer start feltet");
+					System.out.println("Du faldt i søvn i metroen. Ryk 2 metro felter frem. Du modtager ikke 4000,-. hvis du passerer start feltet");
+					GUI.showMessage("Du faldt i søvn i metroen. Ryk 2 metro felter frem. Du modtager ikke 4000,-. hvis du passerer start feltet");
 					
 					//withdraw 4000 from the account of the player so there dont get the bonus when the landed on field nr. 33
 					if(playerWhoLanded.getCurrentPos() == 33 ){
