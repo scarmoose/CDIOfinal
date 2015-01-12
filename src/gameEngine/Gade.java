@@ -89,7 +89,7 @@ public class Gade extends Ownable {
 						options2, 
 						options2[0]);
 				if(buttonPressed2 == 0){
-					String[] gaderEjet = {}
+					String[] gaderEjet = {};
 					String players = (String) JOptionPane.showInputDialog(null, "Vælg antal spillere:",
 							"Livets største beslutning", JOptionPane.QUESTION_MESSAGE, null,
 							amount, 
