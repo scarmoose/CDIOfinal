@@ -144,7 +144,7 @@ public class Gade extends Ownable {
 					"Køb nu!",
                     "Nej, ellers tak.",};
 			int buttonPressed = JOptionPane.showOptionDialog(null,
-					"Ønsker du at eje denne gade?",
+					"Ønsker du at eje "+ super.getFieldName()+"? Pris: "+ super.getPrice(),
 					"BESLUT DIG NU!",
 					JOptionPane.WARNING_MESSAGE,
 					JOptionPane.QUESTION_MESSAGE,
