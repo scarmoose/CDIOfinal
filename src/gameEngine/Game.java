@@ -219,6 +219,14 @@ public class Game {
 			 
 		}
 	}
+	
+	private void checkForHouseColours(Spiller spiller) {
+		for(int i = 0; i < spiller.getColourCount().length; i++) {
+			if(spiller.getColourCount()[i] == spiller.MAX_COLOUR[i]){
+				spiller.getOwnsAllColour()[i] = true;
+			}
+		}
+	}
 
 	
 

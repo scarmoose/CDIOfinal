@@ -10,14 +10,44 @@ public class Spiller {
 	private int currentPos = 0;
 	private Konto playerAcc = new Konto(); 
 	private int PrisonCount = 0;
-	private int blueCount = 0;
-	private int pinkCount = 0;
-	private int greenCount = 0;
-	private int greyCount = 0;
-	private int redCount = 0;
-	private int whiteCount = 0;
-	private int yellowCount = 0;
-	private int purpleCount = 0;
+	
+//	private boolean ownsAllBlue = false; 
+//	private boolean ownsAllPink = false; 
+//	private boolean ownsAllGreen = false; 
+//	private boolean ownsAllGrey = false;
+//	private boolean ownsAllRed = false; 
+//	private boolean ownsAllWhite = false; 
+//	private boolean ownsAllYellow = false;
+//	private boolean ownsAllPurple = false;
+	
+	private boolean ownsAllColour[] = {false, false, false, false, false, false, false, false};
+	
+	//counters for each colour category
+//	private int colourCount[] = {0,0,0,0,0,0,0,0};
+//	private int blueCount = 0;
+//	private int pinkCount = 0;
+//	private int greenCount = 0;
+//	private int greyCount = 0;
+//	private int redCount = 0;
+//	private int whiteCount = 0;
+//	private int yellowCount = 0;
+//	private int purpleCount = 0;
+	
+	private int colourCount[] = new int[8]; //= {blueCount, pinkCount, greenCount, greyCount, redCount,whiteCount, yellowCount, purpleCount};
+	
+//	private final int MAXCOUNT[] = {2,3,3,3,3,3,3,3,2};
+	private final int BLUE_COUNT_MAX = 2; 
+	private final int PINK_COUNT_MAX = 3; 
+	private final int GREEN_COUNT_MAX = 3;
+	private final int GREY_COUNT_MAX = 3; 
+	private final int RED_COUNT_MAX = 3; 
+	private final int WHITE_COUNT_MAX = 3;
+	private final int YELLOW_COUNT_MAX = 3; 
+	private final int PURPLE_COUNT_MAX = 2; 
+	
+	int MAX_COLOUR[] = {BLUE_COUNT_MAX, PINK_COUNT_MAX, GREEN_COUNT_MAX,
+			GREY_COUNT_MAX, RED_COUNT_MAX, WHITE_COUNT_MAX, YELLOW_COUNT_MAX, PURPLE_COUNT_MAX};
+	
 	
 
 	public int getPrisonCount() {
@@ -124,5 +154,191 @@ public class Spiller {
 	public void incrementBreweriesOwned(){
 		this.breweriesOwned++;
 	}
+	
+	/*
+	 * Colour getters and setters
+	 */
+	
+	public int getBlueCount() {
+		return colourCount[0];
+	}
+	
+	public void setBlueCount(int blueCount) {
+		colourCount[0] = blueCount; 
+	}
+	
+	public int getPinkCount() {
+		return colourCount[1];
+	}
+	
+	public void setPinkCount(int pinkCount) {
+		colourCount[1] = pinkCount;
+	}
+	
+	public int getGreenCount() {
+		return colourCount[2];
+	}
+	
+	public void setGreenCount(int greenCount) {
+		colourCount[2] = greenCount;
+	}
+	
+	public int getGreyCount() {
+		return colourCount[3];
+	}
+	
+	public void setGreyCount(int greyCount) {
+		colourCount[3] = greyCount;
+	}
+	
+	public int getRedCount() {
+		return colourCount[4];
+	}
+	
+	public void setRedCount(int redCount) {
+		colourCount[4] = redCount;
+	}
+	
+	public int getWhiteCount() {
+		return colourCount[5];
+	}
+	
+	public void setWhiteCount(int whiteCount) {
+		colourCount[5] = whiteCount;
+	}
+	
+	public int getYellowCount() {
+		return colourCount[6];
+	}
+	
+	public void setYellowCount(int yellowCount) {
+		colourCount[6] = yellowCount;
+	}
+	
+	public int getPurpleCount() {
+		return colourCount[7];
+	}
+	
+	public void setPurpleCount(int purpleCount) {
+		colourCount[7] = purpleCount; 
+	}
 
+	public int getBLUE_COUNT_MAX() {
+		return BLUE_COUNT_MAX;
+	}
+
+	public int getPINK_COUNT_MAX() {
+		return PINK_COUNT_MAX;
+	}
+
+	public int getGREEN_COUNT_MAX() {
+		return GREEN_COUNT_MAX;
+	}
+
+	public int getGREY_COUNT_MAX() {
+		return GREY_COUNT_MAX;
+	}
+
+	public int getRED_COUNT_MAX() {
+		return RED_COUNT_MAX;
+	}
+
+	public int getWHITE_COUNT_MAX() {
+		return WHITE_COUNT_MAX;
+	}
+
+	public int getYELLOW_COUNT_MAX() {
+		return YELLOW_COUNT_MAX;
+	}
+
+	public int getPURPLE_COUNT_MAX() {
+		return PURPLE_COUNT_MAX;
+	}
+	
+	/*
+	 * getters/setters ownsAll--- booleans
+	 */
+	
+	public boolean isOwnsAllBlue() {
+		return ownsAllColour[0];
+	}
+
+	public void setOwnsAllBlue(boolean ownsAllBlue) {
+		ownsAllColour[0] = ownsAllBlue;
+	}
+
+	public boolean isOwnsAllPink() {
+		return ownsAllColour[1];
+	}
+
+	public void setOwnsAllPink(boolean ownsAllPink) {
+		ownsAllColour[1] = ownsAllPink;
+	}
+
+	public boolean isOwnsAllGreen() {
+		return ownsAllColour[2];
+	}
+
+	public void setOwnsAllGreen(boolean ownsAllGreen) {
+		ownsAllColour[2] = ownsAllGreen;
+	}
+
+	public boolean isOwnsAllGrey() {
+		return ownsAllColour[3];
+	}
+
+	public void setOwnsAllGrey(boolean ownsAllGrey) {
+		ownsAllColour[3] = ownsAllGrey;
+	}
+
+	public boolean isOwnsAllRed() {
+		return ownsAllColour[4];
+	}
+
+	public void setOwnsAllRed(boolean ownsAllRed) {
+		ownsAllColour[4] = ownsAllRed;
+	}
+
+	public boolean isOwnsAllWhite() {
+		return ownsAllColour[5];
+	}
+
+	public void setOwnsAllWhite(boolean ownsAllWhite) {
+		ownsAllColour[5] = ownsAllWhite;
+	}
+
+	public boolean isOwnsAllYellow() {
+		return ownsAllColour[6];
+	}
+
+	public void setOwnsAllYellow(boolean ownsAllYellow) {
+		ownsAllColour[6] = ownsAllYellow;
+	}
+
+	public boolean isOwnsAllPurple() {
+		return ownsAllColour[7];
+	}
+
+	public void setOwnsAllPurple(boolean ownsAllPurple) {
+		ownsAllColour[7] = ownsAllPurple;
+	}
+
+	public boolean[] getOwnsAllColour() {
+		return ownsAllColour;
+	}
+
+	public void setOwnsAllColour(boolean[] ownsAllColour) {
+		this.ownsAllColour = ownsAllColour;
+	}
+
+	public int[] getColourCount() {
+		return colourCount;
+	}
+
+	public void setColourCount(int[] colourCount) {
+		this.colourCount = colourCount;
+	}
+	
+	
+		
 }
