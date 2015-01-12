@@ -51,8 +51,8 @@ public class Metro extends Felt{
 				case 3:
 
 					playerWhoLanded.getAccount().deposit(metroBonus); //Deposit Bonus to the  players account
-					System.out.println("Du finder en tegnebog, og retuner den til retmæssige. For din gerning får du en findeløn." + metroBonus +",-");
-					GUI.showMessage("Du finder en tegnebog, og retuner den til retmæssige. For din gerning får du en findeløn." + metroBonus +",-");
+					System.out.println("Du finder en tegnebog, og retuner den til den retmæssige. For din gode gerning får du en findeløn. " + metroBonus +",-");
+					GUI.showMessage("Du finder en tegnebog, og retuner den til den retmæssige. For din gerning får du en findeløn. " + metroBonus +",-");
 					GUI.removeAllCars(playerWhoLanded.getName());
 					playerWhoLanded.updateCurrentPos(updatePositiv [i]);
 					GUI.setCar(playerWhoLanded.getCurrentPos(), playerWhoLanded.getName());
@@ -68,8 +68,8 @@ public class Metro extends Felt{
 					
 				case 5:
 					playerWhoLanded.getAccount().withdraw(rejsekortFine); //withdraw to the players account
-					System.out.println("Du har glem at tjekke ud med dit rejsekortet. Du modtager derfor en bøde på." + rejsekortFine + ",-");
-					GUI.showMessage("Du har glem at tjekke ud med dit rejsekortet. Du modtager derfor en bøde på." + rejsekortFine + ",-");
+					System.out.println("Du har glemt at tjekke ud med dit rejsekort. Du modtager derfor en bøde på. " + rejsekortFine + ",-");
+					GUI.showMessage("Du har glemt at tjekke ud med dit rejsekort. Du modtager derfor en bøde på. " + rejsekortFine + ",-");
 					GUI.removeAllCars(playerWhoLanded.getName());
 					playerWhoLanded.updateCurrentPos(updatePositiv [i]);
 					GUI.setCar(playerWhoLanded.getCurrentPos(), playerWhoLanded.getName());
@@ -77,24 +77,24 @@ public class Metro extends Felt{
 					
 				case 6:
 
-					System.out.println("Du tog metroen den forkerte vej. Ryk tilbage til forige metro felt");
-					GUI.showMessage("Du tog metroen den forkerte vej. Ryk tilbage til forige metro felt");
+					System.out.println("Du tog metroen den forkerte vej. Ryk tilbage til forrige metro felt");
+					GUI.showMessage("Du tog metroen den forkerte vej. Ryk tilbage til forrige metro felt");
 					GUI.removeAllCars(playerWhoLanded.getName());
 					playerWhoLanded.updateCurrentPos(updateNegativ [i]);
 					GUI.setCar(playerWhoLanded.getCurrentPos(), playerWhoLanded.getName());
 					break;
 					
 				case 7:
-					System.out.println("Du har husket dit rejsekortet i dag. Ryk frem til næste metro felt");
-					GUI.showMessage("Du har husket dit rejsekortet i dag. Ryk frem til næste metro felt");
+					System.out.println("Du har husket dit rejsekort i dag. Ryk frem til næste metro felt");
+					GUI.showMessage("Du har husket dit rejsekort i dag. Ryk frem til næste metro felt");
 					GUI.removeAllCars(playerWhoLanded.getName());
 					playerWhoLanded.updateCurrentPos(updatePositiv [i]);
 					GUI.setCar(playerWhoLanded.getCurrentPos(), playerWhoLanded.getName());
 					break;
 					
 				case 8:
-					System.out.println("Du faldt i søvn i metroen. Ryk 2 metro felter frem. Du modtager ikke 4000kr. hvis du passerer start feltet");
-					GUI.showMessage("Du faldt i søvn i metroen. Ryk 2 metro felter frem. Du modtager ikke 4000kr. hvis du passerer start feltet");
+					System.out.println("Du faldt i søvn i metroen. Ryk 2 metro felter frem. Du modtager ikke 4000,- hvis du passerer start feltet");
+					GUI.showMessage("Du faldt i søvn i metroen. Ryk 2 metro felter frem. Du modtager ikke 4000,- hvis du passerer start feltet");
 					
 					//withdraw 4000 from the account of the player so there dont get the bonus when the landed on field nr. 33
 					if(playerWhoLanded.getCurrentPos() == 33 ){
