@@ -13,12 +13,13 @@ public class Gade extends Ownable {
 	private int[] houseRent = new int[5];
 	
 	private String colour;
+
 	
 	public String getColour() {
 		return colour;
 	}
 
-	public void setColour(String colour) {
+	public void setColour(String colour) {		
 		this.colour = colour;
 	}
 
@@ -61,6 +62,42 @@ public class Gade extends Ownable {
 			housesOnField++;	
 			System.out.println(super.getOwnerName()+" har købt et hus på "+super.getFieldName());
 			GUI.showMessage(super.getOwnerName()+" har købt et hus på "+super.getFieldName());
+				
+			
+			Object[] options = {
+					"Administrér grunde.",
+                    "Giv turen videre.",};
+			int buttonPressed = JOptionPane.showOptionDialog(null,
+					"Hvad vil du foretage dig?",
+					"BESLUT DIG NU!",
+					JOptionPane.WARNING_MESSAGE,
+					JOptionPane.QUESTION_MESSAGE,
+					null,
+					options, 
+					options[0]);
+			if(buttonPressed == 0){
+				Object[] options2 = {
+						"Køb hus(e)!",
+	                    "Pantsæt grund.",};
+				int buttonPressed2 = JOptionPane.showOptionDialog(null,
+						"Hvad vil du foretage dig?",
+						"BESLUT DIG NU!",
+						JOptionPane.WARNING_MESSAGE,
+						JOptionPane.QUESTION_MESSAGE,
+						null,
+						options2, 
+						options2[0]);
+				if(buttonPressed2 == 0){
+					buyHouse();
+				}	
+				else if(buttonPressed2 == 1){
+					return;
+				}
+			}	
+			else if(buttonPressed == 1){
+				return;
+			}
+		
 		}
 		else
 		{
