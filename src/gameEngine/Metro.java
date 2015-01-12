@@ -24,7 +24,7 @@ public class Metro extends Felt{
 		
 		@Override
 		public void landOnField(Spiller playerWhoLanded) {
-			int result = (int)(8);//((Math.random()*8)+1); // 8 random Places for the Switch statsment. And +1 for make it go from 1-8 insted of 0-7.
+			int result = (int)((Math.random()*8)+1); // 8 random Places for the Switch statsment. And +1 for make it go from 1-8 insted of 0-7.
 			
 			while(playerWhoLanded.getCurrentPos() !=plads[i]){
 				i++;
