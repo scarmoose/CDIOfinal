@@ -59,12 +59,12 @@ public class Game {
 
 
 		//The choice of amount of players
-		String[] amount = {"3", "4","5","6"};//Lowest amount of players will be 2
+		String[] amount = {"3", "4","5","6"};//Lowest amount of players will be 3
 		//Selection box in which amount of players is chosen
 		String players = (String) JOptionPane.showInputDialog(null, "Vælg antal spillere:",
 				"Livets største beslutning", JOptionPane.QUESTION_MESSAGE, null,
 				amount, 
-				amount[0]); //Default choice is 2 players
+				amount[0]); //Default choice is 3 players
 		int NumberOfPlayers = Integer.parseInt(players);//Turns the choice into an integer
 
 
@@ -76,11 +76,10 @@ public class Game {
 		int n = 0; //Variable used to run through the array
 		while (n<=NumberOfPlayers-1){
 			playerNames[n] = GUI.getUserString(" Indtast navn for spiller "+(n+1));
-			playerTurn[n].setName(playerNames[n]);
 			if (playerNames[n].equals("")){
 				playerNames[n] = "Spiller "+(n+1);//Add 1 to n, because we wont start with Spiller0
-				playerTurn[n].setName(playerNames[n]);
 			}
+			playerTurn[n].setName(playerNames[n]);
 			n++;//increment n in order to perform the next iteration
 		}
 

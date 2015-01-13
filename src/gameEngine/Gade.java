@@ -82,48 +82,7 @@ public class Gade extends Ownable {
 			housesOnField++;	
 			System.out.println(super.getOwnerName()+" har købt et hus på "+super.getFieldName());
 			GUI.showMessage(super.getOwnerName()+" har købt et hus på "+super.getFieldName());
-				
-			
-			Object[] options = {
-					"Administrér grunde.",
-                    "Giv turen videre",};
-			int buttonPressed = JOptionPane.showOptionDialog(null,
-					"Hvad vil du foretage dig?",
-					"BESLUT DIG NU!",
-					JOptionPane.WARNING_MESSAGE,
-					JOptionPane.QUESTION_MESSAGE,
-					null,
-					options, 
-					options[0]);
-			if(buttonPressed == 0){
-				Object[] options2 = {
-						"Køb hus(e)!",
-	                    "Pantsæt grund.",};
-				int buttonPressed2 = JOptionPane.showOptionDialog(null,
-						"Hvad vil du foretage dig?",
-						"BESLUT DIG NU!",
-						JOptionPane.WARNING_MESSAGE,
-						JOptionPane.QUESTION_MESSAGE,
-						null,
-						options2, 
-						options2[0]);
-				if(buttonPressed2 == 0){
-					String[] gaderEjet = {};
-					String players = (String) JOptionPane.showInputDialog(null, "Vælg antal spillere:",
-							"Livets største beslutning", JOptionPane.QUESTION_MESSAGE, null,
-							amount, 
-							amount[0]);
-					
-				}	
-				else if(buttonPressed2 == 1){
-					return;
-				}
-			}	
-			else if(buttonPressed == 1){
-				return;
 			}
-		
-		}
 		else
 		{
 			System.out.println(super.getOwnerName()+" kan ikke bygge flere huse på "+super.getFieldName());
