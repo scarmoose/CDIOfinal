@@ -152,25 +152,30 @@ public class Game {
 				//int trow = 0;
 				trow=dieOne.rollDie();
 				GUI.setDice(dieOne.getFaceValue1(), dieOne.getFaceValue2());
-
 				if(activePlayers[turn]) {
 					if(playerTurn[turn].getPrisonCount()==4){
 						playerTurn[turn].resetPrisonCount();
 						if(dieOne.getFaceValue1()!=dieOne.getFaceValue2())
 						{
 							playerTurn[turn].getAccount().withdraw(1000);
+							System.out.println(playerNames[turn]+" har været i fængslet i 3 runder og betaler 1000 for at komme ud");	
+						}
+						else
+						{
+							System.out.println(playerNames[turn]+" er ude af fænglset pga par på slag");
 						}
 					}
 					if(playerTurn[turn].getPrisonCount()>0){
 						if(dieOne.getFaceValue1()==dieOne.getFaceValue2())
 						{
 							playerTurn[turn].resetPrisonCount();
+							System.out.println(playerNames[turn]+" er ude af fænglset pga par på slag");
 						}
 						else
 						{
 							playerTurn[turn].incrementPrisonCount();
 							trow=0;
-							System.out.println("PRISON");
+							System.out.println(playerNames[turn]+" forbliver i fænglset");
 						}
 					}
 					GUI.removeAllCars(playerNames[turn]);//Removes the player from the board.

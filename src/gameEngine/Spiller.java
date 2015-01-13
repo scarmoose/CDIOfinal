@@ -55,7 +55,7 @@ public class Spiller {
 	}
 
 	public void incrementPrisonCount() {
-		this.prisonCount = this.prisonCount + 1;
+		this.prisonCount++;
 	}
 	
 	public void resetPrisonCount() {
@@ -71,10 +71,6 @@ public class Spiller {
 	 * @return the current position of the player in the game.
 	 */
 	public int getCurrentPos() {
-		if(currentPos == 30)
-		{
-			currentPos = 10;
-		}
 		if(currentPos > 39){
 			currentPos = currentPos - 40;
 			this.getAccount().deposit(4000); //4000 when START is passed
