@@ -8,6 +8,31 @@ package gameEngine;
  */
 public class GameBoard {
 	
+	Gade[] gader = new Gade[]{
+		new Gade("Rødovrevej", 1200, 50, "blue"), 						
+		new Gade("Hvidovrevej", 1200, 50, "blue"),
+		new Gade("Roskildevej", 2000, 100, "pink"),
+		new Gade("Valby Langgade", 2000, 100, "pink"),
+		new Gade("Allegade", 2400, 150, "pink"), 						
+		new Gade("Frederiksberg Alle", 2800, 200, "green"),
+		new Gade("Bülowsvej", 2800, 200, "green"),
+		new Gade("Gl. Kongevej", 3200, 250, "green"), 	
+		new Gade("Bernstoffsvej", 3600, 300, "grey"),
+		new Gade("Hellerupvej", 3600, 300, "grey"), 
+		new Gade("Strandvej", 4000, 350, "grey"),
+		new Gade("Trianglen", 4400, 350, "red"),
+		new Gade("Østerbrogade", 4400, 350, "red"), 					
+		new Gade("Grønningen", 4800, 400, "red"), 
+		new Gade("Bredgade", 5200, 450, "white"), 
+		new Gade("Kgs. Nytorv", 5200, 450, "white"),				
+		new Gade("Østergade", 5600, 500, "white"),
+		new Gade("Amagertorv", 6000, 550, "yellow"),
+		new Gade("Vimmelskaftet", 6000, 550, "yellow"), 
+		new Gade("Nygade", 6400, 600, "yellow"),
+		new Gade("Frederiksberggade", 7000, 700, "purple"),
+		new Gade("Rådhuspladsen", 8000, 1000, "purple")	
+	};
+	
 	Ownable[] ownables = new Ownable[]{
 		new Gade("Rødovrevej", 1200, 50, "blue"), 						//0
 		new Gade("Hvidovrevej", 1200, 50, "blue"),

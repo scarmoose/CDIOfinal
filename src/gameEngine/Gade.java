@@ -18,7 +18,26 @@ public class Gade extends Ownable {
 	public String getColour() {
 		return colour;
 	}
-
+	
+	public int getColourIndex() {
+		if(colour.equals("blue")) {
+			return 1;
+		}else if(colour.equals("pink")) {
+			return 2;
+		}else if(colour.equals("green")) {
+			return 3;
+		}else if(colour.equals("grey")) {
+			return 4; 
+		}else if(colour.equals("red")) {
+			return 5;
+		}else if(colour.equals("white")) {
+			return 6;
+		}else if(colour.equals("yellow")) {
+			return 7;
+		}else if(colour.equals("purple")) {
+			return 8;
+		}else return 0;
+	}
 	public void setColour(String colour) {		
 		this.colour = colour;
 	}
@@ -163,6 +182,8 @@ public class Gade extends Ownable {
 	 * @param player player who landed on the field
 	 */
 
+	
+	
 	@Override
 	public void landOnField( Spiller lander){
 		if (super.getOwner() != null){

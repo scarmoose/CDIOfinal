@@ -9,7 +9,7 @@ public class Spiller {
 	private int breweriesOwned = 0;
 	private int currentPos = 0;
 	private Konto playerAcc = new Konto(); 
-	private int PrisonCount = 0;
+	private int prisonCount = 0;
 	
 //	private boolean ownsAllBlue = false; 
 //	private boolean ownsAllPink = false; 
@@ -51,15 +51,15 @@ public class Spiller {
 	
 
 	public int getPrisonCount() {
-		return PrisonCount;
+		return prisonCount;
 	}
 
 	public void incrementPrisonCount() {
-		this.PrisonCount = this.PrisonCount + 1;
+		this.prisonCount = this.prisonCount + 1;
 	}
 	
 	public void resetPrisonCount() {
-		PrisonCount = 0;
+		prisonCount = 0;
 	}
 
 	/**
