@@ -33,7 +33,7 @@ public class Spiller {
 //	private int yellowCount = 0;
 //	private int purpleCount = 0;
 	
-	private int colourCount[] = new int[8]; //= {blueCount, pinkCount, greenCount, greyCount, redCount,whiteCount, yellowCount, purpleCount};
+	public int colourCount[] = new int[8]; //= {blueCount, pinkCount, greenCount, greyCount, redCount,whiteCount, yellowCount, purpleCount};
 	
 //	private final int MAXCOUNT[] = {2,3,3,3,3,3,3,3,2};
 	private final int BLUE_COUNT_MAX = 2; 
@@ -158,6 +158,30 @@ public class Spiller {
 	/*
 	 * Colour getters and setters
 	 */
+	public void incrementBlueOwned(){
+		this.colourCount[0]++;
+	}
+	public void incrementPinkOwned(){
+		this.colourCount[1]++;
+	}
+	public void incrementGreenOwned(){
+		this.colourCount[2]++;
+	}
+	public void incrementGreyOwned(){
+		this.colourCount[3]++;
+	}
+	public void incrementRedOwned(){
+		this.colourCount[4]++;
+	}
+	public void incrementWhiteOwned(){
+		this.colourCount[5]++;
+	}
+	public void incrementYellowOwned(){
+		this.colourCount[6]++;
+	}
+	public void incrementPurpleOwned(){
+		this.colourCount[7]++;
+	}
 	
 	public int getBlueCount() {
 		return colourCount[0];

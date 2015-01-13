@@ -89,7 +89,11 @@ public class Gade extends Ownable {
 						options2, 
 						options2[0]);
 				if(buttonPressed2 == 0){
-					String[] ejedeGader = {};
+					String[] gaderEjet = {};
+					String players = (String) JOptionPane.showInputDialog(null, "Vælg antal spillere:",
+							"Livets største beslutning", JOptionPane.QUESTION_MESSAGE, null,
+							amount, 
+							amount[0]);
 					
 				}	
 				else if(buttonPressed2 == 1){
@@ -125,6 +129,31 @@ public class Gade extends Ownable {
 		super.setOwnerName(lander.getName());
 		lander.getAccount().withdraw(getPrice());
 		System.out.println(lander.getName()+" købte "+fieldName+" for "+getPrice());
+			//Switch only works in 1.7 or newer version, so we went with this instead
+			if(colour.equals("blue")){
+				lander.incrementBlueOwned();
+			}
+			else if(colour.equals("pink")){
+				lander.incrementPinkOwned();
+			}
+			else if(colour.equals("green")){
+				lander.incrementGreenOwned();
+			}
+			else if(colour.equals("grey")){
+				lander.incrementGreyOwned();
+			}
+			else if(colour.equals("red")){
+				lander.incrementRedOwned();
+			}
+			else if(colour.equals("white")){
+				lander.incrementWhiteOwned();
+			}
+			else if(colour.equals("yellow")){
+				lander.incrementYellowOwned();
+			}
+			else if(colour.equals("purple")){
+				lander.incrementPurpleOwned();
+			}
 		}
 	}
 	
