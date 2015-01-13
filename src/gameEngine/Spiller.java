@@ -362,7 +362,5 @@ public class Spiller {
 	public void setColourCount(int[] colourCount) {
 		this.colourCount = colourCount;
 	}
-	
-	
-		
 }
+
