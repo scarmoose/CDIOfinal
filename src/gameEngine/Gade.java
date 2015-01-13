@@ -89,7 +89,7 @@ public class Gade extends Ownable {
 						options2, 
 						options2[0]);
 				if(buttonPressed2 == 0){
-					String[] ejedeGader = {}
+					String[] ejedeGader = {};
 					
 				}	
 				else if(buttonPressed2 == 1){
