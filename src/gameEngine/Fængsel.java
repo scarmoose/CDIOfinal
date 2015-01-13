@@ -15,7 +15,7 @@ public class Fængsel extends Felt{
 	 */
 	@Override
 	public void landOnField(Spiller playerWhoLandedOnField) {
-		GUI.showMessage("Du rykkes til Fængsel feltet");
+		GUI.showMessage("Du rykkes til fængsel feltet");
 		System.out.println(playerWhoLandedOnField.getName()+" ryger i fængsel");
 		GUI.removeAllCars(playerWhoLandedOnField.getName());//Removes the player from the board.
 		//sets car at field corresponding to the value of the players position
