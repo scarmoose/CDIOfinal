@@ -88,7 +88,7 @@ public class Rederi extends Ownable {
 					"Køb nu!",
                     "Nej, ellers tak.",};
 			int buttonPressed = JOptionPane.showOptionDialog(null,
-					"Ønsker du at eje "+ super.getFieldName()+"? Pris: "+ super.getPrice(),
+					"Ønsker du ("+player.getName()+") at eje "+ super.getFieldName()+"? Pris: "+ super.getPrice(),
 					"BESLUT DIG NU!",
 					JOptionPane.WARNING_MESSAGE,
 					JOptionPane.QUESTION_MESSAGE,

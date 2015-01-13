@@ -53,6 +53,7 @@ public class Game {
 	
 	public void game(){
 
+		int turn = 0; //Variable used to determine which players turn it is.
 		//variables created for storing the users names for the game in an array
 		//With only a Max amount of 6 players, the len of the array is only 6
 		String playerNames[] = {"","","","","",""};
@@ -89,7 +90,6 @@ public class Game {
 		//Dices to be rolled are created.
 		Terning dieOne = new Terning();
 
-		int turn = 0; //Variable used to determine which players turn it is.
 
 
 		n = 0; //Resest the variable used to run through the array
@@ -145,9 +145,9 @@ public class Game {
 			System.out.println(playerNames[turn]+"s tur.");
 			
 			//user prompted button, when pressed the value of rollDice is stored in i.
-			buttonPressed = GUI.getUserButtonPressed(null, rollDice);
+			buttonPressed = GUI.getUserButtonPressed(null, rollDice+" ("+playerTurn[turn].getName()+")");
 
-			if(buttonPressed.equals(rollDice)){
+			if(buttonPressed.equals(rollDice+" ("+playerTurn[turn].getName()+")")){
 				//int trow=dieOne.rollDie();
 				//int trow = 0;
 				trow=dieOne.rollDie();
@@ -229,14 +229,6 @@ public class Game {
 			}
 		}
 	}
-	
-//	public void listHousesToBuy(Spiller spiller) {
-//		for(int i = 0; i < spiller.getColourCount().length; i++) {
-//			if(spiller.getOwnsAllColour()[i] == true){
-//				
-//			}
-//		}
-//	}
 	
 	String StreetsWithHousesToBuy[];
 	
