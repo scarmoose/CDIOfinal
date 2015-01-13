@@ -76,11 +76,10 @@ public class Game {
 		int n = 0; //Variable used to run through the array
 		while (n<=NumberOfPlayers-1){
 			playerNames[n] = GUI.getUserString(" Indtast navn for spiller "+(n+1));
-			playerTurn[n].setName(playerNames[n]);
 			if (playerNames[n].equals("")){
 				playerNames[n] = "Spiller "+(n+1);//Add 1 to n, because we wont start with Spiller0
-				playerTurn[n].setName(playerNames[n]);
 			}
+			playerTurn[n].setName(playerNames[n]);
 			n++;//increment n in order to perform the next iteration
 		}
 
