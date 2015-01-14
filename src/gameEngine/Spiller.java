@@ -1,6 +1,9 @@
 package gameEngine;
 
-import boundaryToMatador.GUI;
+import desktop_resources.GUI;
+import java.awt.Color;
+import codebehind.Car;
+
 
 public class Spiller {
 
@@ -392,5 +395,12 @@ public class Spiller {
 	public void setNumberOfColorsFullyOwned(int numberOfColorsFullyOwned) {
 		this.numberOfColorsFullyOwned = numberOfColorsFullyOwned;
 	}
+	Car playerCar = new Car.Builder()
+    .typeRacecar()
+    .primaryColor(Color.BLUE)
+    .secondaryColor(Color.RED)
+    .patternDiagonalDualColor()
+    .build();
+	
 }
 
