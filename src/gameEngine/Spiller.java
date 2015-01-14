@@ -374,13 +374,15 @@ public class Spiller {
 	private int numberOfColorsFullyOwned = 0; 
 	
 
-	public void checkForHouseColours() {
+	public int checkForHouseColours() {
 		for(int i = 0; i < this.getColourCount().length; i++) {
-			if(this.getColourCount()[i] == this.MAX_COLOUR[i]){
+			if(this.getColourCount()[i] == this.MAX_COLOUR[i]	){
 				this.getOwnsAllColour()[i] = true;	
 				numberOfColorsFullyOwned++;
 			}
+		
 		}
+		return numberOfColorsFullyOwned;
 	}
 	
 	public int getNumberOfColorsFullyOwned() {

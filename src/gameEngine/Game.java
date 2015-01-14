@@ -198,9 +198,15 @@ public class Game {
 					if (turn>NumberOfPlayers-1){
 						turn=0;
 					}
+
+					if(playerTurn[turn].checkForHouseColours()>0){
+						if(playerTurn[turn].listHousesToBuy(currentBoard)[0]!= null){
+							GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
+						}
+					}
 				}
-			}	
-		}	
+			}
+		}
 	}
 
 	//Checks if the players have lost all points
