@@ -62,7 +62,7 @@ public class Game {
 
 
 		//Game Window initialization
-		GUI.create("fieldstext-cdio3.txt");
+//		GUI.create("fieldstext-cdio3.txt");
 		Game.setRollDice("Kast terninger");
 
 		//User names are prompted from the users, and store in previous variables
