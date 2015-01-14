@@ -31,7 +31,7 @@ public class Game {
 	private boolean playerSix = true;
 	//All players state of activity are placed in an array
 	private boolean activePlayers[]={playerOne,playerTwo,playerThree,playerFour,playerFive,playerSix};
-	
+
 	//The game will be running while its' true
 	private boolean game = true;
 
@@ -48,9 +48,9 @@ public class Game {
 	private static String rollDice = "";
 
 	private int inactivePlayers  = 0; //Variable to check amount of inactive player. It starts with 0, because they all start out active
-	
+
 	int trow = 0;
-	
+
 	public void game(){
 
 		int turn = 0; //Variable used to determine which players turn it is.
@@ -70,7 +70,7 @@ public class Game {
 
 
 		//Game Window initialization
-//		GUI.create("fieldstext-cdio3.txt");
+		//		GUI.create("fieldstext-cdio3.txt");
 		Game.setRollDice("Kast terninger");
 
 		//User names are prompted from the users, and store in previous variables
@@ -93,7 +93,7 @@ public class Game {
 
 
 		n = 0; //Resest the variable used to run through the array
-		
+
 		/*
 		 * Color1-3 is the value to the six color made with RGB color-model
 		 * To set the color of the six players cars.
@@ -112,12 +112,12 @@ public class Game {
 		//Maximum amount of players that can be inactive
 		int MaxInactive = NumberOfPlayers - 1;
 		while(game) {
-			
+
 			//Updates the balance of all players at the start of each turn
 			for(int check = 0; check < NumberOfPlayers; check++){
 				GUI.setBalance(playerNames[check], playerTurn[check].getAccount().getBalance());
 			}
-			
+
 			//Checks if the players have already lost. If so, next players turn
 			if (activePlayers[turn]!=true){
 				turn++;
@@ -130,20 +130,19 @@ public class Game {
 			if (inactivePlayers==MaxInactive){
 				Object[] option = {"Slut spil!",};         		
 				int endButtonPressed = JOptionPane.showOptionDialog(null,playerNames[turn]+" er vinderen! " + " Tak fordi I spillede med! ", playerNames[turn]+ " vandt! ",
-				JOptionPane.WARNING_MESSAGE,
-				JOptionPane.QUESTION_MESSAGE,
-				null,
-				option,
-				option[0]);
+						JOptionPane.WARNING_MESSAGE,
+						JOptionPane.QUESTION_MESSAGE,
+						null,
+						option,
+						option[0]);
 				if (endButtonPressed == 0){
-				System.exit(0);
+					System.exit(0);
 				}
-				
-				}
-		
+			}
+
 			//Prints out which players turn it is
 			System.out.println(playerNames[turn]+"s tur.");
-			
+
 			//user prompted button, when pressed the value of rollDice is stored in i.
 			buttonPressed = GUI.getUserButtonPressed(null, rollDice+" ("+playerTurn[turn].getName()+")");
 
@@ -176,35 +175,34 @@ public class Game {
 							playerTurn[turn].incrementPrisonCount();
 							trow=0;
 							System.out.println(playerNames[turn]+" forbliver i fænglset");
-						}
+						}				
 					}
 					GUI.removeAllCars(playerNames[turn]);//Removes the player from the board.
 					playerTurn[turn].updateCurrentPos(trow);//Updates the current position by adding with trow
-					
+
 					//sets car at field corresponding to the value of the players position
 					GUI.setCar(playerTurn[turn].getCurrentPos()+1, playerNames[turn]);
 					System.out.println(playerNames[turn]+" fik en "+trow+"'er.");
 
 					currentBoard.fields[playerTurn[turn].getCurrentPos()].landOnField(playerTurn[turn]);
-					
+
 					//Fields.field(playerTurn[turn], trow, i);
 					GUI.setBalance(playerNames[turn], playerTurn[turn].getAccount().getBalance());
-					
+
 					//Sets the player to lose in case of 0 points
 					checkForLoserAndExecute(playerNames, turn);	 
 
-						//Next players turn
-						turn++;
-						//If turn is out of bounds. It is reset to 0
-						if (turn>NumberOfPlayers-1){
-							turn=0;
-						}
-
+					//Next players turn
+					turn++;
+					//If turn is out of bounds. It is reset to 0
+					if (turn>NumberOfPlayers-1){
+						turn=0;
 					}
-
 				}
-		}
+			}	
+		}	
 	}
+
 	//Checks if the players have lost all points
 	private void checkForLoserAndExecute(String[] playerNames, int turn) {
 		if(playerTurn[turn].getAccount().getBalance()==0){
@@ -213,33 +211,31 @@ public class Game {
 			GUI.removeAllCars(playerNames[turn]); //Player is removed from board
 
 			//removes bankrupt player as owner of his fields
-			
-			 for(int is = 0; is < currentBoard.ownables.length; is++){
+
+			for(int is = 0; is < currentBoard.ownables.length; is++){
 				if(currentBoard.ownables[is].getOwner() == playerTurn[turn]) {
 					currentBoard.ownables[is].setOwner(null);
 				}	
-			
 			}
-			 
-		}
+		}	
 	}
-	
-	
-	
-//	String StreetsWithHousesToBuy[];
-//	
-//	public String[] listHousesToBuy(Spiller spiller) {
-//		StreetsWithHousesToBuy = new String[currentBoard.gader.length];
-//		int index = 0;
-//		for (Gade gade : currentBoard.gader) {
-//			if(spiller.getOwnsAllColour()[gade.getColourIndex()] == true){
-//				StreetsWithHousesToBuy[index++] = gade.getFieldName();				
-//			}
-//		}
-//		return StreetsWithHousesToBuy;
-//	}
-	
-	
+
+
+
+	//	String StreetsWithHousesToBuy[];
+	//	
+	//	public String[] listHousesToBuy(Spiller spiller) {
+	//		StreetsWithHousesToBuy = new String[currentBoard.gader.length];
+	//		int index = 0;
+	//		for (Gade gade : currentBoard.gader) {
+	//			if(spiller.getOwnsAllColour()[gade.getColourIndex()] == true){
+	//				StreetsWithHousesToBuy[index++] = gade.getFieldName();				
+	//			}
+	//		}
+	//		return StreetsWithHousesToBuy;
+	//	}
+
+
 	//Language Strings getters and setters
 	public static void setTypeNameOne(String typeNameOne) {
 		Game.typeNameOne = typeNameOne;
@@ -254,6 +250,6 @@ public class Game {
 		Game.rollDice = rollDice;
 	}
 
-	}
+}
 
 
