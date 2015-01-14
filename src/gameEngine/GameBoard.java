@@ -54,7 +54,7 @@ public class GameBoard {
 		new Rederi("DFDS Seaways", 4000),
 		new Gade("Bredgade", 5200, 450, "white"), 
 		new Gade("Kgs. Nytorv", 5200, 450, "white"),
-		new Bryggeri("Coca-Cola Tapperi", 3000),				//20 
+		new Bryggeri("Carlsberg Bryggeri", 3000),				//20 
 		new Gade("Østergade", 5600, 500, "white"),
 		new Gade("Amagertorv", 6000, 550, "yellow"),
 		new Gade("Vimmelskaftet", 6000, 550, "yellow"), 
