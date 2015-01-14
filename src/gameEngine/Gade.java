@@ -81,19 +81,20 @@ public class Gade extends Ownable {
 	
 	public void buyHouse(Spiller lander) {
 		if(housesOnField < MAX_HOUSES_ON_FIELD) {
-			housesOnField++;	
-			lander.getAccount().withdraw(housePrice);
-			System.out.println(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
-			GUI.showMessage(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
+			if(super.getOwner().getAccount().getBalance()>super.getPrice()){
+				housesOnField++;	
+				lander.getAccount().withdraw(housePrice);
+				System.out.println(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
+				GUI.showMessage(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
 			
 			}
 		else
 		{
 			System.out.println(super.getOwnerName()+" kan ikke bygge flere huse på "+super.getFieldName());
 			GUI.showMessage(super.getOwnerName()+" kan ikke bygge flere huse på "+super.getFieldName());
+			}
 		}
 	}
-	
 	/**
 	 * Prompts the player if he wants to buy a not-owned fleet if players account balance > price
 	 * @param lander player who landed on the field
