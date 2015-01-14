@@ -12,6 +12,7 @@ public class Gade extends Ownable {
 	private int housesOnField = 0; 
 	private final int MAX_HOUSES_ON_FIELD = 5; //4 houses + 1 hotel
 	private int[] houseRent = new int[5];
+	private int housePrice;
 	
 	private String colour;
 
@@ -22,21 +23,21 @@ public class Gade extends Ownable {
 	
 	public int getColourIndex() {
 		if(colour.equals("blue")) {
-			return 1;
+			return 0;
 		}else if(colour.equals("pink")) {
-			return 2;
+			return 1;
 		}else if(colour.equals("green")) {
-			return 3;
+			return 2;
 		}else if(colour.equals("grey")) {
-			return 4; 
+			return 3; 
 		}else if(colour.equals("red")) {
-			return 5;
+			return 4;
 		}else if(colour.equals("white")) {
-			return 6;
+			return 5;
 		}else if(colour.equals("yellow")) {
-			return 7;
+			return 6;
 		}else if(colour.equals("purple")) {
-			return 8;
+			return 7;
 		}else return 0;
 	}
 	public void setColour(String colour) {		
@@ -68,10 +69,11 @@ public class Gade extends Ownable {
 	 * @param rent rent of the field 
 	 */
 	
-	public Gade(String fieldName, int price, int rent, String colour) {
+	public Gade(String fieldName, int price, int rent, String colour, int housePrice) {
 		super(fieldName, price);
 		this.rent = rent;
 		this.colour = colour;
+		this.housePrice = housePrice;
 	}
 	
 	public int getHousesOnField() {
@@ -81,8 +83,9 @@ public class Gade extends Ownable {
 	public void buyHouse(Spiller lander) {
 		if(housesOnField < MAX_HOUSES_ON_FIELD) {
 			housesOnField++;	
-			System.out.println(super.getOwnerName()+" har købt et hus på "+super.getFieldName());
-			GUI.showMessage(super.getOwnerName()+" har købt et hus på "+super.getFieldName());
+			lander.getAccount().withdraw(housePrice);
+			System.out.println(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
+			GUI.showMessage(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
 			
 			}
 		else
@@ -159,10 +162,16 @@ public class Gade extends Ownable {
 	@Override
 	public void landOnField( Spiller lander){
 		if (super.getOwner() != null){
+			if(housesOnField>0){
+				lander.getAccount().withdraw(houseRent[housesOnField-1]);
+				super.getOwner().getAccount().deposit(houseRent[housesOnField-1]);
+			}
+			else{
 			lander.getAccount().withdraw(rent);
 			super.getOwner().getAccount().deposit(rent);
 			System.out.println(lander.getName()+" betalte "+rent+" til "+getOwnerName());
-		}
+			}
+			}
 		else{				
 			Object[] options = {
 					"Køb nu!",

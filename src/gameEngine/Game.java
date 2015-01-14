@@ -37,16 +37,6 @@ public class Game {
 	//The game will be running while its' true
 	private boolean game = true;
 
-	//Language used in the code, will be changed by the language setting.
-	private static String typeNameOne = ""; 
-	private static String typeNameTwo = "";
-	private static String typeNameThree = ""; 
-	private static String typeNameFour = "";
-	private static String typeNameFive = ""; 
-	private static String typeNameSix = "";
-	//All typeNames have been placed in an array
-	private static String typeNames[] = {typeNameOne, typeNameTwo,typeNameThree,typeNameFour,typeNameFive,typeNameSix};
-
 	private static String rollDice = "";
 
 	private int inactivePlayers  = 0; //Variable to check amount of inactive player. It starts with 0, because they all start out active
@@ -72,7 +62,7 @@ public class Game {
 
 
 		//Game Window initialization
-		//		GUI.create("fieldstext-cdio3.txt");
+		GUI.create("fieldstext-cdio3.txt");
 		Game.setRollDice("Kast terninger");
 
 		//User names are prompted from the users, and store in previous variables
@@ -196,17 +186,23 @@ public class Game {
 					//Sets the player to lose in case of 0 points
 					checkForLoserAndExecute(playerNames, turn);	 
 
+					
+					if(playerTurn[turn].checkForHouseColours()>0){
+						if(playerTurn[turn].listHousesToBuy(currentBoard)[0]!= null){
+							String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
+								for(int i =0;i<currentBoard.gader.length;i++){
+									if(buttonPressed3.equals(currentBoard.gader[i].getFieldName())){
+										currentBoard.gader[i].buyHouse(playerTurn[turn]);
+									}
+							}
+						}
+					}
+				
 					//Next players turn
 					turn++;
 					//If turn is out of bounds. It is reset to 0
 					if (turn>NumberOfPlayers-1){
 						turn=0;
-					}
-
-					if(playerTurn[turn].checkForHouseColours()>0){
-						if(playerTurn[turn].listHousesToBuy(currentBoard)[0]!= null){
-							GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
-						}
 					}
 				}
 			}
@@ -230,29 +226,6 @@ public class Game {
 		}	
 	}
 
-
-
-	//	String StreetsWithHousesToBuy[];
-	//	
-	//	public String[] listHousesToBuy(Spiller spiller) {
-	//		StreetsWithHousesToBuy = new String[currentBoard.gader.length];
-	//		int index = 0;
-	//		for (Gade gade : currentBoard.gader) {
-	//			if(spiller.getOwnsAllColour()[gade.getColourIndex()] == true){
-	//				StreetsWithHousesToBuy[index++] = gade.getFieldName();				
-	//			}
-	//		}
-	//		return StreetsWithHousesToBuy;
-	//	}
-
-
-	//Language Strings getters and setters
-	public static void setTypeNameOne(String typeNameOne) {
-		Game.typeNameOne = typeNameOne;
-	}
-	public static void setTypeNameTwo(String typeNameTwo) {
-		Game.typeNameTwo = typeNameTwo;
-	}
 	public static String getRollDice() {
 		return rollDice;
 	}
