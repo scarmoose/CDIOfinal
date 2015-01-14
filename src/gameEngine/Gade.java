@@ -11,6 +11,7 @@ public class Gade extends Ownable {
 	private int housesOnField = 0; 
 	private final int MAX_HOUSES_ON_FIELD = 5; //4 houses + 1 hotel
 	private int[] houseRent = new int[5];
+	private int housePrice;
 	
 	private String colour;
 
@@ -67,10 +68,11 @@ public class Gade extends Ownable {
 	 * @param rent rent of the field 
 	 */
 	
-	public Gade(String fieldName, int price, int rent, String colour) {
+	public Gade(String fieldName, int price, int rent, String colour, int housePrice) {
 		super(fieldName, price);
 		this.rent = rent;
 		this.colour = colour;
+		this.housePrice = housePrice;
 	}
 	
 	public int getHousesOnField() {
@@ -80,8 +82,9 @@ public class Gade extends Ownable {
 	public void buyHouse(Spiller lander) {
 		if(housesOnField < MAX_HOUSES_ON_FIELD) {
 			housesOnField++;	
-			System.out.println(super.getOwnerName()+" har købt et hus på "+super.getFieldName());
-			GUI.showMessage(super.getOwnerName()+" har købt et hus på "+super.getFieldName());
+			lander.getAccount().withdraw(housePrice);
+			System.out.println(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
+			GUI.showMessage(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
 			
 			}
 		else
@@ -158,10 +161,16 @@ public class Gade extends Ownable {
 	@Override
 	public void landOnField( Spiller lander){
 		if (super.getOwner() != null){
+			if(housesOnField>0){
+				lander.getAccount().withdraw(houseRent[housesOnField-1]);
+				super.getOwner().getAccount().deposit(houseRent[housesOnField-1]);
+			}
+			else{
 			lander.getAccount().withdraw(rent);
 			super.getOwner().getAccount().deposit(rent);
 			System.out.println(lander.getName()+" betalte "+rent+" til "+getOwnerName());
-		}
+			}
+			}
 		else{				
 			Object[] options = {
 					"Køb nu!",

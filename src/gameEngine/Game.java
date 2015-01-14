@@ -182,9 +182,15 @@ public class Game {
 					//Sets the player to lose in case of 0 points
 					checkForLoserAndExecute(playerNames, turn);	 
 
+					
 					if(playerTurn[turn].checkForHouseColours()>0){
 						if(playerTurn[turn].listHousesToBuy(currentBoard)[0]!= null){
-							GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
+							String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
+								for(int i =0;i<currentBoard.gader.length;i++){
+									if(buttonPressed3.equals(currentBoard.gader[i].getFieldName())){
+										currentBoard.gader[i].buyHouse(playerTurn[turn]);
+									}
+							}
 						}
 					}
 				
