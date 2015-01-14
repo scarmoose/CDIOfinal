@@ -81,7 +81,7 @@ public class Gade extends Ownable {
 	
 	public void buyHouse(Spiller lander) {
 		if(housesOnField < MAX_HOUSES_ON_FIELD) {
-			if(super.getOwner().getAccount().getBalance()>super.getPrice()){
+			if(super.getOwner().getAccount().getBalance()>housePrice){
 				housesOnField++;	
 				lander.getAccount().withdraw(housePrice);
 				System.out.println(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
