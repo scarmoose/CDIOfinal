@@ -107,7 +107,7 @@ public class Game {
 		
 		while (n<=NumberOfPlayers-1){
 			
-			GUI.addPlayer(playerNames[n],playerTurn[n].getAccount().getBalance(),);
+			GUI.addPlayer(playerNames[n],playerTurn[n].getAccount().getBalance(),playerTurn[n].playerCar);
 			n++;
 		}
 
