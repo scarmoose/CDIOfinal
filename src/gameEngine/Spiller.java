@@ -358,5 +358,28 @@ public class Spiller {
 	public void setColourCount(int[] colourCount) {
 		this.colourCount = colourCount;
 	}
+	
+	String StreetsWithHousesToBuy[];
+	
+	public String[] listHousesToBuy(GameBoard gameBoard) {
+		StreetsWithHousesToBuy = new String[gameBoard.gader.length];
+		int index = 0;
+		for (Gade gade : gameBoard.gader) {
+			if(this.getOwnsAllColour()[gade.getColourIndex()] == true){
+				StreetsWithHousesToBuy[index++] = gade.getFieldName();				
+			}
+		}
+		return StreetsWithHousesToBuy;
+	}
+	int numberOfColorsFullyOwned = 0; 
+	
+	public void checkForHouseColours() {
+		for(int i = 0; i < this.getColourCount().length; i++) {
+			if(this.getColourCount()[i] == this.MAX_COLOUR[i]){
+				this.getOwnsAllColour()[i] = true;	
+				numberOfColorsFullyOwned++;
+			}
+		}
+	}
 }
 

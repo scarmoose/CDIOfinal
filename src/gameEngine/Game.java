@@ -70,7 +70,7 @@ public class Game {
 
 
 		//Game Window initialization
-		GUI.create("fieldstext-cdio3.txt");
+//		GUI.create("fieldstext-cdio3.txt");
 		Game.setRollDice("Kast terninger");
 
 		//User names are prompted from the users, and store in previous variables
@@ -224,29 +224,22 @@ public class Game {
 		}
 	}
 	
-	int numberOfColorsFullyOwned = 0; 
 	
-	public void checkForHouseColours(Spiller spiller) {
-		for(int i = 0; i < spiller.getColourCount().length; i++) {
-			if(spiller.getColourCount()[i] == spiller.MAX_COLOUR[i]){
-				spiller.getOwnsAllColour()[i] = true;	
-				numberOfColorsFullyOwned++;
-			}
-		}
-	}
 	
-	String StreetsWithHousesToBuy[];
+//	String StreetsWithHousesToBuy[];
+//	
+//	public String[] listHousesToBuy(Spiller spiller) {
+//		StreetsWithHousesToBuy = new String[currentBoard.gader.length];
+//		int index = 0;
+//		for (Gade gade : currentBoard.gader) {
+//			if(spiller.getOwnsAllColour()[gade.getColourIndex()] == true){
+//				StreetsWithHousesToBuy[index++] = gade.getFieldName();				
+//			}
+//		}
+//		return StreetsWithHousesToBuy;
+//	}
 	
-	public String[] listHousesToBuy(Spiller spiller) {
-		StreetsWithHousesToBuy = new String[currentBoard.gader.length];
-		int index = 0;
-		for (Gade gade : currentBoard.gader) {
-			if(spiller.getOwnsAllColour()[gade.getColourIndex()] == true){
-				StreetsWithHousesToBuy[index++] = gade.getFieldName();				
-			}
-		}
-		return StreetsWithHousesToBuy;
-	}
+	
 	//Language Strings getters and setters
 	public static void setTypeNameOne(String typeNameOne) {
 		Game.typeNameOne = typeNameOne;
