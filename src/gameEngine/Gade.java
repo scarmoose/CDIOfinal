@@ -21,21 +21,21 @@ public class Gade extends Ownable {
 	
 	public int getColourIndex() {
 		if(colour.equals("blue")) {
-			return 1;
+			return 0;
 		}else if(colour.equals("pink")) {
-			return 2;
+			return 1;
 		}else if(colour.equals("green")) {
-			return 3;
+			return 2;
 		}else if(colour.equals("grey")) {
-			return 4; 
+			return 3; 
 		}else if(colour.equals("red")) {
-			return 5;
+			return 4;
 		}else if(colour.equals("white")) {
-			return 6;
+			return 5;
 		}else if(colour.equals("yellow")) {
-			return 7;
+			return 6;
 		}else if(colour.equals("purple")) {
-			return 8;
+			return 7;
 		}else return 0;
 	}
 	public void setColour(String colour) {		
