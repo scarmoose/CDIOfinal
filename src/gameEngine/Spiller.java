@@ -371,8 +371,9 @@ public class Spiller {
 		}
 		return StreetsWithHousesToBuy;
 	}
-	int numberOfColorsFullyOwned = 0; 
+	private int numberOfColorsFullyOwned = 0; 
 	
+
 	public void checkForHouseColours() {
 		for(int i = 0; i < this.getColourCount().length; i++) {
 			if(this.getColourCount()[i] == this.MAX_COLOUR[i]){
@@ -380,6 +381,14 @@ public class Spiller {
 				numberOfColorsFullyOwned++;
 			}
 		}
+	}
+	
+	public int getNumberOfColorsFullyOwned() {
+		return numberOfColorsFullyOwned;
+	}
+	
+	public void setNumberOfColorsFullyOwned(int numberOfColorsFullyOwned) {
+		this.numberOfColorsFullyOwned = numberOfColorsFullyOwned;
 	}
 }
 
