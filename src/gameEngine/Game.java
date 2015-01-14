@@ -94,6 +94,8 @@ public class Game {
 		int[] color2 = { 255,0,247,56,145,0};
 		int[] color3 = { 255,0,56,26,255,255};
 		//adds player cars to the game
+	
+		
 		
 		while (n<=NumberOfPlayers-1){
 			

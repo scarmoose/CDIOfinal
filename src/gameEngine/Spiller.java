@@ -1,7 +1,9 @@
 package gameEngine;
 
 import desktop_resources.GUI;
+
 import java.awt.Color;
+
 import codebehind.Car;
 
 
@@ -395,11 +397,16 @@ public class Spiller {
 	public void setNumberOfColorsFullyOwned(int numberOfColorsFullyOwned) {
 		this.numberOfColorsFullyOwned = numberOfColorsFullyOwned;
 	}
+	Color[] color1={Color.black,Color.blue,Color.RED,Color.PINK,Color.GRAY,Color.GREEN};
+	Color[] color2={Color.MAGENTA,Color.ORANGE,Color.LIGHT_GRAY,Color.RED,Color.YELLOW,Color.WHITE};
+	int t=(int)((Math.random()*6));
+	int p=(int)((Math.random()*6));
+	
 	Car playerCar = new Car.Builder()
-    .typeRacecar()
-    .primaryColor(Color.BLUE)
-    .secondaryColor(Color.RED)
-    .patternDiagonalDualColor()
+    .typeUfo()
+    .primaryColor(color2[t])
+    .secondaryColor(color1[p])
+    .patternHorizontalDualColor()
     .build();
 	
 }
