@@ -144,6 +144,8 @@ public class Game {
 			//Prints out which players turn it is
 			System.out.println(playerNames[turn]+"s tur.");
 			
+			
+			
 			//user prompted button, when pressed the value of rollDice is stored in i.
 			buttonPressed = GUI.getUserButtonPressed(null, rollDice+" ("+playerTurn[turn].getName()+")");
 
@@ -201,8 +203,12 @@ public class Game {
 						}
 
 					}
-
+				}	
+			if(playerTurn[turn].checkForHouseColours()>0){
+				if(playerTurn[turn].listHousesToBuy(currentBoard)[0]!= null){
+					GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
 				}
+			}
 		}
 	}
 	//Checks if the players have lost all points
