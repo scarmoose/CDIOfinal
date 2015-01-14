@@ -1,6 +1,7 @@
 package gameEngine;
 
-import boundaryToMatador.GUI;
+import desktop_resources.GUI;
+
 
 public class Fængsel extends Felt{
 

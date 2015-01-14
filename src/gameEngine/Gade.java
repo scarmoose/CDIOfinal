@@ -3,7 +3,8 @@ package gameEngine;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import boundaryToMatador.GUI;
+import desktop_resources.GUI;
+
 
 public class Gade extends Ownable {
 	

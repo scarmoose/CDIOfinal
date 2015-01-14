@@ -3,9 +3,11 @@ package gameEngine;
 
 import javax.swing.JOptionPane;
 
+import codebehind.Car;
 
-import boundaryToMatador.GUI;
+import java.awt.Color;
 
+import desktop_resources.GUI;
 import gameEngine.GameBoard;
 
 public class Game {
@@ -102,8 +104,10 @@ public class Game {
 		int[] color2 = { 255,0,247,56,145,0};
 		int[] color3 = { 255,0,56,26,255,255};
 		//adds player cars to the game
+		
 		while (n<=NumberOfPlayers-1){
-			GUI.addPlayer(playerNames[n],playerTurn[n].getAccount().getBalance(),color1[n],color2[n],color3[n]);
+			
+			GUI.addPlayer(playerNames[n],playerTurn[n].getAccount().getBalance(),);
 			n++;
 		}
 
