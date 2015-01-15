@@ -180,7 +180,16 @@ public class Game {
 							for(int i =0;i<currentBoard.gader.length;i++){
 								if(buttonPressed3.equals(currentBoard.gader[i].getFieldName())){
 									int houseCount = GUI.getUserInteger("Hvor mange huse vil du købe?",1, 4-currentBoard.gader[i].getHousesOnField());
-									currentBoard.gader[i].buyHouse(playerTurn[turn],houseCount);
+									for(int j = 0; j < currentBoard.fields.length; j++){	
+										Felt f = currentBoard.fields[j];
+										if(!(f instanceof Gade)){
+											continue;
+										}
+										Gade g = (Gade) f;
+										if(buttonPressed3.equals(g.getFieldName())){
+											currentBoard.gader[i].buyHouse(playerTurn[turn],houseCount,j);											
+										}
+									}
 								}
 							}
 						}

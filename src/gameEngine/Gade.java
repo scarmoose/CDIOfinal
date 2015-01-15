@@ -80,14 +80,15 @@ public class Gade extends Ownable {
 		return housesOnField;
 	}
 	
-	public void buyHouse(Spiller lander, int houseCount) {
+	public void buyHouse(Spiller lander, int houseCount, int fieldNumber) {
 		System.out.println(this.fieldName);
 		if(housesOnField < MAX_HOUSES_ON_FIELD) {
 			System.out.println("Xasda"+getOwner());
 			if(super.getOwner().getAccount().getBalance()>housePrice){
 				housesOnField = housesOnField + houseCount;	
 				lander.getAccount().withdraw(houseCount * housePrice);
-				GUI.setHouses(lander.getCurrentPos()+1, houseCount);
+				System.out.println("qwerty "+fieldNumber+ " "+houseCount);
+				GUI.setHouses(fieldNumber+1, houseCount);
 				System.out.println(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
 				GUI.showMessage(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
 				System.out.println(super.getOwnerName() + " ejer nu " + getHousesOnField() + " huse på " + super.getFieldName());
@@ -116,7 +117,7 @@ public class Gade extends Ownable {
 		}
 		else{
 		super.setOwner(lander);
-//		super.setOwnerName(lander.getName());
+		super.setOwnerName(lander.getName());
 		lander.getAccount().withdraw(getPrice());
 		System.out.println(lander.getName()+" købte "+fieldName+" for "+getPrice());
 		GUI.setOwner(lander.getCurrentPos()+1, lander.getName());
