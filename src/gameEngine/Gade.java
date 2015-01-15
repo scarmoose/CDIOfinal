@@ -87,6 +87,7 @@ public class Gade extends Ownable {
 				lander.getAccount().withdraw(housePrice);
 				System.out.println(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
 				GUI.showMessage(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
+				System.out.println(super.getOwnerName() + " ejer nu " + getHousesOnField() + " på " + super.getFieldName());
 			
 			}
 		else
@@ -96,6 +97,7 @@ public class Gade extends Ownable {
 			}
 		}
 	}
+		
 	/**
 	 * Prompts the player if he wants to buy a not-owned fleet if players account balance > price
 	 * @param lander player who landed on the field
