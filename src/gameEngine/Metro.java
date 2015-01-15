@@ -10,7 +10,7 @@ public class Metro extends Felt{
 		private int metroFine = 750; //Set fine to 750
 		private int metroBonus = 500; //bonus for finding the wallet
 		private int rejsekortFine = 150;//fine for not having the travelcard at check
-		private int plads[]={2,7,17,22,33,36}; // array over the metro fields
+		private int fieldNumber[]={2,7,17,22,33,36}; // array over the metro fields
 		private int updateOneSpaceAhead[]={6,11,6,12,4,7}; // array over the positive amount that there are add to the felt position to get to the next metro fields
 		private int updateOneSpaceBack[]={35,-4,-9,-4,-10,-2};//array over the negative amount that there are add to the felt position to get to the next metro fields
 		private int updateTwoSpaceAhead[]={16,16,17,15,10,12};//array over the double positive amount that there are add to the felt position to get to the next metro fields
@@ -19,7 +19,7 @@ public class Metro extends Felt{
 		public Metro(String fieldName){
 			super(fieldName);
 		}
-		public int getmetroFine() {
+		public int getMetroFine() {
 			return metroFine;
 		}
 		
@@ -27,7 +27,7 @@ public class Metro extends Felt{
 		public void landOnField(Spiller playerWhoLanded) {
 			int result = (int)((Math.random()*8)+1); // 8 random Places for the Switch statsment. And +1 for make it go from 1-8 insted of 0-7.
 			
-			while(playerWhoLanded.getCurrentPos() !=plads[i]){
+			while(playerWhoLanded.getCurrentPos() !=fieldNumber[i]){
 				i++;
 			}
 	
