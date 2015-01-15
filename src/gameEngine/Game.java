@@ -2,6 +2,7 @@
 package gameEngine;
 
 import javax.swing.JOptionPane;
+
 import desktop_resources.GUI;
 import gameEngine.GameBoard;
 
@@ -176,12 +177,28 @@ public class Game {
 					
 					if(playerTurn[turn].checkForHouseColours()>0){
 						if(playerTurn[turn].listHousesToBuy(currentBoard)[0]!= null){
-							String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
-							for(int i =0;i<currentBoard.gader.length;i++){
-								if(buttonPressed3.equals(currentBoard.gader[i].getFieldName())){
-									int houseCount = GUI.getUserInteger("Hvor mange huse vil du købe?",1, 4-currentBoard.gader[i].getHousesOnField());
-									currentBoard.gader[i].buyHouse(playerTurn[turn],houseCount);
-								}
+							Object[] options = {
+									"Køb hus(e) nu!",
+				                    "Giv turen videre.",};
+							int buttonPressed2 = JOptionPane.showOptionDialog(null,
+									"Du ejer en eller flere serier af gader!",
+									"BESLUT DIG NU!",
+									JOptionPane.WARNING_MESSAGE,
+									JOptionPane.QUESTION_MESSAGE,
+									null,
+									options, 
+									options[0]);
+							if(buttonPressed2 == 0){
+								String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
+								for(int i =0;i<currentBoard.gader.length;i++){
+									if(buttonPressed3.equals(currentBoard.gader[i].getFieldName())){
+										int houseCount = GUI.getUserInteger("Hvor mange huse vil du købe?",1, 4-currentBoard.gader[i].getHousesOnField());
+										currentBoard.gader[i].buyHouse(playerTurn[turn],houseCount);
+									}
+							else if(buttonPressed2 == 1){
+								return;
+							}
+						}
 							}
 						}
 					}
