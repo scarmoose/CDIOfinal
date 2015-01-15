@@ -2,11 +2,6 @@
 package gameEngine;
 
 import javax.swing.JOptionPane;
-
-import codebehind.Car;
-
-import java.awt.Color;
-
 import desktop_resources.GUI;
 import gameEngine.GameBoard;
 
@@ -63,7 +58,6 @@ public class Game {
 
 
 		//Game Window initialization
-//		GUI.create("fieldstext-cdio3.txt");
 		Game.setRollDice("Kast terninger");
 
 		//User names are prompted from the users, and store in previous variables
@@ -85,18 +79,7 @@ public class Game {
 
 
 
-		n = 0; //Resest the variable used to run through the array
-
-		/*
-		 * Color1-3 is the value to the six color made with RGB color-model
-		 * To set the color of the six players cars.
-		 */
-		int[] color1 = { 255,0,18,255,0,230};
-		int[] color2 = { 255,0,247,56,145,0};
-		int[] color3 = { 255,0,56,26,255,255};
-		//adds player cars to the game
-	
-		
+		n = 0; //Resest the variable used to run through the array		
 		
 		while (n<=NumberOfPlayers-1){
 			
