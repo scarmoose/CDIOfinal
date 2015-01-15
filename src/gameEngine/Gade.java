@@ -88,7 +88,7 @@ public class Gade extends Ownable {
 				housesOnField = housesOnField + houseCount;	
 				lander.getAccount().withdraw(houseCount * housePrice);
 				System.out.println("qwerty "+fieldNumber+ " "+houseCount);
-				GUI.setHouses(fieldNumber+1, houseCount);
+				GUI.setHouses(fieldNumber+1, housesOnField);
 				System.out.println(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
 				GUI.showMessage(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
 				System.out.println(super.getOwnerName() + " ejer nu " + getHousesOnField() + " huse på " + super.getFieldName());

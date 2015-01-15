@@ -203,43 +203,10 @@ public class Game {
 							if(buttonPressed2 == 0){
 								while (buyCheck)
 								{
-									String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
-									for(int i =0;i<currentBoard.gader.length;i++){
-										if(buttonPressed3.equals(currentBoard.gader[i].getFieldName())){
-											int houseCount = GUI.getUserInteger("Hvor mange huse vil du købe?",1, 4-currentBoard.gader[i].getHousesOnField());
-											for(int j = 0; j < currentBoard.fields.length; j++){	
-												Felt f = currentBoard.fields[j];
-												if(!(f instanceof Gade)){
-													continue;
-												}
-												Gade g = (Gade) f;
-												if(buttonPressed3.equals(g.getFieldName())){
-													currentBoard.gader[i].buyHouse(playerTurn[turn],houseCount,j);											
-												}
-											}
-										}
-									}
-									Object[] checkoptions = {
-											"Køb flere huse!",
-											"Giv turen videre.",};
-									int buttonCheck = JOptionPane.showOptionDialog(null,
-											"Du ejer flere huse",
-											"BESLUT DIG NU!",
-											JOptionPane.WARNING_MESSAGE,
-											JOptionPane.QUESTION_MESSAGE,
-											null,
-											checkoptions, 
-											checkoptions[0]);
-									if(buttonCheck == 0){
-										continue;
-									}
-									else if(buttonCheck == 1){
-										buyCheck=false;
-									}
+									getHouses(turn);
 								}
 								buyCheck=true;
-							}
-							
+							}							
 						}
 					}
 
@@ -251,6 +218,42 @@ public class Game {
 					}
 				}
 			}
+		}
+	}
+
+	private void getHouses(int turn) {
+		String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
+		for(int i =0;i<currentBoard.gader.length;i++){
+			if(buttonPressed3.equals(currentBoard.gader[i].getFieldName())){
+				int houseCount = GUI.getUserInteger("Hvor mange huse vil du købe?",1, 6-currentBoard.gader[i].getHousesOnField());
+				for(int j = 0; j < currentBoard.fields.length; j++){	
+					Felt f = currentBoard.fields[j];
+					if(!(f instanceof Gade)){
+						continue;
+					}
+					Gade g = (Gade) f;
+					if(buttonPressed3.equals(g.getFieldName())){
+						currentBoard.gader[i].buyHouse(playerTurn[turn],houseCount,j);											
+					}
+				}
+			}
+		}
+		Object[] checkoptions = {
+				"Køb flere huse!",
+				"Giv turen videre.",};
+		int buttonCheck = JOptionPane.showOptionDialog(null,
+				"Du ejer flere huse",
+				"BESLUT DIG NU!",
+				JOptionPane.WARNING_MESSAGE,
+				JOptionPane.QUESTION_MESSAGE,
+				null,
+				checkoptions, 
+				checkoptions[0]);
+		if(buttonCheck == 0){
+			return;
+		}
+		else if(buttonCheck == 1){
+			buyCheck=false;
 		}
 	}
 
