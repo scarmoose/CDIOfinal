@@ -52,13 +52,14 @@ public class Game {
 
 
 		//The choice of amount of players
-		String[] amount = {"3", "4","5","6"};//Lowest amount of players will be 3
+		String[] amount = {"1","2","3", "4","5","6"};//Lowest amount of players will be 3
 		//Selection box in which amount of players is chosen
 		String players = (String) JOptionPane.showInputDialog(null, "Vælg antal spillere:",
 				"Livets største beslutning", JOptionPane.QUESTION_MESSAGE, null,
 				amount, 
 				amount[0]); //Default choice is 3 players
 		int NumberOfPlayers = Integer.parseInt(players);//Turns the choice into an integer
+
 
 
 		//Game Window initialization
@@ -145,7 +146,8 @@ public class Game {
 			if(buttonPressed.equals(rollDice+" ("+playerTurn[turn].getName()+")")){
 				//int trow=dieOne.rollDie();
 				//int trow = 0;
-				trow=dieOne.rollDie();
+//				trow=dieOne.rollDie();
+				trow=1;
 				GUI.setDice(dieOne.getFaceValue1(), dieOne.getFaceValue2());
 				if(activePlayers[turn]) {
 					if(playerTurn[turn].getPrisonCount()==4){
@@ -192,10 +194,11 @@ public class Game {
 					if(playerTurn[turn].checkForHouseColours()>0){
 						if(playerTurn[turn].listHousesToBuy(currentBoard)[0]!= null){
 							String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
-								for(int i =0;i<currentBoard.gader.length;i++){
-									if(buttonPressed3.equals(currentBoard.gader[i].getFieldName())){
-										currentBoard.gader[i].buyHouse(playerTurn[turn]);
-									}
+							for(int i =0;i<currentBoard.gader.length;i++){
+								if(buttonPressed3.equals(currentBoard.gader[i].getFieldName())){
+									int houseCount = GUI.getUserInteger("Hvor mange huse vil du købe?",1, 4-currentBoard.gader[i].getHousesOnField());
+									currentBoard.gader[i].buyHouse(playerTurn[turn],houseCount);
+								}
 							}
 						}
 					}
