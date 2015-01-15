@@ -2,6 +2,7 @@
 package gameEngine;
 
 import javax.swing.JOptionPane;
+
 import desktop_resources.GUI;
 import gameEngine.GameBoard;
 
@@ -18,6 +19,7 @@ public class Game {
 	Spiller playerTurn[] = {player1,player2,player3,player4,player5,player6}; 
 
 	GameBoard currentBoard = new GameBoard();
+	boolean buyCheck = true;
 
 	//All players are set to true. True means that they are still active and haven't lost
 	private boolean playerOne = true;
@@ -47,13 +49,14 @@ public class Game {
 
 
 		//The choice of amount of players
-		String[] amount = {"3", "4","5","6"};//Lowest amount of players will be 3
+		String[] amount = {"2","3", "4","5","6"};//Lowest amount of players will be 3
 		//Selection box in which amount of players is chosen
 		String players = (String) JOptionPane.showInputDialog(null, "Vælg antal spillere:",
 				"Livets største beslutning", JOptionPane.QUESTION_MESSAGE, null,
 				amount, 
 				amount[0]); //Default choice is 3 players
 		int NumberOfPlayers = Integer.parseInt(players);//Turns the choice into an integer
+
 
 
 		//Game Window initialization
@@ -79,9 +82,9 @@ public class Game {
 
 
 		n = 0; //Resest the variable used to run through the array		
-		
+
 		while (n<=NumberOfPlayers-1){
-			
+
 			GUI.addPlayer(playerNames[n],playerTurn[n].getAccount().getBalance(),playerTurn[n].playerCar);
 			n++;
 		}
@@ -128,34 +131,46 @@ public class Game {
 			if(buttonPressed.equals(rollDice+" ("+playerTurn[turn].getName()+")")){
 				//int trow=dieOne.rollDie();
 				//int trow = 0;
+				//				trow=dieOne.rollDie();
 				trow=dieOne.rollDie();
-				GUI.setDice(dieOne.getFaceValue1(), dieOne.getFaceValue2());
+				trow=1;
 				if(activePlayers[turn]) {
 					if(playerTurn[turn].getPrisonCount()==4){
+						System.out.println(playerNames[turn]+" har været i fængslet i 3 runder og kommer nu ud");
 						playerTurn[turn].resetPrisonCount();
-						if(dieOne.getFaceValue1()!=dieOne.getFaceValue2())
-						{
-							playerTurn[turn].getAccount().withdraw(1000);
-							System.out.println(playerNames[turn]+" har været i fængslet i 3 runder og betaler 1000 for at komme ud");	
-						}
-						else
-						{
-							System.out.println(playerNames[turn]+" er ude af fænglset pga par på slag");
-						}
 					}
 					if(playerTurn[turn].getPrisonCount()>0){
-						if(dieOne.getFaceValue1()==dieOne.getFaceValue2())
-						{
+						Object[] Prisonoptions = {
+								"Betal for at komme ud",
+			                    "Prøv at slå par for at komme ud",};
+						int buttonPrison = JOptionPane.showOptionDialog(null,
+								"Ønsker du at betale for at komme ud af fængslet?",
+								"BESLUT DIG NU!",
+								JOptionPane.WARNING_MESSAGE,
+								JOptionPane.QUESTION_MESSAGE,
+								null,
+								Prisonoptions, 
+								Prisonoptions[0]);
+						
+						if(buttonPrison == 0){
+							playerTurn[turn].getAccount().withdraw(1000);
 							playerTurn[turn].resetPrisonCount();
-							System.out.println(playerNames[turn]+" er ude af fænglset pga par på slag");
-						}
-						else
-						{
-							playerTurn[turn].incrementPrisonCount();
-							trow=0;
-							System.out.println(playerNames[turn]+" forbliver i fænglset");
+						}	
+						else if(buttonPrison == 1){
+							if(dieOne.getFaceValue1()==dieOne.getFaceValue2())
+							{
+								playerTurn[turn].resetPrisonCount();
+								System.out.println(playerNames[turn]+" er ude af fænglset pga par på slag");
+							}
+							else
+							{
+								playerTurn[turn].incrementPrisonCount();
+								trow=0;
+								System.out.println(playerNames[turn]+" forbliver i fænglset");
+							}
 						}				
 					}
+					GUI.setDice(dieOne.getFaceValue1(), dieOne.getFaceValue2());
 					GUI.removeAllCars(playerNames[turn]);//Removes the player from the board.
 					playerTurn[turn].updateCurrentPos(trow);//Updates the current position by adding with trow
 
@@ -171,18 +186,63 @@ public class Game {
 					//Sets the player to lose in case of 0 points
 					checkForLoserAndExecute(playerNames, turn);	 
 
-					
+
 					if(playerTurn[turn].checkForHouseColours()>0){
 						if(playerTurn[turn].listHousesToBuy(currentBoard)[0]!= null){
-							String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
-								for(int i =0;i<currentBoard.gader.length;i++){
-									if(buttonPressed3.equals(currentBoard.gader[i].getFieldName())){
-										currentBoard.gader[i].buyHouse(playerTurn[turn]);
+							Object[] options = {
+									"Køb hus(e) nu!",
+									"Giv turen videre.",};
+							int buttonPressed2 = JOptionPane.showOptionDialog(null,
+									"Du ejer en eller flere serier af gader!",
+									"BESLUT DIG NU!",
+									JOptionPane.WARNING_MESSAGE,
+									JOptionPane.QUESTION_MESSAGE,
+									null,
+									options, 
+									options[0]);
+							if(buttonPressed2 == 0){
+								while (buyCheck)
+								{
+									String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
+									for(int i =0;i<currentBoard.gader.length;i++){
+										if(buttonPressed3.equals(currentBoard.gader[i].getFieldName())){
+											int houseCount = GUI.getUserInteger("Hvor mange huse vil du købe?",1, 4-currentBoard.gader[i].getHousesOnField());
+											for(int j = 0; j < currentBoard.fields.length; j++){	
+												Felt f = currentBoard.fields[j];
+												if(!(f instanceof Gade)){
+													continue;
+												}
+												Gade g = (Gade) f;
+												if(buttonPressed3.equals(g.getFieldName())){
+													currentBoard.gader[i].buyHouse(playerTurn[turn],houseCount,j);											
+												}
+											}
+										}
 									}
+									Object[] checkoptions = {
+											"Køb flere huse!",
+											"Giv turen videre.",};
+									int buttonCheck = JOptionPane.showOptionDialog(null,
+											"Du ejer flere huse",
+											"BESLUT DIG NU!",
+											JOptionPane.WARNING_MESSAGE,
+											JOptionPane.QUESTION_MESSAGE,
+											null,
+											checkoptions, 
+											checkoptions[0]);
+									if(buttonCheck == 0){
+										continue;
+									}
+									else if(buttonCheck == 1){
+										buyCheck=false;
+									}
+								}
+								buyCheck=true;
 							}
+							
 						}
 					}
-				
+
 					//Next players turn
 					turn++;
 					//If turn is out of bounds. It is reset to 0

@@ -80,14 +80,18 @@ public class Gade extends Ownable {
 		return housesOnField;
 	}
 	
-	public void buyHouse(Spiller lander) {
+	public void buyHouse(Spiller lander, int houseCount, int fieldNumber) {
+		System.out.println(this.fieldName);
 		if(housesOnField < MAX_HOUSES_ON_FIELD) {
+			System.out.println("Xasda"+getOwner());
 			if(super.getOwner().getAccount().getBalance()>housePrice){
-				housesOnField++;	
-				lander.getAccount().withdraw(housePrice);
+				housesOnField = housesOnField + houseCount;	
+				lander.getAccount().withdraw(houseCount * housePrice);
+				System.out.println("qwerty "+fieldNumber+ " "+houseCount);
+				GUI.setHouses(fieldNumber+1, houseCount);
 				System.out.println(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
 				GUI.showMessage(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
-				System.out.println(super.getOwnerName() + " ejer nu " + getHousesOnField() + " på " + super.getFieldName());
+				System.out.println(super.getOwnerName() + " ejer nu " + getHousesOnField() + " huse på " + super.getFieldName());
 			
 			}
 		else
@@ -104,9 +108,10 @@ public class Gade extends Ownable {
 	 */
 	
 	public void buyProperty(Spiller lander){
+//		System.out.println("BuyProperty" + lander.getName());
 		if(lander.getAccount().getBalance()<super.getPrice()){
 			final JPanel panel = new JPanel();
-			JOptionPane.showMessageDialog(panel, "Ikke nok penge.", "Service meddelelse",
+			JOptionPane.showMessageDialog(panel, "Du har ikke penge nok", "Service meddelelse",
 			JOptionPane.WARNING_MESSAGE);
 			return;
 		}

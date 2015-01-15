@@ -31,9 +31,9 @@ public class GameBoard {
 			new Gade("Nygade", 6400, 600, "yellow", 4000),
 			new Gade("Frederiksberggade", 7000, 700, "purple", 4000),
 			new Gade("Rådhuspladsen", 8000, 1000, "purple", 4000)
-		};
-	{
+	};
 	
+	{
 	gader[0].setHouseRent(250,750,2250,4000,6000);
 	gader[1].setHouseRent(250,750,2250,4000,6000);
 	gader[2].setHouseRent(600,1800,5400,8000,11000);
@@ -56,39 +56,39 @@ public class GameBoard {
 	gader[19].setHouseRent(3000,9000,20000,24000,28000);
 	gader[20].setHouseRent(3500,10000,22000,26000,30000);
 	gader[21].setHouseRent(4000,12000,28000,34000,40000);
-	
-	
 	}
 	
+	
+	
 	Ownable[] ownables = new Ownable[]{
-		new Gade("Rødovrevej", 1200, 50, "blue", 1000), 						//0
-		new Gade("Hvidovrevej", 1200, 50, "blue", 1000),
+		gader[0],						//0
+		gader[1],
 		new Rederi("SFL Færgerne", 4000),
-		new Gade("Roskildevej", 2000, 100, "pink", 1000),
-		new Gade("Valby Langgade", 2000, 100, "pink", 1000),
-		new Gade("Allegade", 2400, 150, "pink", 1000), 						//5
-		new Gade("Frederiksberg Alle", 2800, 200, "green", 2000),
+		gader[2],
+		gader[3],
+		gader[4],						//5
+		gader[5],
 		new Bryggeri("Tuborg Bryggeri", 3000),
-		new Gade("Bülowsvej", 2800, 200, "green", 2000),
-		new Gade("Gl. Kongevej", 3200, 250, "green", 2000),
+		gader[6],
+		gader[7],
 		new Rederi("DSB Rederierne Kalundborg/Aarhus", 4000), 	//10
-		new Gade("Bernstoffsvej", 3600, 300, "grey", 2000),
-		new Gade("Hellerupvej", 3600, 300, "grey", 2000), 
-		new Gade("Strandvej", 4000, 350, "grey", 2000),
-		new Gade("Trianglen", 4400, 350, "red", 3000),
-		new Gade("Østerbrogade", 4400, 350, "red", 3000), 					//15
-		new Gade("Grønningen", 4800, 400, "red", 3000), 
+		gader[8],
+		gader[9], 
+		gader[10],
+		gader[11],
+		gader[12],				//15
+		gader[13],
 		new Rederi("DFDS Seaways", 4000),
-		new Gade("Bredgade", 5200, 450, "white", 3000), 
-		new Gade("Kgs. Nytorv", 5200, 450, "white", 3000),
+		gader[14],
+		gader[15],
 		new Bryggeri("Carlsberg Bryggeri", 3000),				//20 
-		new Gade("Østergade", 5600, 500, "white", 3000),
-		new Gade("Amagertorv", 6000, 550, "yellow", 4000),
-		new Gade("Vimmelskaftet", 6000, 550, "yellow", 4000), 
-		new Gade("Nygade", 6400, 600, "yellow", 4000),
+		gader[16],
+		gader[17],
+		gader[18],
+		gader[19],
 		new Rederi("DSB Rederierne Halvskov/Knudshoved2", 4000),//25
-		new Gade("Frederiksberggade", 7000, 700, "purple", 4000),
-		new Gade("Rådhuspladsen", 8000, 1000, "purple", 4000)
+		gader[20],
+		gader[21]
 	};
 	
 	Felt[] fields = new Felt[]{
@@ -134,6 +134,7 @@ public class GameBoard {
 		ownables[27]											//39
 	};
 }
+
 
 
 
