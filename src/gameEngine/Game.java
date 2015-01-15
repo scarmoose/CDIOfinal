@@ -131,34 +131,44 @@ public class Game {
 				//int trow=dieOne.rollDie();
 				//int trow = 0;
 				//				trow=dieOne.rollDie();
-				trow=1;
-				GUI.setDice(dieOne.getFaceValue1(), dieOne.getFaceValue2());
+				trow=dieOne.rollDie();
 				if(activePlayers[turn]) {
 					if(playerTurn[turn].getPrisonCount()==4){
+						System.out.println(playerNames[turn]+" har været i fængslet i 3 runder og kommer nu ud");
 						playerTurn[turn].resetPrisonCount();
-						if(dieOne.getFaceValue1()!=dieOne.getFaceValue2())
-						{
-							playerTurn[turn].getAccount().withdraw(1000);
-							System.out.println(playerNames[turn]+" har været i fængslet i 3 runder og betaler 1000 for at komme ud");	
-						}
-						else
-						{
-							System.out.println(playerNames[turn]+" er ude af fænglset pga par på slag");
-						}
 					}
 					if(playerTurn[turn].getPrisonCount()>0){
-						if(dieOne.getFaceValue1()==dieOne.getFaceValue2())
-						{
+						Object[] Prisonoptions = {
+								"Betal for at komme ud",
+			                    "Prøv at slå par for at komme ud",};
+						int buttonPrison = JOptionPane.showOptionDialog(null,
+								"Ønsker du at betale for at komme ud af fængslet?",
+								"BESLUT DIG NU!",
+								JOptionPane.WARNING_MESSAGE,
+								JOptionPane.QUESTION_MESSAGE,
+								null,
+								Prisonoptions, 
+								Prisonoptions[0]);
+						
+						if(buttonPrison == 0){
+							playerTurn[turn].getAccount().withdraw(1000);
 							playerTurn[turn].resetPrisonCount();
-							System.out.println(playerNames[turn]+" er ude af fænglset pga par på slag");
-						}
-						else
-						{
-							playerTurn[turn].incrementPrisonCount();
-							trow=0;
-							System.out.println(playerNames[turn]+" forbliver i fænglset");
+						}	
+						else if(buttonPrison == 1){
+							if(dieOne.getFaceValue1()==dieOne.getFaceValue2())
+							{
+								playerTurn[turn].resetPrisonCount();
+								System.out.println(playerNames[turn]+" er ude af fænglset pga par på slag");
+							}
+							else
+							{
+								playerTurn[turn].incrementPrisonCount();
+								trow=0;
+								System.out.println(playerNames[turn]+" forbliver i fænglset");
+							}
 						}				
 					}
+					GUI.setDice(dieOne.getFaceValue1(), dieOne.getFaceValue2());
 					GUI.removeAllCars(playerNames[turn]);//Removes the player from the board.
 					playerTurn[turn].updateCurrentPos(trow);//Updates the current position by adding with trow
 
