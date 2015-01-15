@@ -373,6 +373,9 @@ public class Spiller {
 			if(this.getOwnsAllColour()[gade.getColourIndex()] == true){
 				StreetsWithHousesToBuy[index++] = gade.getFieldName();
 			}
+			if(gade.getHousesOnField() == 4){
+				
+			}
 		}
 		return StreetsWithHousesToBuy;
 	}

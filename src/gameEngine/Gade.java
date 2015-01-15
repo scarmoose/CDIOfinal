@@ -82,7 +82,7 @@ public class Gade extends Ownable {
 	
 	public void buyHouse(Spiller lander, int houseCount, int fieldNumber) {
 		System.out.println(this.fieldName);
-		if(housesOnField < MAX_HOUSES_ON_FIELD) {
+		if(housesOnField < 4) {
 			System.out.println("Xasda"+getOwner());
 			if(super.getOwner().getAccount().getBalance()>housePrice){
 				housesOnField = housesOnField + houseCount;	
@@ -94,14 +94,23 @@ public class Gade extends Ownable {
 				System.out.println(super.getOwnerName() + " ejer nu " + getHousesOnField() + " huse på " + super.getFieldName());
 			
 			}
-		else
-		{
-			System.out.println(super.getOwnerName()+" kan ikke bygge flere huse på "+super.getFieldName());
-			GUI.showMessage(super.getOwnerName()+" kan ikke bygge flere huse på "+super.getFieldName());
+				
+				else{
+			System.out.println(super.getOwnerName()+" kan ikke bygge flere huse eller hoteller "+super.getFieldName());
+			GUI.showMessage(super.getOwnerName()+" kan ikke bygge flere huse eller hoteller "+super.getFieldName());
 			}
 		}
 	}
 		
+	public void buyHotel(Spiller lander, int fieldNumber, boolean hotelCount){
+		if(housesOnField == 4){
+			GUI.setHotel(fieldNumber, hotelCount);
+			lander.getAccount().withdraw(housePrice);
+			System.out.println(super.getOwnerName()+" opgraderede til et hotel på "+super.getFieldName());
+		}
+	}
+	
+	
 	/**
 	 * Prompts the player if he wants to buy a not-owned fleet if players account balance > price
 	 * @param lander player who landed on the field
