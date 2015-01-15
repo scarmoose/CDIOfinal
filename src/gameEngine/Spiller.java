@@ -397,11 +397,16 @@ public class Spiller {
 	public void setNumberOfColorsFullyOwned(int numberOfColorsFullyOwned) {
 		this.numberOfColorsFullyOwned = numberOfColorsFullyOwned;
 	}
-	Color[] color1={Color.black,Color.blue,Color.RED,Color.PINK,Color.GRAY,Color.GREEN};
+	
+	// Color1 and Color2 is an array of the Color to the cars to the GUI
+	Color[] color1={Color.black,Color.blue,Color.RED,Color.PINK,Color.GRAY,Color.GREEN}; 
 	Color[] color2={Color.MAGENTA,Color.ORANGE,Color.LIGHT_GRAY,Color.RED,Color.YELLOW,Color.WHITE};
+	
+	//make an random seltion for 0-5 so the colors of the cars can be random.
 	int t=(int)((Math.random()*6));
 	int p=(int)((Math.random()*6));
 	
+	//Metod to set the cars(UFO), color and patten.
 	Car playerCar = new Car.Builder()
     .typeUfo()
     .primaryColor(color2[t])
