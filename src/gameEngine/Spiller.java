@@ -371,7 +371,7 @@ public class Spiller {
 		int index = 0;
 		for (Gade gade : gameBoard.gader) {
 			if(this.getOwnsAllColour()[gade.getColourIndex()] == true){
-				StreetsWithHousesToBuy[index++] = gade.getFieldName();				
+				StreetsWithHousesToBuy[index++] = gade.getFieldName();
 			}
 		}
 		return StreetsWithHousesToBuy;
