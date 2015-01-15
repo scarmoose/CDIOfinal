@@ -2,6 +2,7 @@
 package gameEngine;
 
 import javax.swing.JOptionPane;
+
 import desktop_resources.GUI;
 import gameEngine.GameBoard;
 
@@ -80,9 +81,9 @@ public class Game {
 
 
 		n = 0; //Resest the variable used to run through the array		
-		
+
 		while (n<=NumberOfPlayers-1){
-			
+
 			GUI.addPlayer(playerNames[n],playerTurn[n].getAccount().getBalance(),playerTurn[n].playerCar);
 			n++;
 		}
@@ -129,7 +130,7 @@ public class Game {
 			if(buttonPressed.equals(rollDice+" ("+playerTurn[turn].getName()+")")){
 				//int trow=dieOne.rollDie();
 				//int trow = 0;
-//				trow=dieOne.rollDie();
+				//				trow=dieOne.rollDie();
 				trow=1;
 				GUI.setDice(dieOne.getFaceValue1(), dieOne.getFaceValue2());
 				if(activePlayers[turn]) {
@@ -173,28 +174,42 @@ public class Game {
 					//Sets the player to lose in case of 0 points
 					checkForLoserAndExecute(playerNames, turn);	 
 
-					
+
 					if(playerTurn[turn].checkForHouseColours()>0){
 						if(playerTurn[turn].listHousesToBuy(currentBoard)[0]!= null){
-							String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
-							for(int i =0;i<currentBoard.gader.length;i++){
-								if(buttonPressed3.equals(currentBoard.gader[i].getFieldName())){
-									int houseCount = GUI.getUserInteger("Hvor mange huse vil du købe?",1, 4-currentBoard.gader[i].getHousesOnField());
-									for(int j = 0; j < currentBoard.fields.length; j++){	
-										Felt f = currentBoard.fields[j];
-										if(!(f instanceof Gade)){
-											continue;
-										}
-										Gade g = (Gade) f;
-										if(buttonPressed3.equals(g.getFieldName())){
-											currentBoard.gader[i].buyHouse(playerTurn[turn],houseCount,j);											
+							Object[] options = {
+									"Køb hus(e) nu!",
+									"Giv turen videre.",};
+							int buttonPressed2 = JOptionPane.showOptionDialog(null,
+									"Du ejer en eller flere serier af gader!",
+									"BESLUT DIG NU!",
+									JOptionPane.WARNING_MESSAGE,
+									JOptionPane.QUESTION_MESSAGE,
+									null,
+									options, 
+									options[0]);
+							if(buttonPressed2 == 0){
+
+								String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
+								for(int i =0;i<currentBoard.gader.length;i++){
+									if(buttonPressed3.equals(currentBoard.gader[i].getFieldName())){
+										int houseCount = GUI.getUserInteger("Hvor mange huse vil du købe?",1, 4-currentBoard.gader[i].getHousesOnField());
+										for(int j = 0; j < currentBoard.fields.length; j++){	
+											Felt f = currentBoard.fields[j];
+											if(!(f instanceof Gade)){
+												continue;
+											}
+											Gade g = (Gade) f;
+											if(buttonPressed3.equals(g.getFieldName())){
+												currentBoard.gader[i].buyHouse(playerTurn[turn],houseCount,j);											
+											}
 										}
 									}
 								}
 							}
 						}
 					}
-				
+
 					//Next players turn
 					turn++;
 					//If turn is out of bounds. It is reset to 0
