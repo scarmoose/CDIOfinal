@@ -80,18 +80,28 @@ public class Gade extends Ownable {
 		return housesOnField;
 	}
 	
+	public int getMAX_HOUSES_ON_FIELD() {
+		return MAX_HOUSES_ON_FIELD;
+	}
+	
 	public void buyHouse(Spiller lander, int houseCount, int fieldNumber) {
 		System.out.println(this.fieldName);
-		if(housesOnField < 4) {
+		if(housesOnField < MAX_HOUSES_ON_FIELD) {
 			System.out.println("Xasda"+getOwner());
 			if(super.getOwner().getAccount().getBalance()>housePrice){
 				housesOnField = housesOnField + houseCount;	
 				lander.getAccount().withdraw(houseCount * housePrice);
-				System.out.println("qwerty "+fieldNumber+ " "+houseCount);
-				GUI.setHouses(fieldNumber+1, housesOnField);
-				System.out.println(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
-				GUI.showMessage(super.getOwnerName() +" har købt et hus på "+super.getFieldName());
-				System.out.println(super.getOwnerName() + " ejer nu " + getHousesOnField() + " huse på " + super.getFieldName());
+				if(housesOnField<=4){
+					System.out.println("qwerty "+fieldNumber+ " "+houseCount);
+					System.out.println(super.getOwnerName() +" har købt "+houseCount+" hus(e) på "+super.getFieldName());
+					GUI.showMessage(super.getOwnerName() +" har købt "+houseCount+" hus(e) på "+super.getFieldName());
+					System.out.println(super.getOwnerName() + " ejer nu " + getHousesOnField() + " huse på " + super.getFieldName());
+					GUI.setHouses(fieldNumber+1, housesOnField);					
+				}else if(housesOnField>4){
+					GUI.setHotel(fieldNumber+1, true);
+					System.out.println(super.getOwnerName()+" har købt et hotel på "+super.getFieldName());
+					
+				}
 			
 			}
 				

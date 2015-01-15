@@ -222,7 +222,7 @@ public class Game {
 	}
 
 	private void getHouses(int turn) {
-		String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
+		String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på (5 huse = 1 hotel)", playerTurn[turn].listHousesToBuy(currentBoard));
 		for(int i =0;i<currentBoard.gader.length;i++){
 			if(buttonPressed3.equals(currentBoard.gader[i].getFieldName())){
 				int houseCount = GUI.getUserInteger("Hvor mange huse vil du købe?",1, 6-currentBoard.gader[i].getHousesOnField());
