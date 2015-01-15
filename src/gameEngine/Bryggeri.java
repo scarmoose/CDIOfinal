@@ -3,6 +3,8 @@ package gameEngine;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import desktop_resources.GUI;
+
 public class Bryggeri extends Ownable {
 	
 	private int baseRent = 100;
@@ -50,6 +52,7 @@ public class Bryggeri extends Ownable {
 		super.setOwnerName(playerWhoLandedOnField.getName());
 		playerWhoLandedOnField.getAccount().withdraw(getPrice());
 		System.out.println(playerWhoLandedOnField.getName()+" købte "+fieldName+" for "+getPrice());
+		GUI.setOwner(playerWhoLandedOnField.getCurrentPos()+1, playerWhoLandedOnField.getName());
 		}
 	}
 	

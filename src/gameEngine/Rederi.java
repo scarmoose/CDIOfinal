@@ -3,6 +3,8 @@ package gameEngine;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import desktop_resources.GUI;
+
 public class Rederi extends Ownable {
 	
 	/**
@@ -66,6 +68,7 @@ public class Rederi extends Ownable {
 			player.getAccount().withdraw(getPrice());
 			super.getOwner().incrementFleetsOwned();
 			System.out.println(player.getName()+" købte "+fieldName+" for "+getPrice());
+			GUI.setOwner(player.getCurrentPos()+1, player.getName());			
 		}
 	}
 	

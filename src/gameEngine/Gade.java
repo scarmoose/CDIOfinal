@@ -115,6 +115,7 @@ public class Gade extends Ownable {
 		super.setOwnerName(lander.getName());
 		lander.getAccount().withdraw(getPrice());
 		System.out.println(lander.getName()+" købte "+fieldName+" for "+getPrice());
+		GUI.setOwner(lander.getCurrentPos()+1, lander.getName());
 			//Switch only works in 1.7 or newer version, so we went with this instead
 			if(colour.equals("blue")){
 				lander.incrementBlueOwned();
