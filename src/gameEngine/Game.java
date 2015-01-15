@@ -160,10 +160,7 @@ public class Game {
 							}							
 						}
 					}
-
-					//Next players turn
 					turn++;
-					//If turn is out of bounds. It is reset to 0
 					if (turn>NumberOfPlayers-1){
 						turn=0;
 					}
