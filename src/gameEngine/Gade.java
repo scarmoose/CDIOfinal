@@ -99,8 +99,7 @@ public class Gade extends Ownable {
 					GUI.setHouses(fieldNumber+1, housesOnField);					
 				}else if(housesOnField>4){
 					GUI.setHotel(fieldNumber+1, true);
-					System.out.println(super.getOwnerName()+" har købt et hotel på "+super.getFieldName());
-					
+					System.out.println(super.getOwnerName()+" har købt et hotel på "+super.getFieldName());					
 				}
 			
 			}
