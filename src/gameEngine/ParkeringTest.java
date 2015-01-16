@@ -19,7 +19,7 @@ public class ParkeringTest {
 	@Test
 	public void testLandOnField() {
 		ref1.landOnField(player1);
-		assertEquals(35000, player1.getAccount().getBalance());
+		assertEquals(30500, player1.getAccount().getBalance());
 
 	}
 }

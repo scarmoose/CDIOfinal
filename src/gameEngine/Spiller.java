@@ -344,20 +344,17 @@ public class Spiller {
 		this.colourCount = colourCount;
 	}
 	
-	String StreetsWithHousesToBuy[];
+	String streetsWithHousesToBuy[];
 	
 	public String[] listHousesToBuy(GameBoard gameBoard) {
-		StreetsWithHousesToBuy = new String[gameBoard.gader.length];
+		streetsWithHousesToBuy = new String[gameBoard.gader.length];
 		int index = 0;
 		for (Gade gade : gameBoard.gader) {
 			if(this.getOwnsAllColour()[gade.getColourIndex()] == true){
-				StreetsWithHousesToBuy[index++] = gade.getFieldName();
-			}
-			if(gade.getHousesOnField() == 4){
-				
-			}
+				streetsWithHousesToBuy[index++] = gade.getFieldName();
+			}			
 		}
-		return StreetsWithHousesToBuy;
+		return streetsWithHousesToBuy;
 	}
 	
 	private int numberOfColorsFullyOwned = 0; 

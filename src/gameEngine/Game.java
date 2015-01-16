@@ -207,11 +207,13 @@ public class Game {
 	}
 
 	private void getHouses(int turn) {
-		String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på", playerTurn[turn].listHousesToBuy(currentBoard));
+		String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på",
+				playerTurn[turn].listHousesToBuy(currentBoard));
 		for(int i =0;i<currentBoard.gader.length;i++){
 			if(buttonPressed3.equals(currentBoard.gader[i].getFieldName()) 
 					&& currentBoard.gader[i].getHousesOnField()<currentBoard.gader[i].getMAX_HOUSES_ON_FIELD()){
-				int houseCount = GUI.getUserInteger("Hvor mange huse vil du købe? (5 huse = 1 hotel)",1, 5-currentBoard.gader[i].getHousesOnField());
+				int houseCount = GUI.getUserInteger("Hvor mange huse vil du købe? (5 huse = 1 hotel)",
+						1, 5-currentBoard.gader[i].getHousesOnField());
 				for(int j = 0; j < currentBoard.fields.length; j++){	
 					Felt f = currentBoard.fields[j];
 					if(!(f instanceof Gade)){

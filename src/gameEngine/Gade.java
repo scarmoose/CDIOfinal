@@ -163,19 +163,6 @@ public class Gade extends Ownable {
 	 * If the field is not owned, the player who landed on there can choose to buy it.
 	 * @param player player who landed on the field
 	 */
-
-//	String StreetsWithHousesToBuy[];
-//	
-//	public String[] listHousesToBuy(Spiller spiller, GameBoard gameBoard) {
-//		StreetsWithHousesToBuy = new String[gameBoard.gader.length];
-//		int index = 0;
-//		for (Gade gade : gameBoard.gader) {
-//			if(spiller.getOwnsAllColour()[gade.getColourIndex()] == true){
-//				StreetsWithHousesToBuy[index++] = gade.getFieldName();				
-//			}
-//		}
-//		return StreetsWithHousesToBuy;
-//	}
 	
 	@Override
 	public void landOnField( Spiller lander){
