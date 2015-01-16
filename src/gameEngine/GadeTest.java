@@ -20,7 +20,7 @@ public class GadeTest {
 	
 	/*
 	 * Test of the  rent required when a player lands on a field.
-	 * In this case the rent of field 1 (Tribal Encampment) is 100 points. 
+	 * In this case the rent of field 1 (Rødovrevej) is 50,-. 
 	 */
 	
 	@Test
@@ -48,7 +48,7 @@ public class GadeTest {
 		assertEquals(landerExpected, landerActual);
 	} 
 	
-	@Test //pop up message saying insufficient funds will appear
+	@Test //A pop up message saying insufficient funds will appear
 	public void testBuyPropertyInsufficientFunds() {
 		owner.getAccount().setBalance(500);
 		gade.buyProperty(owner);
@@ -58,7 +58,7 @@ public class GadeTest {
 				
 	}
 	
-	@Test //will ask whether lander wants to buy the field
+	@Test //This test will ask whether lander wants to buy the field.
 	public void landOnFreeField() {
 		gade.landOnField(lander);
 	} 
