@@ -12,7 +12,7 @@ public class Konto {
 	}
 	
 	public Konto() {
-		balance = 300000;
+		balance = 30000;
 	}
 	
 	/**

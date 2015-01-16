@@ -4,6 +4,7 @@ public class Parkering extends Felt{
 
 	
 	private int bonus;
+	
 	/**
 	 * Construct for the class Refugee 
 	 * 
@@ -16,6 +17,7 @@ public class Parkering extends Felt{
 		super(fieldName);
 		this.bonus = bonus;
 	}
+	
 	/**
 	 * The play who landed on the field recieves a set bonus.
 	 */
@@ -24,5 +26,6 @@ public class Parkering extends Felt{
 		playerWhoLandedOnField.getAccount().deposit(bonus);
 		System.out.println(playerWhoLandedOnField.getName()+" recieved "+bonus);
 	}
+	
 	
 }

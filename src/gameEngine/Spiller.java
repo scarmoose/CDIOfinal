@@ -16,31 +16,10 @@ public class Spiller {
 	private Konto playerAcc = new Konto(); 
 	private int prisonCount = 0;
 	
-//	private boolean ownsAllBlue = false; 
-//	private boolean ownsAllPink = false; 
-//	private boolean ownsAllGreen = false; 
-//	private boolean ownsAllGrey = false;
-//	private boolean ownsAllRed = false; 
-//	private boolean ownsAllWhite = false; 
-//	private boolean ownsAllYellow = false;
-//	private boolean ownsAllPurple = false;
-	
 	private boolean ownsAllColour[] = {false, false, false, false, false, false, false, false};
-	
-	//counters for each colour category
-//	private int colourCount[] = {0,0,0,0,0,0,0,0};
-//	private int blueCount = 0;
-//	private int pinkCount = 0;
-//	private int greenCount = 0;
-//	private int greyCount = 0;
-//	private int redCount = 0;
-//	private int whiteCount = 0;
-//	private int yellowCount = 0;
-//	private int purpleCount = 0;
 	
 	public int colourCount[] = new int[8]; //= {blueCount, pinkCount, greenCount, greyCount, redCount,whiteCount, yellowCount, purpleCount};
 	
-//	private final int MAXCOUNT[] = {2,3,3,3,3,3,3,3,2};
 	private final int BLUE_COUNT_MAX = 2; 
 	private final int PINK_COUNT_MAX = 3; 
 	private final int GREEN_COUNT_MAX = 3;
@@ -53,8 +32,6 @@ public class Spiller {
 	int MAX_COLOUR[] = {BLUE_COUNT_MAX, PINK_COUNT_MAX, GREEN_COUNT_MAX,
 			GREY_COUNT_MAX, RED_COUNT_MAX, WHITE_COUNT_MAX, YELLOW_COUNT_MAX, PURPLE_COUNT_MAX};
 	
-	
-
 	public int getPrisonCount() {
 		return prisonCount;
 	}
@@ -141,17 +118,20 @@ public class Spiller {
 		return fleetsOwned;
 	}
 	/**
-	 * adds 1 to the amount of fleets a player owns.
-	 * 
+	 * adds 1 to the amount of fleets a player owns. 
 	 */
 	public void incrementFleetsOwned(){
 		this.fleetsOwned = this.fleetsOwned + 1;
 	}
-	
+	/**
+	 * @return number of breweries owned
+	 */
 	public int getBreweriesOwned(){
 		return breweriesOwned;
 	}
-	
+	/**
+	 * adds a brewery to breweriesowned
+	 */
 	public void incrementBreweriesOwned(){
 		this.breweriesOwned++;
 	}
@@ -415,7 +395,6 @@ public class Spiller {
     .primaryColor(color2[t])
     .secondaryColor(color1[p])
     .patternHorizontalDualColor()
-    .build();
-	
+    .build();	
 }
 
