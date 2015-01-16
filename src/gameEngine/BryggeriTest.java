@@ -11,15 +11,16 @@ public class BryggeriTest {
 
 	Spiller playerWhoLandedOnField;
 	Terning diceRoll;
-	Bryggeri labor;	
+	Bryggeri bryggeri;	
 	Ownable ownable;
+	GameBoard gameboard;
 	
 	//Initializing the above
 	@Before
 	public void setup(){
 		playerWhoLandedOnField = new Spiller("Lander-Guy");
 		diceRoll = new Terning();
-		labor = new Bryggeri("ACB", 1000);
+		bryggeri = new Bryggeri("Turborg", 3000);
 	}
 	
 	//Tests if BaseRent is equal to what we expected: The facevalue of the dice*100,
@@ -28,21 +29,10 @@ public class BryggeriTest {
 	@Test
 	public void testLaborCamp() {
 		Terning testDie = new Terning();
-		testDie.setLastRoll(3);
-		assertEquals(labor.getRent(), 300);		
+		testDie.setLastRoll(12);
+		assertEquals(bryggeri.getRent(), 1200);		
 	}
 
-	//Tests if playerWhoLandedOnField actually buys the property he lands on
-	//Using system.out.print to visualize it
-	@Test
-	public void testLandOnField() {
-		
-		labor.landOnField(playerWhoLandedOnField);; //imports the m
-		assertTrue(playerWhoLandedOnField.getAccount().getBalance()<30000);
-		System.out.println(playerWhoLandedOnField + " now owns " + labor.getFieldName());
-			
-	}
-	
 	//Tests if the player who lands on a specific field can buy the property
 	//and if the price is subtracted from the players account
 	//When you see the prints, playerWhoLandedOnField's balance is also shown. This is because of
@@ -52,9 +42,28 @@ public class BryggeriTest {
 	
 	@Test
 	public void testBuyProperty(){
-		labor.buyProperty(playerWhoLandedOnField);
+		bryggeri.buyProperty(playerWhoLandedOnField);
 		assertTrue(playerWhoLandedOnField.getAccount().getBalance()<30000);
-//		System.out.println(playerWhoLandedOnField + " landed on " + labor.getFieldNumber());
-		System.out.println(playerWhoLandedOnField + " bought " + labor.getFieldName() + " for " + labor.getPrice());
+		System.out.println(playerWhoLandedOnField + " landed on " + bryggeri.getFieldName());
+		System.out.println(playerWhoLandedOnField + " bought " + bryggeri.getFieldName() + " for " + bryggeri.getPrice());
 	}
-}
+	//Tests if playerWhoLandedOnField actually buys the property he lands on
+	//Using system.out.print to visualize it
+	@Test
+	public void testLandOnField() {
+	
+		GameBoard spillerplade = new GameBoard();
+		Terning testDie = new Terning();
+		testDie.setLastRoll(12);
+		
+		playerWhoLandedOnField = new Spiller("Lander-Guy");
+		playerWhoLandedOnField.updateCurrentPos(12);
+		System.out.println(playerWhoLandedOnField.getName() +" står nu på " + playerWhoLandedOnField.getCurrentPos());
+		
+		
+//		bryggeri.landOnField(playerWhoLandedOnField);; //imports the m
+//		assertTrue(playerWhoLandedOnField.getAccount().getBalance()<30000);
+//		System.out.println(playerWhoLandedOnField + " now owns " + bryggeri.getFieldName());
+		
+	}
+	}
