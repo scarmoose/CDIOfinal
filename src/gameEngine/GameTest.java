@@ -23,7 +23,7 @@ public class GameTest {
 	 */
 	@Test
 	public void testResetOwner() {
-		currentBoard.fields[2].landOnField(playerTurn[0]);
+		currentBoard.fields[3].landOnField(playerTurn[0]);
 		System.out.println(currentBoard.ownables[1].getOwner());
 		assertTrue(currentBoard.ownables[1].getOwner().getName().equals("1"));
 		
