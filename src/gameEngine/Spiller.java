@@ -10,10 +10,10 @@ import codebehind.Car;
 public class Spiller {
 
 	private String name;
+	private Konto playerAcc = new Konto(); 
 	private int fleetsOwned = 0;
 	private int breweriesOwned = 0;
 	private int currentPos = 0;
-	private Konto playerAcc = new Konto(); 
 	private int prisonCount = 0;
 	
 	private boolean ownsAllColour[] = {false, false, false, false, false, false, false, false};

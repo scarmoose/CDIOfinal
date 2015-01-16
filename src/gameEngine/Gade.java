@@ -110,15 +110,6 @@ public class Gade extends Ownable {
 			}
 		}
 	}
-		
-	public void buyHotel(Spiller lander, int fieldNumber, boolean hotelCount){
-		if(housesOnField == 4){
-			GUI.setHotel(fieldNumber, hotelCount);
-			lander.getAccount().withdraw(housePrice);
-			System.out.println(super.getOwnerName()+" opgraderede til et hotel på "+super.getFieldName());
-		}
-	}
-	
 	
 	/**
 	 * Prompts the player if he wants to buy a not-owned fleet if players account balance > price

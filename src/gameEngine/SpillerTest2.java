@@ -10,7 +10,6 @@ public class SpillerTest2 {
 	Spiller player1;
 	Rederi fleet1;
 	Rederi fleet2;
-	Rederi fleet3;
 
 	
 
@@ -19,7 +18,6 @@ public class SpillerTest2 {
 		player1 = new Spiller("PlayerOne");
 		fleet1 = new Rederi("fleet1", 4000);
 		fleet2 = new Rederi("fleet2", 4000);
-		fleet3 = new Rederi("fleet3", 4000);
 	}
 	
 	@Test 
