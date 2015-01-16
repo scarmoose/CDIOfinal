@@ -33,7 +33,7 @@ public class BryggeriTest2 {
 		//We have set the diceroll to 12 - the getRent() will then be = 1200
 		
 		@Test
-		public void testLaborCamp() {
+		public void testBreweriRent() {
 			
 			bryggeri.setOwner(playerWhoLandedOnField2);
 			playerWhoLandedOnField2.incrementBreweriesOwned();
