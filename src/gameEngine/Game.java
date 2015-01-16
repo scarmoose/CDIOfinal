@@ -228,7 +228,7 @@ public class Game {
 				"Køb flere huse!",
 				"Giv turen videre.",};
 		int buttonCheck = JOptionPane.showOptionDialog(null,
-				"Du ejer flere huse",
+				"Vil du købe flere huse, eller give turen videre?",
 				"BESLUT DIG NU!",
 				JOptionPane.WARNING_MESSAGE,
 				JOptionPane.QUESTION_MESSAGE,
