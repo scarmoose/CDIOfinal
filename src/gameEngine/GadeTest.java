@@ -2,30 +2,30 @@ package gameEngine;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
 import org.junit.Before;
+import org.junit.Test;
 
 public class GadeTest {
-	
+
 	Spiller owner;
 	Spiller lander;
-	Gade territory;
+	Gade gade;
 	
 	@Before
 	public void setup(){
 		owner = new Spiller("owner");
 		lander = new Spiller("lander");
-		territory = new Gade("Tribal Encampment",1000,100,"red", 1000);
+		gade = new Gade("Rødovrevej", 1200, 50, "blue", 1000);
 	}
 	
 	/*
 	 * Test of the  rent required when a player lands on a field.
 	 * In this case the rent of field 1 (Tribal Encampment) is 100 points. 
 	 */
-	@Test
-	public void testTerritory(){
-		assertEquals(territory.getRent(),100);
 	
+	@Test
+	public void testGade(){
+		assertEquals(gade.getRent(),50);
 	}
 	
 	/*
@@ -34,23 +34,24 @@ public class GadeTest {
 	
 	@Test
 	public void testLandOnField() {
-		territory.buyProperty(owner);
+		gade.buyProperty(owner);
 		int ownerActual1 = owner.getAccount().getBalance();
-		int ownerExpected1 = 29000;
+		int ownerExpected1 = 28800;
 		assertEquals(ownerExpected1, ownerActual1);
-		territory.landOnField(lander);
+		gade.landOnField(lander);
 		int ownerActual2 = owner.getAccount().getBalance();
-		int ownerExpected2 = 29100;
+		int ownerExpected2 = 28850;
 		assertEquals(ownerExpected2, ownerActual2);
+		gade.landOnField(owner);
 		int landerActual = lander.getAccount().getBalance();
-		int landerExpected = 29900;
+		int landerExpected = 29950;
 		assertEquals(landerExpected, landerActual);
 	} 
 	
 	@Test //pop up message saying insufficient funds will appear
 	public void testBuyPropertyInsufficientFunds() {
 		owner.getAccount().setBalance(500);
-		territory.buyProperty(owner);
+		gade.buyProperty(owner);
 		int expected = 500;
 		int actual = owner.getAccount().getBalance();
 		assertEquals(expected, actual);
@@ -59,12 +60,9 @@ public class GadeTest {
 	
 	@Test //will ask whether lander wants to buy the field
 	public void landOnFreeField() {
-		territory.landOnField(lander);
+		gade.landOnField(lander);
 	} 
-	
-	
-	
-
 
 }
+
 
