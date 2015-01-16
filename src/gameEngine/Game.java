@@ -122,7 +122,6 @@ public class Game {
 				//int trow = 0;
 				//				trow=dieOne.rollDie();
 				trow=dieOne.rollDie();
-				trow=30;
 				if(activePlayers[turn]) {
 					prisonCheck(turn, playerNames, dieOne);					
 					GUI.setDice(dieOne.getFaceValue1(), dieOne.getFaceValue2());
