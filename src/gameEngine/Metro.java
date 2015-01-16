@@ -23,6 +23,9 @@ public class Metro extends Felt{
 		return metroFine;
 	}
 
+	//The Math.random will choose a random number and then pick a scenario
+	//for the player who landed on a metro-field
+	
 	@Override
 	public void landOnField(Spiller playerWhoLanded) {
 

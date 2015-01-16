@@ -12,7 +12,7 @@ public class Fængsel extends Felt{
 		super(fieldName);
 	}
 	/**
-	 * The play who landed on the field recieves a set bonus.
+	 * The play who landed on the field gets put in prison
 	 */
 	@Override
 	public void landOnField(Spiller playerWhoLandedOnField) {

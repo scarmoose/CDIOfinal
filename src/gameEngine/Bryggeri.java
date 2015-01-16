@@ -19,6 +19,8 @@ public class Bryggeri extends Ownable {
 	 * @param price Price of field
 	 */
 	
+	//Depending how on many breweries a player owns, the rent for landing on one will vary.
+	
 	public Bryggeri(String fieldName, int price){ 
 		super(fieldName, price);
 	}
@@ -36,9 +38,10 @@ public class Bryggeri extends Ownable {
 	}
 	
 	/**
-	 * Prompts the player if he wants to buy a not-owned fleet if players account balance > price
+	 * Prompts the player if he wants to buy a not-owned street if players account balance > price
 	 * @param playerWhoLandedOnField player who landed on the field
 	 */
+	
 	
 	public void buyProperty(Spiller playerWhoLandedOnField){
 		if(playerWhoLandedOnField.getAccount().getBalance()<super.getPrice()){

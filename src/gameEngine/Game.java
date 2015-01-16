@@ -167,7 +167,11 @@ public class Game {
 			}
 		}
 	}
-
+	
+//Checks if a player has been in prison for 3 rounds. If the count is bigger than 0, that
+//player will get the opportunity to pay 1.000kr and get out straight away, or he can choose to keep rolling the dice
+//and hope for a pair.
+	
 	private void prisonCheck(int turn, String[] playerNames, Terning dieOne) {
 		if(playerTurn[turn].getPrisonCount()==4){
 			System.out.println(playerNames[turn]+" har været i fængslet i 3 runder og kommer nu ud");
@@ -206,6 +210,10 @@ public class Game {
 		}
 	}
 
+	//This will allow a player to choose a street to buy 1-4 houses on
+	//After buying houses one time, another pop-up will appear and allow
+	//the same player to buy houses until he wishes to give up his turn
+	
 	private void getHouses(int turn) {
 		String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på",
 				playerTurn[turn].listHousesToBuy(currentBoard));

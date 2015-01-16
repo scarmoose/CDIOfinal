@@ -21,6 +21,12 @@ public class Gade extends Ownable {
 		return colour;
 	}
 	
+	/**
+	 * Returns a number which is used in an array, to determine
+	 * whether or not a player owns the entire "colour"
+	 * @return
+	 */
+	
 	public int getColourIndex() {
 		if(colour.equals("blue")) {
 			return 0;
@@ -63,7 +69,7 @@ public class Gade extends Ownable {
 	
 	
 	/**
-	 * Constructs a Territory field
+	 * Constructs a street-field
 	 * @param fieldName name of the field
 	 * @param price price of the field
 	 * @param rent rent of the field 
@@ -83,6 +89,14 @@ public class Gade extends Ownable {
 	public int getMAX_HOUSES_ON_FIELD() {
 		return MAX_HOUSES_ON_FIELD;
 	}
+	
+	/**
+	 * Allows a player to buy a single or multiple houses.
+	 * If housesOnField is bigger than 4, the GUI will set a Hotel to the field
+	 * @param lander
+	 * @param houseCount
+	 * @param fieldNumber
+	 */
 	
 	public void buyHouse(Spiller lander, int houseCount, int fieldNumber) {
 		System.out.println(this.fieldName);
