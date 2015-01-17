@@ -27,6 +27,7 @@ public class Gade extends Ownable {
 	 * will return the index of the colour in form of its position position on the game board. blue = 0, pink = 1, etc.
 	 * @return the colour index
 	 */
+
 	public int getColourIndex() {
 		if(colour.equals("blue")) {
 			return 0;
@@ -69,7 +70,7 @@ public class Gade extends Ownable {
 	
 	
 	/**
-	 * Constructs a Territory field
+	 * Constructs a street-field
 	 * @param fieldName name of the field
 	 * @param price price of the field
 	 * @param rent rent of the field 
@@ -91,12 +92,20 @@ public class Gade extends Ownable {
 	}
 	
 	/**
+<<<<<<< HEAD
 	 * if there is room on the chosen field, this will build the selected number of houses on the property.
 	 * if the player can't afford it, no houses will be bought.
 	 * if number of houses on a field is 5, a hotel will be set instead.
 	 * @param lander the player who wants to buy houses
 	 * @param houseCount the number of houses the player wants to buy
 	 * @param fieldNumber the field number of the field the player wants to buy houses on
+=======
+	 * Allows a player to buy a single or multiple houses.
+	 * If housesOnField is bigger than 4, the GUI will set a Hotel to the field
+	 * @param lander
+	 * @param houseCount
+	 * @param fieldNumber
+>>>>>>> branch 'master' of https://github.com/scarmoose/CDIOfinal.git
 	 */
 	
 	public void buyHouse(Spiller lander, int houseCount, int fieldNumber) {
