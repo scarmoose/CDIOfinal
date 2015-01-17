@@ -12,15 +12,21 @@ public class Gade extends Ownable {
 	private int housesOnField = 0; 
 	private final int MAX_HOUSES_ON_FIELD = 5; //4 houses + 1 hotel
 	private int[] houseRent = new int[5];
-	private int housePrice;
-	
+	private int housePrice;	
 	private String colour;
-
 	
 	public String getColour() {
 		return colour;
 	}
 	
+	public int getHousePrice() {
+		return housePrice;
+	}
+	
+	/**
+	 * will return the index of the colour in form of its position position on the game board. blue = 0, pink = 1, etc.
+	 * @return the colour index
+	 */
 	public int getColourIndex() {
 		if(colour.equals("blue")) {
 			return 0;
@@ -84,10 +90,19 @@ public class Gade extends Ownable {
 		return MAX_HOUSES_ON_FIELD;
 	}
 	
+	/**
+	 * if there is room on the chosen field, this will build the selected number of houses on the property.
+	 * if the player can't afford it, no houses will be bought.
+	 * if number of houses on a field is 5, a hotel will be set instead.
+	 * @param lander the player who wants to buy houses
+	 * @param houseCount the number of houses the player wants to buy
+	 * @param fieldNumber the field number of the field the player wants to buy houses on
+	 */
+	
 	public void buyHouse(Spiller lander, int houseCount, int fieldNumber) {
 		System.out.println(this.fieldName);
 		if(housesOnField < MAX_HOUSES_ON_FIELD) {
-			System.out.println("Xasda"+getOwner());
+//			System.out.println("Xasda"+getOwner());
 			if(super.getOwner().getAccount().getBalance()>housePrice){
 				housesOnField = housesOnField + houseCount;	
 				lander.getAccount().withdraw(houseCount * housePrice);
@@ -103,16 +118,17 @@ public class Gade extends Ownable {
 				}
 			
 			}
-				
-				else{
-			System.out.println(super.getOwnerName()+" kan ikke bygge flere huse eller hoteller "+super.getFieldName());
-			GUI.showMessage(super.getOwnerName()+" kan ikke bygge flere huse eller hoteller "+super.getFieldName());
+			else{
+				System.out.println(super.getOwnerName()+" kan ikke bygge flere huse eller hoteller på "+super.getFieldName());
+				GUI.showMessage(super.getOwnerName()+" kan ikke bygge flere huse eller hoteller på "+super.getFieldName());
 			}
 		}
 	}
 	
 	/**
-	 * Prompts the player if he wants to buy a not-owned fleet if players account balance > price
+	 * Prompts the player if he wants to buy a not-owned fleet,
+	 * if players account balance is more than the price of the property.
+	 * If the property is bought, the players corresponding colour count will increment
 	 * @param lander player who landed on the field
 	 */
 	

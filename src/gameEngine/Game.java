@@ -118,10 +118,8 @@ public class Game {
 			//user prompted button, when pressed the value of rollDice is stored in i.
 			buttonPressed = GUI.getUserButtonPressed(null, rollDice+" ("+playerTurn[turn].getName()+")");
 			if(buttonPressed.equals(rollDice+" ("+playerTurn[turn].getName()+")")){
-				//int trow=dieOne.rollDie();
-				//int trow = 0;
-				//				trow=dieOne.rollDie();
-				trow=dieOne.rollDie();
+				trow = 1;				
+//				trow=dieOne.rollDie();
 				if(activePlayers[turn]) {
 					prisonCheck(turn, playerNames, dieOne);					
 					GUI.setDice(dieOne.getFaceValue1(), dieOne.getFaceValue2());
@@ -205,14 +203,19 @@ public class Game {
 			}				
 		}
 	}
-
+	
+	/**
+	 * method responsible for listing the properties available to buy houses on. 
+	 * And buy the houses if the player wishes
+	 * @param turn the player turn. NOT the player
+	 */
 	private void getHouses(int turn) {
 		String buttonPressed3 = GUI.getUserSelection("Vælg gade(r) du vil købe huse på",
 				playerTurn[turn].listHousesToBuy(currentBoard));
 		for(int i =0;i<currentBoard.gader.length;i++){
 			if(buttonPressed3.equals(currentBoard.gader[i].getFieldName()) 
 					&& currentBoard.gader[i].getHousesOnField()<currentBoard.gader[i].getMAX_HOUSES_ON_FIELD()){
-				int houseCount = GUI.getUserInteger("Hvor mange huse vil du købe? (5 huse = 1 hotel)",
+				int houseCount = GUI.getUserInteger("Hvor mange huse vil du købe? (5 huse = 1 hotel) 1 hus koster "+currentBoard.gader[i].getHousePrice(),
 						1, 5-currentBoard.gader[i].getHousesOnField());
 				for(int j = 0; j < currentBoard.fields.length; j++){	
 					Felt f = currentBoard.fields[j];
@@ -230,7 +233,7 @@ public class Game {
 				"Køb flere huse!",
 				"Giv turen videre.",};
 		int buttonCheck = JOptionPane.showOptionDialog(null,
-				"Du ejer flere huse",
+				"Køb flere huse eller giv turen videre",
 				"BESLUT DIG NU!",
 				JOptionPane.WARNING_MESSAGE,
 				JOptionPane.QUESTION_MESSAGE,
@@ -245,14 +248,19 @@ public class Game {
 		}
 	}
 
-	//Checks if the players have lost all points
+	/**
+	 * Checks to see if the current player lost
+	 * @param playerNames array of the player names
+	 * @param turn the player turn. NOT the player
+	 */
+	
 	private void checkForLoserAndExecute(String[] playerNames, int turn) {
 		if(playerTurn[turn].getAccount().getBalance()==0){
 			activePlayers[turn] = false;//Sets the player to false (inactive), when the player have lost
 			inactivePlayers++;//increment amount of inactive players
 			GUI.removeAllCars(playerNames[turn]); //Player is removed from board
 
-			//removes bankrupt player as owner of his fields
+	 		//removes bankrupt player as owner of his fields
 
 			for(int is = 0; is < currentBoard.ownables.length; is++){
 				if(currentBoard.ownables[is].getOwner() == playerTurn[turn]) {

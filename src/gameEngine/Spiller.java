@@ -346,6 +346,12 @@ public class Spiller {
 	
 	String streetsWithHousesToBuy[];
 	
+	/**
+	 * will list the properties to buy houses on in a String array
+	 * @param gameBoard the current game board
+	 * @return a String array of the properties ready to buy houses on
+	 */
+	
 	public String[] listHousesToBuy(GameBoard gameBoard) {
 		streetsWithHousesToBuy = new String[gameBoard.gader.length];
 		int index = 0;
@@ -358,7 +364,12 @@ public class Spiller {
 	}
 	
 	private int numberOfColorsFullyOwned = 0; 
-
+	
+	 /**
+	  * checks to see if the player owns all properties of any colour
+	  * @return number of property series the player completely owns
+	  */
+	
 	public int checkForHouseColours() {
 		for(int i = 0; i < this.getColourCount().length; i++) {
 			if(this.getColourCount()[i] == this.MAX_COLOUR[i]	){
@@ -382,11 +393,11 @@ public class Spiller {
 	Color[] color1={Color.black,Color.blue,Color.RED,Color.PINK,Color.GRAY,Color.GREEN}; 
 	Color[] color2={Color.MAGENTA,Color.ORANGE,Color.LIGHT_GRAY,Color.RED,Color.YELLOW,Color.WHITE};
 	
-	//make an random seltion for 0-5 so the colors of the cars can be random.
+	//make an random selection for 0-5 so the colors of the cars can be random.
 	int t=(int)((Math.random()*6));
 	int p=(int)((Math.random()*6));
 	
-	//Metod to set the cars(UFO), color and patten.
+	//The player cars are created.
 	Car playerCar = new Car.Builder()
     .typeUfo()
     .primaryColor(color2[t])

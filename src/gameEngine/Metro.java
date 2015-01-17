@@ -9,7 +9,7 @@ public class Metro extends Felt{
 
 	private int metroFine = 750; //Set fine to 750
 	private int metroBonus = 500; //bonus for finding the wallet
-	private int rejsekortFine = 150;//fine for not having the travelcard at check
+	private int rejsekortFine = 150;//fine for not having the travel card at check
 	private int fieldNumber[]={2,7,17,22,33,36}; // array over the metro fields
 	private int updateOneSpaceAhead[]={6,11,6,12,4,7}; // array over the positive amount that there are add to the felt position to get to the next metro fields
 	private int updateOneSpaceBack[]={35,-4,-9,-4,-10,-2};//array over the negative amount that there are add to the felt position to get to the next metro fields
@@ -22,11 +22,11 @@ public class Metro extends Felt{
 	public int getMetroFine() {
 		return metroFine;
 	}
-
+	
 	@Override
 	public void landOnField(Spiller playerWhoLanded) {
-
-		int result = (int)((Math.random()*8)+1); // 8 random Places for the Switch statsment. And +1 for make it go from 1-8 insted of 0-7.
+		
+		int result = (int)((Math.random()*8)+1); // 8 random Places for the Switch statement. And +1 for make it go from 1-8 instead of 0-7.
 
 		while(playerWhoLanded.getCurrentPos() !=fieldNumber[i]){
 			i++;
@@ -98,7 +98,7 @@ public class Metro extends Felt{
 			System.out.println("Du faldt i søvn i metroen. Ryk 2 metro felter frem. Du modtager ikke 4000,-. hvis du passerer start feltet");
 			GUI.showMessage("Du faldt i søvn i metroen. Ryk 2 metro felter frem. Du modtager ikke 4000,-. hvis du passerer start feltet");
 
-			//withdraw 4000 from the account of the player so there dont get the bonus when the landed on field nr. 33
+			//withdraw 4000 from the account of the player so they don't get the bonus for passing START when they landed on field number 33
 			if(playerWhoLanded.getCurrentPos() == 33 ){
 				playerWhoLanded.getAccount().withdraw(4000);
 				System.out.println("Trækker 4000 fra for at passer start");
@@ -118,7 +118,7 @@ public class Metro extends Felt{
 	}
 	public void landOnFieldTest(Spiller playerWhoLanded,int result) {	
 
-		//int result = (int)((Math.random()*8)+1); // 8 random Places for the Switch statsment. And +1 for make it go from 1-8 insted of 0-7.
+//		int result = (int)((Math.random()*8)+1); // 8 random Places for the Switch statement. And +1 for make it go from 1-8 insted of 0-7.
 //
 //		while(playerWhoLanded.getCurrentPos() !=fieldNumber[i]){
 //			i++;
