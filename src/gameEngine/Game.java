@@ -166,9 +166,13 @@ public class Game {
 		}
 	}
 	
-//Checks if a player has been in prison for 3 rounds. If the count is bigger than 0, that
-//player will get the opportunity to pay 1.000kr and get out straight away, or he can choose to keep rolling the dice
-//and hope for a pair.
+	/**
+	 * Checks if a player is in prison and if the player has been so for 3 rounds
+	 * Will prompt the player if he wants to pay to get out or try to roll a pair
+	 * @param turn the player turn. NOT the player
+	 * @param playerNames array of player names
+	 * @param dieOne the die 
+	 */
 	
 	private void prisonCheck(int turn, String[] playerNames, Terning dieOne) {
 		if(playerTurn[turn].getPrisonCount()==4){
