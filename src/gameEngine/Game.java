@@ -118,8 +118,8 @@ public class Game {
 			//user prompted button, when pressed the value of rollDice is stored in i.
 			buttonPressed = GUI.getUserButtonPressed(null, rollDice+" ("+playerTurn[turn].getName()+")");
 			if(buttonPressed.equals(rollDice+" ("+playerTurn[turn].getName()+")")){
-				trow = 1;				
-//				trow=dieOne.rollDie();
+//				trow = 1;				
+				trow=dieOne.rollDie();
 				if(activePlayers[turn]) {
 					prisonCheck(turn, playerNames, dieOne);					
 					GUI.setDice(dieOne.getFaceValue1(), dieOne.getFaceValue2());
