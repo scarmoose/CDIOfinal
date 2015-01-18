@@ -44,7 +44,7 @@ public class Game {
 		String playerNames[] = {"","","","","",""};
 
 		//The choice of amount of players
-		String[] amount = {"2","3", "4","5","6"};//Lowest amount of players will be 3
+		String[] amount = {"3", "4","5","6"};//Lowest amount of players will be 3
 		//Selection box in which amount of players is chosen
 		String players = (String) JOptionPane.showInputDialog(null, "Vælg antal spillere:",
 				"Livets største beslutning", JOptionPane.QUESTION_MESSAGE, null,
